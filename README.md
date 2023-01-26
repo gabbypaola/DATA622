@@ -1,6 +1,5 @@
 # DATA622
 **Machine Learning and Big Data**  
-**DATA622: Machine Learning and Big Data**  
 **Course Description and Learning Outcomes**  
 
 This course aims to develop basic understanding of foundational machine learning techniques. This course will aim to have a smooth transition from statistical modeling methods to machine learning methods. In this course, we emphasize computational techniques. We will primarily use R as our programming environment. All assignments are expected to be submitted as R-Markdown documents.  However, if you are more comfortable using Python, please let me know and we can make some adjustments. 
