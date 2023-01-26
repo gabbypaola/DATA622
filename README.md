@@ -16,28 +16,28 @@ This course supports both R and Python languages for machine learning. Practical
 R is more popular with statisticians (and what we focus on in our courses), while Python is more popular amongst data scientists generally. Choose either Python or R, as both essentially serve the same purpose. 
 
 **Required:**  
-TITLE: Practical Machine Learning in R (2020)
-AUTHORS: Fred Nwanganga, Mike Chapple
+TITLE: Practical Machine Learning in R (2020)  
+AUTHORS: Fred Nwanganga, Mike Chapple  
 URL: https://www.wiley.com/en-us/Practical+Machine+Learning+in+R-p-9781119591535
 
 Python:	While this course is focused on R for a lot of great reasons (it's easier to learn, you should have familiarity from previous courses, etc) I will accommodate those that prefer Python by accepting assignments/homework in Python. However, please buy the "Practical Machine Learning in R" as it covers critical concepts, even if you prefer Python.
 
-TITLE: Machine Learning with Python Tutorial (2021)
-AUTHORS: Bernd Klein
-URL: https://python-course.eu/books/bernd_klein_python_and_machine_learning_a4.pdf
+TITLE: Machine Learning with Python Tutorial (2021)  
+AUTHORS: Bernd Klein  
+URL: https://python-course.eu/books/bernd_klein_python_and_machine_learning_a4.pdf  
 
 **Optional:**  
 Either	 
 
-TITLE: Machine Learning Projects in R
-SOURCE: ProjectPro
-URL: https://www.projectpro.io/projects/data-science-projects/machine-learning-projects-in-r
+TITLE: Machine Learning Projects in R  
+SOURCE: ProjectPro  
+URL: https://www.projectpro.io/projects/data-science-projects/machine-learning-projects-in-r  
 
 Or	 
 
-TITLE: Python Machine Learning Projects
-AUTHORS: Brian Boucheron & Lisa Tagliaferri, DigitalOcean
-URL: https://assets.digitalocean.com
+TITLE: Python Machine Learning Projects  
+AUTHORS: Brian Boucheron & Lisa Tagliaferri, DigitalOcean  
+URL: https://assets.digitalocean.com  
 
 
 **Tentative Schedule**
