@@ -5,8 +5,7 @@
 1. Visit the following website and explore the range of sizes of this dataset (from 100 to 5 million records):
 https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/ or
 (new) https://www.kaggle.com/datasets
-2. Select 2 files to download
-Based on your computer's capabilities (memory, CPU), select 2 files you can handle (recommended one small, one large)
+2. Select 2 files to download. Based on your computer's capabilities (memory, CPU), select 2 files you can handle (recommended one small, one large)
 3. Download the files
 4. Review the structure and content of the tables, and think about the data sets (structure, size, dependencies, labels, etc)
 5. Consider the similarities and differences in the two data sets you have downloaded
@@ -14,10 +13,8 @@ Based on your computer's capabilities (memory, CPU), select 2 files you can hand
 7. Based on the data you have, think which two machine learning algorithms presented so far could be used to analyze the data
 
 **Deliverable**
-1. Essay (minimum 500 word document)
-Write a short essay explaining your selection of algorithms and how they relate to the data and what you are trying to do
-2. Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document)
-Explore how to analyze and predict an outcome based on the data available. This will be an exploratory exercise, so feel free to show errors and warnings that raise during the analysis. Test the code with both datasets selected and compare the results.
+1. Essay (minimum 500 word document). Write a short essay explaining your selection of algorithms and how they relate to the data and what you are trying to do
+2. Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document). Explore how to analyze and predict an outcome based on the data available. This will be an exploratory exercise, so feel free to show errors and warnings that raise during the analysis. Test the code with both datasets selected and compare the results.
 
 **Answer questions such as:**  
 1. Are the columns of your data correlated?
@@ -29,4 +26,5 @@ Explore how to analyze and predict an outcome based on the data available. This 
 7. How does the analysis between data sets compare?
 
 Develop your exploratory analysis of the data and the essay in the following 2 weeks.  
+
 **Due Date: Sunday March 5th, end of day**
