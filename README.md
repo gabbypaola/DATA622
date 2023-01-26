@@ -14,8 +14,8 @@ Develop proficiency of technical terminology expected of a Data Science practiti
 **Required Textbooks:**  
 This course supports both R and Python languages for machine learning. Practical Machine Learning in R (Nwanganga & Chapple) can be purchased, while the Python book is free (as are the optional books).
 R is more popular with statisticians (and what we focus on in our courses), while Python is more popular amongst data scientists generally. Choose either Python or R, as both essentially serve the same purpose. 
-**Required:**  
 
+**Required:**  
 TITLE: Practical Machine Learning in R (2020)
 AUTHORS: Fred Nwanganga, Mike Chapple
 URL: https://www.wiley.com/en-us/Practical+Machine+Learning+in+R-p-9781119591535
