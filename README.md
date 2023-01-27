@@ -58,4 +58,4 @@ URL: https://assets.digitalocean.com
 |   11    |   4/17   |   Unsupervised Learning: PCA and Distance Metrics       | Discus. 11, HW #3 |  4/23  |
 |   12    |   4/24   |   Resampling and Model Selection and other topics       | Discus. 12        |  4/30  |
 |   13    |   5/01   |   Bias Variance Tradeoff                                | Discus. 13        |  5/07  |
-|   14    |   5/08   |   Neural Networks continued & Foundational Models       | Discus. 14        |  5/14  |
+|   14    |   5/08   |   Neural Networks continued & Foundational Models       | Discus. 14, HW #4 |  5/14  |
