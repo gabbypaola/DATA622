@@ -1,0 +1,130 @@
+---
+title: "DATA622 | Machine Learning and Big Data"
+author: "Gabriella Martinez"
+date: "3/5/2023"
+output:
+      html_document:
+        toc: yes
+        toc_float: yes
+        theme: yeti
+        highlight: kate
+        font-family: "Arial"
+        code_folding: show
+---
+
+# Assignment 1
+1. Visit the following website and explore the range of sizes of this dataset (from 100 to 5 million records):
+https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/ or
+(new) https://www.kaggle.com/datasets
+2. Select 2 files to download. Based on your computer's capabilities (memory, CPU), select 2 files you can handle (recommended one small, one large)
+3. Download the files
+4. Review the structure and content of the tables, and think about the data sets (structure, size, dependencies, labels, etc)
+5. Consider the similarities and differences in the two data sets you have downloaded
+6. Think about how to analyze and predict an outcome based on the datasets available
+7. Based on the data you have, think which two machine learning algorithms presented so far could be used to analyze the data
+
+# Packages
+```{r}
+library(readr)
+library(tidyverse)
+library(psych)
+```
+
+
+# Load Data
+```{r}
+df5000 <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/5000%20Sales%20Records.csv")
+df500000 <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/500000%20Sales%20Records.csv")
+```
+
+```{r}
+glimpse(df5000)
+```
+
+```{r}
+unique(df5000$Region)
+unique(df5000$Country)
+```
+```{r}
+unique(df5000$Item.Type)
+unique(df5000$Sales.Channel)
+```
+
+
+
+```{r}
+glimpse(df500000)
+```
+
+```{r}
+unique(df500000$Region)
+unique(df500000$Country)
+```
+
+```{r}
+unique(df5000$Item.Type)
+unique(df5000$Sales.Channel)
+```
+
+
+## Missing Data
+```{r}
+colSums(is.na(df5000))
+```
+
+```{r}
+colSums(is.na(df500000))
+```
+
+## Distributions
+```{r}
+df5000_n <- df5000 %>% 
+  keep(is.numeric) %>% 
+  select(-Order.ID)
+
+describe(df5000_n, fast=TRUE) %>% 
+  select(c(-vars,-n))
+```
+
+```{r}
+df5000_n %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=..density..), alpha=0.2, fill = "lightblue", color="lightblue", position="identity") +
+    theme_minimal()
+```
+
+
+
+```{r}
+df500000_n <- df500000 %>% 
+  keep(is.numeric) %>% 
+  select(-Order.ID)
+
+describe(df500000_n, fast=TRUE) %>% 
+  select(c(-vars,-n))
+```
+
+```{r}
+df500000_n %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=..density..), alpha=0.2, fill = "lightblue", color="lightblue", position="identity") +
+    theme_minimal()
+```
+
+
+## Variable Type Conversions
+```{r}
+df5000[['Order.Date']] <- as.Date(df5000[['Order.Date']], "%m/%d/%Y")
+df5000[['Ship.Date']] <- as.Date(df5000[['Ship.Date']], "%m/%d/%Y")
+
+df500000[['Order.Date']] <- as.Date(df500000[['Order.Date']], "%m/%d/%Y")
+df500000[['Ship.Date']] <- as.Date(df500000[['Ship.Date']], "%m/%d/%Y")
+```
+
+
