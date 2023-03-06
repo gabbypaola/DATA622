@@ -119,6 +119,12 @@ df500k_n %>%
     geom_histogram(aes(y=..density..), alpha=0.2, fill = "lightblue", color="lightblue", position="identity") +
     theme_minimal()
 ```
+## Dependencies and Definitions
+`Total.Cost` = `Units.Sold` * `Unit.Cost`  
+`Total.Revenue` = `Units.Sold` * `Unit.Price`  
+`Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`)
+
+`Order.Priority`: C(Critical), H(High), M(Medium) or L(Low)
 
 
 ## Variable Type Conversions
