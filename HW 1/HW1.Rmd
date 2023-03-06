@@ -27,67 +27,70 @@ https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-test
 ```{r}
 library(readr)
 library(tidyverse)
+library(tidymodels)
 library(psych)
+library(rpart)
+library(rpart.plot)
 ```
 
 
 # Load Data
 ```{r}
-df5000 <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/5000%20Sales%20Records.csv")
-df500000 <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/500000%20Sales%20Records.csv")
+df5k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/5000%20Sales%20Records.csv")
+df500k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/500000%20Sales%20Records.csv")
 ```
 
 ```{r}
-glimpse(df5000)
+glimpse(df5k)
 ```
 
 ```{r}
-unique(df5000$Region)
-unique(df5000$Country)
+unique(df5k$Region)
+unique(df5k$Country)
 ```
 ```{r}
-unique(df5000$Item.Type)
-unique(df5000$Sales.Channel)
+unique(df5k$Item.Type)
+unique(df5k$Sales.Channel)
 ```
 
 
 
 ```{r}
-glimpse(df500000)
-```
-
-```{r}
-unique(df500000$Region)
-unique(df500000$Country)
+glimpse(df500k)
 ```
 
 ```{r}
-unique(df5000$Item.Type)
-unique(df5000$Sales.Channel)
+unique(df500k$Region)
+unique(df500k$Country)
+```
+
+```{r}
+unique(df5k$Item.Type)
+unique(df5k$Sales.Channel)
 ```
 
 
 ## Missing Data
 ```{r}
-colSums(is.na(df5000))
+colSums(is.na(df5k))
 ```
 
 ```{r}
-colSums(is.na(df500000))
+colSums(is.na(df500k))
 ```
 
 ## Distributions
 ```{r}
-df5000_n <- df5000 %>% 
+df5k_n <- df5k %>% 
   keep(is.numeric) %>% 
   select(-Order.ID)
 
-describe(df5000_n, fast=TRUE) %>% 
+describe(df5k_n, fast=TRUE) %>% 
   select(c(-vars,-n))
 ```
 
 ```{r}
-df5000_n %>% 
+df5k_n %>% 
   gather(variable, value, 1:6) %>%
   ggplot(aes(value)) +
     facet_wrap(~variable, scales = "free") +
@@ -99,16 +102,16 @@ df5000_n %>%
 
 
 ```{r}
-df500000_n <- df500000 %>% 
+df500k_n <- df500k %>% 
   keep(is.numeric) %>% 
   select(-Order.ID)
 
-describe(df500000_n, fast=TRUE) %>% 
+describe(df500k_n, fast=TRUE) %>% 
   select(c(-vars,-n))
 ```
 
 ```{r}
-df500000_n %>% 
+df500k_n %>% 
   gather(variable, value, 1:6) %>%
   ggplot(aes(value)) +
     facet_wrap(~variable, scales = "free") +
@@ -120,11 +123,60 @@ df500000_n %>%
 
 ## Variable Type Conversions
 ```{r}
-df5000[['Order.Date']] <- as.Date(df5000[['Order.Date']], "%m/%d/%Y")
-df5000[['Ship.Date']] <- as.Date(df5000[['Ship.Date']], "%m/%d/%Y")
+df5k[['Order.Date']] <- as.Date(df5k[['Order.Date']], "%m/%d/%Y")
+df5k[['Ship.Date']] <- as.Date(df5k[['Ship.Date']], "%m/%d/%Y")
 
-df500000[['Order.Date']] <- as.Date(df500000[['Order.Date']], "%m/%d/%Y")
-df500000[['Ship.Date']] <- as.Date(df500000[['Ship.Date']], "%m/%d/%Y")
+df500k[['Order.Date']] <- as.Date(df500k[['Order.Date']], "%m/%d/%Y")
+df500k[['Ship.Date']] <- as.Date(df500k[['Ship.Date']], "%m/%d/%Y")
+
+df5k[['Sales.Channel']] <- as.factor(df5k[['Sales.Channel']])
+df500k[['Sales.Channel']] <- as.factor(df500k[['Sales.Channel']])
+
+df5k[['Order.Priority']] <- as.factor(df5k[['Order.Priority']])
+df500k[['Order.Priority']] <- as.factor(df500k[['Order.Priority']])
 ```
+
+
+#Model
+Decision Tree models will be used for both the data with 5 thousand records as well as that with 500 thousand to predict the `Sales.Channel`, if an order will be conducted online or offline at a brick and mortar 
+
+## 5k 
+```{r}
+#set seed for reproducibility
+set.seed(6221)
+
+train5k <- createDataPartition(df5k$`Sales.Channel`, p = 0.8, list=FALSE,times = 1)
+train5k_data <- df5k[train5k,]
+test5k_data <- df5k[-train5k,]
+
+mytree1 <- rpart(`Sales.Channel` ~ `Region` + `Item.Type` + `Order.Priority` + `Total.Profit`,
+                data= train5k_data, 
+                method='class')
+mytree1
+
+mytree1 %>% rpart.plot(extra = 2)
+```
+
+`
+
+
+## 500k
+```{r}
+#set seed for reproducibility
+set.seed(6222)
+
+train500k <- createDataPartition(df500k$`Sales.Channel`, p = 0.8, list=FALSE,times = 1)
+train500k_data <- df500k[train500k,]
+test500k_data <- df5k[-train500k,]
+
+mytree2 <- rpart(`Sales.Channel` ~ `Region` + `Item.Type` + `Order.Priority` + `Total.Profit`,
+                data= train500k_data, 
+                method='class')
+mytree2
+
+mytree2 %>% rpart.plot(extra = 2)
+```
+
+
 
 
