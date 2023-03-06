@@ -29,6 +29,7 @@ library(readr)
 library(tidyverse)
 library(tidymodels)
 library(psych)
+library(caret)
 library(rpart)
 library(rpart.plot)
 ```
@@ -143,10 +144,13 @@ df500k[['Order.Priority']] <- as.factor(df500k[['Order.Priority']])
 ```
 
 
-#Model
-Decision Tree models will be used for both the data with 5 thousand records as well as that with 500 thousand to predict the `Sales.Channel`, if an order will be conducted online or offline at a brick and mortar 
+# Model
+## Decision Tree Models
+Decision Tree models will be used for both the data with 5 thousand records as well as that with 500 thousand to predict the `Sales.Channel`, if an order will be conducted online or offline at a brick and mortar store.
 
-## 5k 
+^[https://www.gormanalysis.com/blog/decision-trees-in-r-using-rpart/]  
+
+### 5k 
 ```{r}
 #set seed for reproducibility
 set.seed(6221)
@@ -163,10 +167,7 @@ mytree1
 mytree1 %>% rpart.plot(extra = 2)
 ```
 
-`
-
-
-## 500k
+### 500k
 ```{r}
 #set seed for reproducibility
 set.seed(6222)
