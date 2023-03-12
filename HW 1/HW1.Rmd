@@ -58,6 +58,7 @@ df500k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW
 
 # Exploratory Data Analysis
 
+## Dimensions, Variable Types, Levels, and Frequencies
 ```{r}
 glimpse(df5k)
 ```
@@ -360,6 +361,16 @@ mean(predicted.classes2 == test5k_data$Sales.Channel)
 
 
 # Essay
+**Answer questions such as:**  
+1. Are the columns of your data correlated?
+2. Are there labels in your data? Did that impact your choice of algorithm?  
+3. What are the pros and cons of each algorithm you selected?  
+4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?  
+5. Which result will you trust if you need to make a business decision?  
+6. Do you think an analysis could be prone to errors when using too much data, or when using the least amount possible?  
+7. How does the analysis between data sets compare?  
+Develop your exploratory analysis of the data and the essay in the following 2 weeks.  
+
 
 <!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
 
