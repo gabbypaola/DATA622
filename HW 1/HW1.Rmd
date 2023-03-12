@@ -13,10 +13,10 @@ output:
 ---
 
 # Assignment 1
-Pre-Work  
+**Pre-Work**  
 1. Visit the following website and explore the range of sizes of this dataset (from 100 to 5 million records):  
-https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/ or
-(new) https://www.kaggle.com/datasets
+https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/ or  
+(new) https://www.kaggle.com/datasets  
 2. Select 2 files to download. Based on your computer's capabilities (memory, CPU), select 2 files you can handle (recommended one small, one large)  
 3. Download the files  
 4. Review the structure and content of the tables, and think about the data sets (structure, size, dependencies, labels, etc)  
@@ -24,12 +24,12 @@ https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-test
 6. Think about how to analyze and predict an outcome based on the datasets available  
 7. Based on the data you have, think which two machine learning algorithms presented so far could be used to analyze the data  
 
-Deliverable  
+**Deliverable**  
 1. Essay (minimum 500 word document). Write a short essay explaining your selection of algorithms and how they relate to the data and what you are trying to do.  
 2. Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document. Explore how to analyze and predict an outcome based on the data available. This will be an exploratory exercise, so feel free to show errors and warnings that raise during the analysis. Test the code with both datasets selected and compare the results.
 
-Answer questions such as:  
-1. Are the columns of your data correlated  
+**Answer questions such as:**  
+1. Are the columns of your data correlated?
 2. Are there labels in your data? Did that impact your choice of algorithm?  
 3. What are the pros and cons of each algorithm you selected?  
 4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?  
@@ -39,7 +39,7 @@ Answer questions such as:
 Develop your exploratory analysis of the data and the essay in the following 2 weeks.  
 
 # Packages
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(readr)
 library(tidyverse)
 library(tidymodels)
@@ -56,13 +56,15 @@ df5k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%2
 df500k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/500000%20Sales%20Records.csv")
 ```
 
+# Exploratory Data Analysis
+
 ```{r}
 glimpse(df5k)
 ```
 
 ```{r}
 unique(df5k$Region)
-unique(df5k$Country)
+length(unique(df5k$Country))
 ```
 ```{r}
 table(df5k$Item.Type)
@@ -77,7 +79,7 @@ glimpse(df500k)
 
 ```{r}
 unique(df500k$Region)
-unique(df500k$Country)
+length(unique(df500k$Country))
 ```
 
 ```{r}
@@ -105,13 +107,14 @@ describe(df5k_n, fast=TRUE) %>%
   select(c(-vars,-n))
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 df5k_n %>% 
   gather(variable, value, 1:6) %>%
   ggplot(aes(value)) +
     facet_wrap(~variable, scales = "free") +
     geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
-    geom_histogram(aes(y=..density..), alpha=0.2, fill = "lightblue", color="lightblue", position="identity") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity", bins = 40) +
     theme_minimal()
 ```
 
@@ -126,16 +129,18 @@ describe(df500k_n, fast=TRUE) %>%
   select(c(-vars,-n))
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 df500k_n %>% 
   gather(variable, value, 1:6) %>%
   ggplot(aes(value)) +
     facet_wrap(~variable, scales = "free") +
     geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
-    geom_histogram(aes(y=..density..), alpha=0.2, fill = "lightblue", color="lightblue", position="identity") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity",bins = 40) +
     theme_minimal()
 ```
-## Dependencies and Definitions
+  
+## Variable Dependencies and Definitions
 `Total.Cost` = `Units.Sold` * `Unit.Cost`  
 `Total.Revenue` = `Units.Sold` * `Unit.Price`  
 `Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`)
@@ -167,7 +172,7 @@ levels(df500k$Sales.Channel)
 ```
 
 
-# Model
+# Models
 ## Decision Tree Models
 Decision Tree models will be used for both the data with 5 thousand records as well as that with 500 thousand to predict the `Sales.Channel`, if an order will be conducted online or offline at a brick and mortar store.
 
@@ -178,11 +183,13 @@ Decision Tree models will be used for both the data with 5 thousand records as w
 #set seed for reproducibility
 set.seed(6221)
 
-train5k <- createDataPartition(df5k$`Sales.Channel`, p = 0.8, list=FALSE,times = 1)
+train5k <- createDataPartition(df5k$`Sales.Channel`, p = 0.8, list=FALSE,
+                               times = 1)
 train5k_data <- df5k[train5k,]
 test5k_data <- df5k[-train5k,]
 
-mytree1 <- rpart(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + `Order.Priority` + `Total.Profit`,
+mytree1 <- rpart(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + 
+                   `Order.Priority` + `Total.Profit`+`Region`,
                 data= train5k_data, 
                 method='class')
 mytree1
@@ -216,11 +223,13 @@ table(test5k_data$Sales.Channel, predictTest_tree)
 #set seed for reproducibility
 set.seed(62)
 
-train500k <- createDataPartition(df500k$`Sales.Channel`, p = 0.8, list=FALSE,times = 1)
+train500k <- createDataPartition(df500k$`Sales.Channel`, p = 0.8, 
+                                 list=FALSE,times = 1)
 train500k_data <- df500k[train500k,]
 test500k_data <- df500k[-train500k,]
 
-mytree2 <- rpart(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + `Order.Priority` + `Total.Profit`,
+mytree2 <- rpart(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + 
+                   `Order.Priority` + `Total.Profit`+`Region`,
                 data= train500k_data, 
                 method='class')
 mytree2
@@ -246,7 +255,9 @@ xtabs(~`Sales.Channel` +`Region`, data = train5k_data)
 
 ```{r}
 # Training the model
-logistic_model1 <- glm(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + `Order.Priority` + `Total.Profit`+`Region`, family = binomial(), train5k_data)
+logistic_model1 <- glm(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + 
+                         `Order.Priority` + `Total.Profit`+`Region`, 
+                       family = binomial(), train5k_data)
 # Checking the model
 summary(logistic_model1)
 ```
@@ -262,7 +273,8 @@ prop.table(table(train5k_data$Sales.Channel))
 
 ```{r}
 # Predictions on the training set
-predictTrain1 = predict(logistic_model1, data = train5k_data, type = "response")
+predictTrain1 = predict(logistic_model1, data = train5k_data, 
+                        type = "response")
 head(predictTrain1)
 
 # Confusion matrix on training data
@@ -270,7 +282,8 @@ table(train5k_data$Sales.Channel, predictTrain1>=0.5)
 (1103+1015)/nrow(train5k_data) #accuracy- 53%
 
 #Predictions on the test set
-predictTest1 = predict(logistic_model1, newdata = test5k_data, type = "response")
+predictTest1 = predict(logistic_model1, newdata = test5k_data, 
+                       type = "response")
 
 # Confusion matrix on test set
 table(test5k_data$Sales.Channel, predictTest1 >= 0.5)
@@ -309,6 +322,7 @@ summary(logistic_model2)
 
 #### Model Perfomance
 
+To evaluate the model further, starting by setting the baseline accuracy using the code below. Since the majority class (Offline) of the target variable has a proportion of 0.50, the baseline accuracy is 50 percent.
 ```{r}
 #baseline accuracy
 prop.table(table(train500k_data$Sales.Channel))
@@ -317,14 +331,16 @@ prop.table(table(train500k_data$Sales.Channel))
 
 ```{r}
 # Predictions on the training set
-predictTrain = predict(logistic_model2, data = train500k_data, type = "response")
+predictTrain = predict(logistic_model2, data = train500k_data, 
+                       type = "response")
 
 # Confusion matrix on training data
 table(train500k_data$Sales.Channel, predictTrain >= 0.5)
 (113506+86976)/nrow(train500k_data) #accuracy- 50%
 
 #Predictions on the test set
-predictTest = predict(logistic_model2, newdata = test500k_data, type = "response")
+predictTest = predict(logistic_model2, newdata = test500k_data, 
+                      type = "response")
 
 # Confusion matrix on test set
 table(test500k_data$Sales.Channel, predictTest >= 0.5)
@@ -332,5 +348,19 @@ table(test500k_data$Sales.Channel, predictTest >= 0.5)
 
 ```
 
+The model accuracy is measured as the proportion of observations that have been correctly classified. Inversely, the classification error is defined as the proportion of observations that have been misclassified.
+
+Proportion of correctly classified observations:
+```{r message=FALSE, warning=FALSE}
+predicted.classes2 <- ifelse(predictTrain > 0.5, "Online", "Offline")
+#head(predicted.classes)
+
+mean(predicted.classes2 == test5k_data$Sales.Channel)
+```
+
+
 # Essay
 
+<!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
