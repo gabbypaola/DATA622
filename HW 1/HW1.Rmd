@@ -29,7 +29,7 @@ https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-test
 2. Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document. Explore how to analyze and predict an outcome based on the data available. This will be an exploratory exercise, so feel free to show errors and warnings that raise during the analysis. Test the code with both datasets selected and compare the results.
 
 **Answer questions such as:**  
-1. Are the columns of your data correlated?
+1. Are the columns of your data correlated?  
 2. Are there labels in your data? Did that impact your choice of algorithm?  
 3. What are the pros and cons of each algorithm you selected?  
 4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?  
@@ -47,6 +47,8 @@ library(psych)
 library(caret)
 library(rpart)
 library(rpart.plot)
+library(corrplot)
+library(RColorBrewer)
 ```
 
 
@@ -99,6 +101,7 @@ colSums(is.na(df500k))
 ```
 
 ## Distributions
+
 ```{r}
 df5k_n <- df5k %>% 
   keep(is.numeric) %>% 
@@ -140,6 +143,29 @@ df500k_n %>%
                    color="lightblue", position="identity",bins = 40) +
     theme_minimal()
 ```
+  
+  
+## Correlations
+
+```{r}
+cor(df5k_n) %>%
+  corrplot(tl.col = 'black', diag=FALSE, type="lower", 
+           order="hclust", addCoef.col = "black",
+           #mar argument fixes title positioning
+           title="5k dataset Correlations", mar=c(0,0,1,0), 
+           col=brewer.pal(n=10, name="RdYlBu"))
+
+```
+
+```{r}
+cor(df500k_n) %>%
+  corrplot(tl.col = 'black', diag=FALSE, type="lower", 
+           order="hclust", addCoef.col = "black",
+           title="500k dataset Correlations",mar=c(0,0,1,0) ,
+           col=brewer.pal(n=10, name="RdYlBu"))
+
+```
+
   
 ## Variable Dependencies and Definitions
 `Total.Cost` = `Units.Sold` * `Unit.Cost`  
@@ -291,7 +317,7 @@ table(test5k_data$Sales.Channel, predictTest1 >= 0.5)
 (253+256)/nrow(test5k_data) #accuracy- 51%
 
 ```
-For a better understanding of how R is going to deal with the categorical outcome variable, we can use the `contrasts()` function. This function will show us how the variables have been dummyfied by R and how to interpret them in a model.
+For a better understanding of how R is going to deal with the categorical outcome variable, we can use the `contrasts()` function. This function will show us how the variable has been dummyfied by R and how to interpret it in a model. ^[https://www.r-bloggers.com/2015/09/how-to-perform-a-logistic-regression-in-r/]
 ```{r}
 contrasts(train5k_data$Sales.Channel)
 ```
@@ -309,6 +335,16 @@ mean(predicted.classes == test5k_data$Sales.Channel)
 
 
 ### 500k
+
+```{r}
+## two-way contingency table of categorical outcome and predictors we want
+## to make sure there are not 0 cells
+xtabs(~`Sales.Channel` + `Item.Type`, data = train500k_data)
+
+xtabs(~`Sales.Channel` +`Order.Priority`, data = train500k_data)
+
+xtabs(~`Sales.Channel` +`Region`, data = train500k_data)
+```
 
 ```{r}
 contrasts(train5k_data$Sales.Channel)
@@ -359,10 +395,14 @@ predicted.classes2 <- ifelse(predictTrain > 0.5, "Online", "Offline")
 mean(predicted.classes2 == test5k_data$Sales.Channel)
 ```
 
+```{r}
+
+```
+
 
 # Essay
 **Answer questions such as:**  
-1. Are the columns of your data correlated?
+1. Are the columns of your data correlated?  
 2. Are there labels in your data? Did that impact your choice of algorithm?  
 3. What are the pros and cons of each algorithm you selected?  
 4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?  
@@ -371,6 +411,8 @@ mean(predicted.classes2 == test5k_data$Sales.Channel)
 7. How does the analysis between data sets compare?  
 Develop your exploratory analysis of the data and the essay in the following 2 weeks.  
 
+
+# References
 
 <!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
 

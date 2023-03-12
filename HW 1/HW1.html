@@ -783,7 +783,7 @@ Develop your exploratory analysis of the data and the essay in the following 2 w
 ##   Online    243  256</code></pre>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">253</span><span class="sc">+</span><span class="dv">256</span>)<span class="sc">/</span><span class="fu">nrow</span>(test5k_data) <span class="co">#accuracy- 51%</span></span></code></pre></div>
 <pre><code>## [1] 0.5095095</code></pre>
-<p>For a better understanding of how R is going to deal with the categorical outcome variable, we can use the <code>contrasts()</code> function. This function will show us how the variables have been dummyfied by R and how to interpret them in a model.</p>
+<p>For a better understanding of how R is going to deal with the categorical outcome variable, we can use the <code>contrasts()</code> function. This function will show us how the variables have been dummyfied by R and how to interpret them in a model. <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(train5k_data<span class="sc">$</span>Sales.Channel)</span></code></pre></div>
 <pre><code>##         Online
 ## Offline      0
@@ -928,6 +928,9 @@ Develop your exploratory analysis of the data and the essay in the following 2 w
 6. Do you think an analysis could be prone to errors when using too much data, or when using the least amount possible?<br />
 7. How does the analysis between data sets compare?<br />
 Develop your exploratory analysis of the data and the essay in the following 2 weeks.</p>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
 <!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
 <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;">
 
@@ -937,6 +940,7 @@ Develop your exploratory analysis of the data and the essay in the following 2 w
 <hr />
 <ol>
 <li id="fn1"><p><a href="https://www.gormanalysis.com/blog/decision-trees-in-r-using-rpart/" class="uri">https://www.gormanalysis.com/blog/decision-trees-in-r-using-rpart/</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://www.r-bloggers.com/2015/09/how-to-perform-a-logistic-regression-in-r/" class="uri">https://www.r-bloggers.com/2015/09/how-to-perform-a-logistic-regression-in-r/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 
