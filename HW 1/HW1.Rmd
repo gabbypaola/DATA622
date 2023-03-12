@@ -13,15 +13,30 @@ output:
 ---
 
 # Assignment 1
-1. Visit the following website and explore the range of sizes of this dataset (from 100 to 5 million records):
+Pre-Work  
+1. Visit the following website and explore the range of sizes of this dataset (from 100 to 5 million records):  
 https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/ or
 (new) https://www.kaggle.com/datasets
-2. Select 2 files to download. Based on your computer's capabilities (memory, CPU), select 2 files you can handle (recommended one small, one large)
-3. Download the files
-4. Review the structure and content of the tables, and think about the data sets (structure, size, dependencies, labels, etc)
-5. Consider the similarities and differences in the two data sets you have downloaded
-6. Think about how to analyze and predict an outcome based on the datasets available
-7. Based on the data you have, think which two machine learning algorithms presented so far could be used to analyze the data
+2. Select 2 files to download. Based on your computer's capabilities (memory, CPU), select 2 files you can handle (recommended one small, one large)  
+3. Download the files  
+4. Review the structure and content of the tables, and think about the data sets (structure, size, dependencies, labels, etc)  
+5. Consider the similarities and differences in the two data sets you have downloaded  
+6. Think about how to analyze and predict an outcome based on the datasets available  
+7. Based on the data you have, think which two machine learning algorithms presented so far could be used to analyze the data  
+
+Deliverable  
+1. Essay (minimum 500 word document). Write a short essay explaining your selection of algorithms and how they relate to the data and what you are trying to do.  
+2. Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document. Explore how to analyze and predict an outcome based on the data available. This will be an exploratory exercise, so feel free to show errors and warnings that raise during the analysis. Test the code with both datasets selected and compare the results.
+
+Answer questions such as:  
+1. Are the columns of your data correlated  
+2. Are there labels in your data? Did that impact your choice of algorithm?  
+3. What are the pros and cons of each algorithm you selected?  
+4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?  
+5. Which result will you trust if you need to make a business decision?  
+6. Do you think an analysis could be prone to errors when using too much data, or when using the least amount possible?  
+7. How does the analysis between data sets compare?  
+Develop your exploratory analysis of the data and the essay in the following 2 weeks.  
 
 # Packages
 ```{r}
@@ -50,8 +65,8 @@ unique(df5k$Region)
 unique(df5k$Country)
 ```
 ```{r}
-unique(df5k$Item.Type)
-unique(df5k$Sales.Channel)
+table(df5k$Item.Type)
+table(df5k$Sales.Channel)
 ```
 
 
@@ -66,8 +81,8 @@ unique(df500k$Country)
 ```
 
 ```{r}
-unique(df5k$Item.Type)
-unique(df5k$Sales.Channel)
+table(df5k$Item.Type)
+table(df5k$Sales.Channel)
 ```
 
 
@@ -125,7 +140,7 @@ df500k_n %>%
 `Total.Revenue` = `Units.Sold` * `Unit.Price`  
 `Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`)
 
-`Order.Priority`: C(Critical), H(High), M(Medium) or L(Low)
+`Order.Priority`: C(Critical), H(High), M(Medium), and L(Low)
 
 
 ## Variable Type Conversions
@@ -141,6 +156,14 @@ df500k[['Sales.Channel']] <- as.factor(df500k[['Sales.Channel']])
 
 df5k[['Order.Priority']] <- as.factor(df5k[['Order.Priority']])
 df500k[['Order.Priority']] <- as.factor(df500k[['Order.Priority']])
+
+df5k[['Item.Type']] <- as.factor(df5k[['Item.Type']])
+df500k[['Item.Type']] <- as.factor(df500k[['Item.Type']])
+```
+
+```{r}
+levels(df5k$Sales.Channel)
+levels(df500k$Sales.Channel)
 ```
 
 
@@ -159,7 +182,7 @@ train5k <- createDataPartition(df5k$`Sales.Channel`, p = 0.8, list=FALSE,times =
 train5k_data <- df5k[train5k,]
 test5k_data <- df5k[-train5k,]
 
-mytree1 <- rpart(`Sales.Channel` ~ `Region` + `Item.Type` + `Order.Priority` + `Total.Profit`,
+mytree1 <- rpart(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + `Order.Priority` + `Total.Profit`,
                 data= train5k_data, 
                 method='class')
 mytree1
@@ -167,16 +190,37 @@ mytree1
 mytree1 %>% rpart.plot(extra = 2)
 ```
 
+#### Model Perfomance
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+# Predictions on the training set
+predictTrain_tree = predict(mytree1, data = train5k_data, type = "class")
+head(predictTrain_tree)
+
+# Confusion matrix on training data
+table(train5k_data$Sales.Channel, predictTrain_tree)
+(1169+940)/nrow(train5k_data) #accuracy- 53%
+
+#Predictions on the test set
+predictTest_tree = predict(mytree1, newdata = test5k_data, type = "class")
+
+# Confusion matrix on test set
+table(test5k_data$Sales.Channel, predictTest_tree)
+(275+241)/nrow(test5k_data) #accuracy- 52%
+
+```
+
+
 ### 500k
 ```{r}
 #set seed for reproducibility
-set.seed(6222)
+set.seed(62)
 
 train500k <- createDataPartition(df500k$`Sales.Channel`, p = 0.8, list=FALSE,times = 1)
 train500k_data <- df500k[train500k,]
-test500k_data <- df5k[-train500k,]
+test500k_data <- df500k[-train500k,]
 
-mytree2 <- rpart(`Sales.Channel` ~ `Region` + `Item.Type` + `Order.Priority` + `Total.Profit`,
+mytree2 <- rpart(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + `Order.Priority` + `Total.Profit`,
                 data= train500k_data, 
                 method='class')
 mytree2
@@ -185,5 +229,108 @@ mytree2 %>% rpart.plot(extra = 2)
 ```
 
 
+## Logistic Regression
 
+```{r}
+## two-way contingency table of categorical outcome and predictors we want
+## to make sure there are not 0 cells
+xtabs(~`Sales.Channel` + `Item.Type`, data = train5k_data)
+
+xtabs(~`Sales.Channel` +`Order.Priority`, data = train5k_data)
+
+xtabs(~`Sales.Channel` +`Region`, data = train5k_data)
+```
+
+
+### 5k
+
+```{r}
+# Training the model
+logistic_model1 <- glm(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + `Order.Priority` + `Total.Profit`+`Region`, family = binomial(), train5k_data)
+# Checking the model
+summary(logistic_model1)
+```
+
+#### Model Perfomance
+
+To evaluate the model further, starting by setting the baseline accuracy using the code below. Since the majority class (Offline) of the target variable has a proportion of 0.50, the baseline accuracy is 50 percent.
+```{r}
+#baseline accuracy
+prop.table(table(train5k_data$Sales.Channel))
+```
+
+
+```{r}
+# Predictions on the training set
+predictTrain1 = predict(logistic_model1, data = train5k_data, type = "response")
+head(predictTrain1)
+
+# Confusion matrix on training data
+table(train5k_data$Sales.Channel, predictTrain1>=0.5)
+(1103+1015)/nrow(train5k_data) #accuracy- 53%
+
+#Predictions on the test set
+predictTest1 = predict(logistic_model1, newdata = test5k_data, type = "response")
+
+# Confusion matrix on test set
+table(test5k_data$Sales.Channel, predictTest1 >= 0.5)
+(253+256)/nrow(test5k_data) #accuracy- 51%
+
+```
+For a better understanding of how R is going to deal with the categorical outcome variable, we can use the `contrasts()` function. This function will show us how the variables have been dummyfied by R and how to interpret them in a model.
+```{r}
+contrasts(train5k_data$Sales.Channel)
+```
+
+The model accuracy is measured as the proportion of observations that have been correctly classified. Inversely, the classification error is defined as the proportion of observations that have been misclassified.
+
+Proportion of correctly classified observations:
+```{r message=FALSE, warning=FALSE}
+predicted.classes <- ifelse(predictTrain1 > 0.5, "Online", "Offline")
+#head(predicted.classes)
+
+mean(predicted.classes == test5k_data$Sales.Channel)
+```
+
+
+
+### 500k
+
+```{r}
+contrasts(train5k_data$Sales.Channel)
+```
+
+```{r}
+# Training the model
+logistic_model2 <- glm(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + `Order.Priority` + `Total.Profit` + `Region`, family = binomial(), train500k_data)
+# Summarize the model
+summary(logistic_model2)
+```
+
+#### Model Perfomance
+
+```{r}
+#baseline accuracy
+prop.table(table(train500k_data$Sales.Channel))
+```
+
+
+```{r}
+# Predictions on the training set
+predictTrain = predict(logistic_model2, data = train500k_data, type = "response")
+
+# Confusion matrix on training data
+table(train500k_data$Sales.Channel, predictTrain >= 0.5)
+(113506+86976)/nrow(train500k_data) #accuracy- 50%
+
+#Predictions on the test set
+predictTest = predict(logistic_model2, newdata = test500k_data, type = "response")
+
+# Confusion matrix on test set
+table(test500k_data$Sales.Channel, predictTest >= 0.5)
+(28532+21661)/nrow(test500k_data) #accuracy- 50%
+
+```
+
+# Essay
 
