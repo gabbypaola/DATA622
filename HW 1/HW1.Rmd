@@ -49,6 +49,7 @@ library(rpart)
 library(rpart.plot)
 library(corrplot)
 library(RColorBrewer)
+library(labelled)
 ```
 
 
@@ -60,9 +61,14 @@ df500k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW
 
 # Exploratory Data Analysis
 
-## Dimensions, Variable Types, Levels, and Frequencies
+## Dimensions, Variable Types, Labels, Levels, and Frequencies
+
+^[https://cran.r-project.org/web/packages/labelled/vignettes/intro_labelled.html]
 ```{r}
+print("Dimensions")
 glimpse(df5k)
+print("Labels")
+look_for(df5k)
 ```
 
 ```{r}
@@ -77,7 +83,10 @@ table(df5k$Sales.Channel)
 
 
 ```{r}
+print("Dimensions")
 glimpse(df500k)
+print("Labels")
+look_for(df500k)
 ```
 
 ```{r}
@@ -86,8 +95,8 @@ length(unique(df500k$Country))
 ```
 
 ```{r}
-table(df5k$Item.Type)
-table(df5k$Sales.Channel)
+table(df500k$Item.Type)
+table(df500k$Sales.Channel)
 ```
 
 
@@ -166,7 +175,6 @@ cor(df500k_n) %>%
 
 ```
 
-  
 ## Variable Dependencies and Definitions
 `Total.Cost` = `Units.Sold` * `Unit.Cost`  
 `Total.Revenue` = `Units.Sold` * `Unit.Price`  
@@ -403,9 +411,19 @@ mean(predicted.classes2 == test5k_data$Sales.Channel)
 # Essay
 **Answer questions such as:**  
 1. Are the columns of your data correlated?  
+Yes, the numeric variables in both the 5k and 500k dataset are highly correlated with exception to `Units.Sold` correlations at 0 with `Unit.Cost` and `Unit.Price`. `Units.Sold` highest correlation is with `Total.Profit` which makes sense as `Total.Profit` has dependency on `Units.Sold`, `Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`). The highest correlations exist between `Unit.Cost` and `Unit.Price`, `Total.Revenue` and `Total.Profit`, as well as `Total.Revenue` and `Total.Cost`.
+  
 2. Are there labels in your data? Did that impact your choice of algorithm?  
-3. What are the pros and cons of each algorithm you selected?  
-4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?  
+No, both datasets do not contain labels in their metadata as seen by the output of the `look_for()` function from the `labelled` package.  
+  
+3. What are the pros and cons of each algorithm you selected?   
+Two models were run for the binary classification of the `Sales.Channel` variable in both the 5k and 500k datasets. Decision Tree models were initially run on both datasets. The next models run on the data were Logistic Regression models. While the Decision Tree model provided highly interpretable results for the 5k dataset, it failed to provide a meaningful result on the 500k dataset. Although Decision Tree models in general are simple, highly interpretable and do not require normalization nor scaling of data, they do not perform well with large amounts of data. This dynamic can be seen in the resulting model using the 500k dataset which provided underwhelming results. Logistic Regression was the next model type chosen to be run on the data. Given the binary response variable, and no need to normalize the data, it was thought that logistic regression was the right way to go for ease and convenience. While the logistic model was able to handle both the small and large datasets, its accuracy was lacking. A major contributor to its lackluster performance can be attributed to the multicollinearity noted among the independent variables in the Exploratory Data Analysis section. Unfortunately, correlations between variables were checked *after* running the logistic regression models, which was an error on my behalf in the model selection process. 
+
+^[https://dhirajkumarblog.medium.com/top-5-advantages-and-disadvantages-of-decision-tree-algorithm-428ebd199d9a]
+  
+4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?   
+The classification algorithms were chosen as a result of noting the binary `Sales.Channel` variable, however other models could have been run on continuous variables such as `Total.Revenue` or `Total.Profit`.
+  
 5. Which result will you trust if you need to make a business decision?  
 6. Do you think an analysis could be prone to errors when using too much data, or when using the least amount possible?  
 7. How does the analysis between data sets compare?  
