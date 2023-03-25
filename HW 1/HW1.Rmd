@@ -55,73 +55,139 @@ library(labelled)
 
 # Load Data
 ```{r}
-df5k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/5000%20Sales%20Records.csv")
-df500k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/500000%20Sales%20Records.csv")
+df1k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/1000%20Sales%20Records.csv")
+df100k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/100000%20Sales%20Records.csv")
 ```
 
 # Exploratory Data Analysis
 
+First, exploratory data analysis is conducted to get acquainted with the two Sales datasets selected from https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/. 
+
 ## Dimensions, Variable Types, Labels, Levels, and Frequencies
+
+The dimensions of the 1k data set are checked. The dataset contains 1000 rows, and 14 columns, or predictors. There are 7 character, 2 integer, and 5 double type variables. The `glimpse()` output shows us the first few observation of each variable. There are two geographical variables one for Region, and another for each specific country. Item.Type refers to the type of items sold, Sales.Channel refers to the sales method, whether the sale was conducted online or offline, meaning an in-store purchase.  
+
+The `look_for()` function from the labelled package shows us each variable, their label (if available), column type, as well as the values for any factor type variables. The function produces no labels, and no values as none of the variables are coded as factor types. 
 
 ^[https://cran.r-project.org/web/packages/labelled/vignettes/intro_labelled.html]
 ```{r}
 print("Dimensions")
-glimpse(df5k)
+glimpse(df1k)
 print("Labels")
-look_for(df5k)
+look_for(df1k)
 ```
 
+Next, using the `unique()` and `length()` functions are used to investigate the geographic variables. There are 7 Regions and 185 countries spanning the 1k dataset.
 ```{r}
-unique(df5k$Region)
-length(unique(df5k$Country))
+unique(df1k$Region)
+length(unique(df1k$Country))
 ```
+
+The `table()` function is used to create contingency, or frequency tables of some of the character variables, Item.Type and Sales.Channel. The sorted frequency table shows the top three items of the total 12 types in the 1k dataset are beverages, vegetables, followed by office supplies.
 ```{r}
-table(df5k$Item.Type)
-table(df5k$Sales.Channel)
+table(df1k$Item.Type)[order(table(df1k$Item.Type),decreasing = TRUE)]
+table(df1k$Sales.Channel)
 ```
 
+Following the EDA for the 1k dataset, is the EDA for the 100k dataset. The 100k dataset contains 100,000 rows and 14 columns. Similar to the 1k dataset, in the 100k dataset there are 7 character, 2 integer, and 5 double type variables. The `glimpse()` output shows us the first few observation of each variable. There are two geographical variables one for Region, and another for each specific country. Item.Type refers to the type of items sold, Sales.Channel refers to the sales method, whether the sale was conducted online or offline, meaning an in-store purchase.
 
-
+The `look_for()` function from the labelled package shows us each variable, their label (if available), column type, as well as the values for any factor type variables. The function produces no labels, and no values as none of the variables are coded as factor types. 
 ```{r}
 print("Dimensions")
-glimpse(df500k)
+glimpse(df100k)
 print("Labels")
-look_for(df500k)
+look_for(df100k)
+```
+As above, using the `unique()` and `length()` functions are used to investigate the geographic variables. There are also 7 Regions and 185 countries spanning the 100k dataset.
+```{r}
+unique(df100k$Region)
+length(unique(df100k$Country))
 ```
 
+Once again the `table()` function is used to create contingency, or frequency tables of some of the character variables, Item.Type and Sales.Channel in the 100k dataset. The sorted frequency table shows the top three items of the total 12 types in the 100k dataset are office supplies, cereal, and baby food.
 ```{r}
-unique(df500k$Region)
-length(unique(df500k$Country))
+table(df100k$Item.Type)[order(table(df100k$Item.Type),decreasing = TRUE)]
+table(df100k$Sales.Channel)
 ```
 
-```{r}
-table(df500k$Item.Type)
-table(df500k$Sales.Channel)
-```
+## Variable Dependencies and Definitions
+
+Both datasets contain the same information, only differing in the amount of observations. As such, below are the variable dependencies and definitions that are applicable to both the 1k and 100k dataset.
+
+`Total.Cost` = `Units.Sold` * `Unit.Cost`  
+`Total.Revenue` = `Units.Sold` * `Unit.Price`  
+`Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`)
+
+`Order.Priority`: C(Critical), H(High), M(Medium), and L(Low)
 
 
 ## Missing Data
+
+Next the data is checked for any missing values.
+
+The below shows no missing values for the 1k dataset. 
+
 ```{r}
-colSums(is.na(df5k))
+colSums(is.na(df1k))
 ```
 
+As in the 1k dataset, there are no missing values for the 100k dataset. 
+
 ```{r}
-colSums(is.na(df500k))
+colSums(is.na(df100k))
 ```
 
-## Distributions
+## Correlations
+
+Subsequently, the correlations between numeric variables are examined. It is important to investigate the correlations between the independent variables to avoid multicollinearity. Multicollinearity occurs when two or more independent variables are highly correlated to one another. When two (or more) independent variables are highly correlated one cannot individually determine the impact of individual variables on the dependent variable.  
+
+Multicollinearity can be a problem in a regression model when using algorithms such as OLS (ordinary least squares). This is because the estimated regression coefficients become unstable and difficult to interpret in the presence of multicollinearity.  
+
+When multicollinearity is present, the estimated regression coefficients may become large and unpredictable, leading to unreliable inferences about the effects of the predictor variables on the response variable. Therefore, it is important to check for multicollinearity and consider using other regression techniques that can handle this problem, such as ridge regression or principal component regression or make a decision about dropping highly correlated independent variables.
 
 ```{r}
-df5k_n <- df5k %>% 
+df1k_n <- df1k %>% 
   keep(is.numeric) %>% 
   select(-Order.ID)
 
-describe(df5k_n, fast=TRUE) %>% 
+describe(df1k_n, fast=TRUE) %>% 
   select(c(-vars,-n))
 ```
 
+```{r}
+df100k_n <- df100k %>% 
+  keep(is.numeric) %>% 
+  select(-Order.ID)
+
+describe(df100k_n, fast=TRUE) %>% 
+  select(c(-vars,-n))
+```
+
+
+```{r}
+cor(df1k_n) %>%
+  corrplot(tl.col = 'black', diag=FALSE, type="lower", 
+           order="hclust", addCoef.col = "black",
+           #mar argument fixes title positioning
+           title="1k dataset Correlations", mar=c(0,0,1,0), 
+           col=brewer.pal(n=10, name="RdYlBu"))
+
+```
+
+```{r}
+cor(df100k_n) %>%
+  corrplot(tl.col = 'black', diag=FALSE, type="lower", 
+           order="hclust", addCoef.col = "black",
+           title="100k dataset Correlations",mar=c(0,0,1,0),
+           col=brewer.pal(n=10, name="RdYlBu"))
+
+```
+
+
+## Distributions
+
 ```{r message=FALSE, warning=FALSE}
-df5k_n %>% 
+df1k_n %>% 
   gather(variable, value, 1:6) %>%
   ggplot(aes(value)) +
     facet_wrap(~variable, scales = "free") +
@@ -133,17 +199,9 @@ df5k_n %>%
 
 
 
-```{r}
-df500k_n <- df500k %>% 
-  keep(is.numeric) %>% 
-  select(-Order.ID)
-
-describe(df500k_n, fast=TRUE) %>% 
-  select(c(-vars,-n))
-```
 
 ```{r message=FALSE, warning=FALSE}
-df500k_n %>% 
+df100k_n %>% 
   gather(variable, value, 1:6) %>%
   ggplot(aes(value)) +
     facet_wrap(~variable, scales = "free") +
@@ -153,255 +211,35 @@ df500k_n %>%
     theme_minimal()
 ```
   
-  
-## Correlations
-
-```{r}
-cor(df5k_n) %>%
-  corrplot(tl.col = 'black', diag=FALSE, type="lower", 
-           order="hclust", addCoef.col = "black",
-           #mar argument fixes title positioning
-           title="5k dataset Correlations", mar=c(0,0,1,0), 
-           col=brewer.pal(n=10, name="RdYlBu"))
-
-```
-
-```{r}
-cor(df500k_n) %>%
-  corrplot(tl.col = 'black', diag=FALSE, type="lower", 
-           order="hclust", addCoef.col = "black",
-           title="500k dataset Correlations",mar=c(0,0,1,0) ,
-           col=brewer.pal(n=10, name="RdYlBu"))
-
-```
-
-## Variable Dependencies and Definitions
-`Total.Cost` = `Units.Sold` * `Unit.Cost`  
-`Total.Revenue` = `Units.Sold` * `Unit.Price`  
-`Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`)
-
-`Order.Priority`: C(Critical), H(High), M(Medium), and L(Low)
-
 
 ## Variable Type Conversions
 ```{r}
-df5k[['Order.Date']] <- as.Date(df5k[['Order.Date']], "%m/%d/%Y")
-df5k[['Ship.Date']] <- as.Date(df5k[['Ship.Date']], "%m/%d/%Y")
+df1k[['Order.Date']] <- as.Date(df1k[['Order.Date']], "%m/%d/%Y")
+df1k[['Ship.Date']] <- as.Date(df1k[['Ship.Date']], "%m/%d/%Y")
 
-df500k[['Order.Date']] <- as.Date(df500k[['Order.Date']], "%m/%d/%Y")
-df500k[['Ship.Date']] <- as.Date(df500k[['Ship.Date']], "%m/%d/%Y")
+df100k[['Order.Date']] <- as.Date(df100k[['Order.Date']], "%m/%d/%Y")
+df100k[['Ship.Date']] <- as.Date(df100k[['Ship.Date']], "%m/%d/%Y")
 
-df5k[['Sales.Channel']] <- as.factor(df5k[['Sales.Channel']])
-df500k[['Sales.Channel']] <- as.factor(df500k[['Sales.Channel']])
+df1k[['Sales.Channel']] <- as.factor(df1k[['Sales.Channel']])
+df100k[['Sales.Channel']] <- as.factor(df100k[['Sales.Channel']])
 
-df5k[['Order.Priority']] <- as.factor(df5k[['Order.Priority']])
-df500k[['Order.Priority']] <- as.factor(df500k[['Order.Priority']])
+df1k[['Order.Priority']] <- as.factor(df1k[['Order.Priority']])
+df100k[['Order.Priority']] <- as.factor(df100k[['Order.Priority']])
 
-df5k[['Item.Type']] <- as.factor(df5k[['Item.Type']])
-df500k[['Item.Type']] <- as.factor(df500k[['Item.Type']])
+df1k[['Item.Type']] <- as.factor(df1k[['Item.Type']])
+df100k[['Item.Type']] <- as.factor(df100k[['Item.Type']])
 ```
 
 ```{r}
-levels(df5k$Sales.Channel)
-levels(df500k$Sales.Channel)
+levels(df1k$Sales.Channel)
+levels(df100k$Sales.Channel)
 ```
 
 
 # Models
-## Decision Tree Models
-Decision Tree models will be used for both the data with 5 thousand records as well as that with 500 thousand to predict the `Sales.Channel`, if an order will be conducted online or offline at a brick and mortar store.
-
-^[https://www.gormanalysis.com/blog/decision-trees-in-r-using-rpart/]  
-
-### 5k 
-```{r}
-#set seed for reproducibility
-set.seed(6221)
-
-train5k <- createDataPartition(df5k$`Sales.Channel`, p = 0.8, list=FALSE,
-                               times = 1)
-train5k_data <- df5k[train5k,]
-test5k_data <- df5k[-train5k,]
-
-mytree1 <- rpart(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + 
-                   `Order.Priority` + `Total.Profit`+`Region`,
-                data= train5k_data, 
-                method='class')
-mytree1
-
-mytree1 %>% rpart.plot(extra = 2)
-```
-
+## 
 #### Model Perfomance
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
-# Predictions on the training set
-predictTrain_tree = predict(mytree1, data = train5k_data, type = "class")
-head(predictTrain_tree)
-
-# Confusion matrix on training data
-table(train5k_data$Sales.Channel, predictTrain_tree)
-(1169+940)/nrow(train5k_data) #accuracy- 53%
-
-#Predictions on the test set
-predictTest_tree = predict(mytree1, newdata = test5k_data, type = "class")
-
-# Confusion matrix on test set
-table(test5k_data$Sales.Channel, predictTest_tree)
-(275+241)/nrow(test5k_data) #accuracy- 52%
-
-```
-
-
-### 500k
-```{r}
-#set seed for reproducibility
-set.seed(62)
-
-train500k <- createDataPartition(df500k$`Sales.Channel`, p = 0.8, 
-                                 list=FALSE,times = 1)
-train500k_data <- df500k[train500k,]
-test500k_data <- df500k[-train500k,]
-
-mytree2 <- rpart(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + 
-                   `Order.Priority` + `Total.Profit`+`Region`,
-                data= train500k_data, 
-                method='class')
-mytree2
-
-mytree2 %>% rpart.plot(extra = 2)
-```
-
-
-## Logistic Regression
-
-```{r}
-## two-way contingency table of categorical outcome and predictors we want
-## to make sure there are not 0 cells
-xtabs(~`Sales.Channel` + `Item.Type`, data = train5k_data)
-
-xtabs(~`Sales.Channel` +`Order.Priority`, data = train5k_data)
-
-xtabs(~`Sales.Channel` +`Region`, data = train5k_data)
-```
-
-
-### 5k
-
-```{r}
-# Training the model
-logistic_model1 <- glm(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + 
-                         `Order.Priority` + `Total.Profit`+`Region`, 
-                       family = binomial(), train5k_data)
-# Checking the model
-summary(logistic_model1)
-```
-
-#### Model Perfomance
-
-To evaluate the model further, starting by setting the baseline accuracy using the code below. Since the majority class (Offline) of the target variable has a proportion of 0.50, the baseline accuracy is 50 percent.
-```{r}
-#baseline accuracy
-prop.table(table(train5k_data$Sales.Channel))
-```
-
-
-```{r}
-# Predictions on the training set
-predictTrain1 = predict(logistic_model1, data = train5k_data, 
-                        type = "response")
-head(predictTrain1)
-
-# Confusion matrix on training data
-table(train5k_data$Sales.Channel, predictTrain1>=0.5)
-(1103+1015)/nrow(train5k_data) #accuracy- 53%
-
-#Predictions on the test set
-predictTest1 = predict(logistic_model1, newdata = test5k_data, 
-                       type = "response")
-
-# Confusion matrix on test set
-table(test5k_data$Sales.Channel, predictTest1 >= 0.5)
-(253+256)/nrow(test5k_data) #accuracy- 51%
-
-```
-For a better understanding of how R is going to deal with the categorical outcome variable, we can use the `contrasts()` function. This function will show us how the variable has been dummyfied by R and how to interpret it in a model. ^[https://www.r-bloggers.com/2015/09/how-to-perform-a-logistic-regression-in-r/]
-```{r}
-contrasts(train5k_data$Sales.Channel)
-```
-
-The model accuracy is measured as the proportion of observations that have been correctly classified. Inversely, the classification error is defined as the proportion of observations that have been misclassified.
-
-Proportion of correctly classified observations:
-```{r message=FALSE, warning=FALSE}
-predicted.classes <- ifelse(predictTrain1 > 0.5, "Online", "Offline")
-#head(predicted.classes)
-
-mean(predicted.classes == test5k_data$Sales.Channel)
-```
-
-
-
-### 500k
-
-```{r}
-## two-way contingency table of categorical outcome and predictors we want
-## to make sure there are not 0 cells
-xtabs(~`Sales.Channel` + `Item.Type`, data = train500k_data)
-
-xtabs(~`Sales.Channel` +`Order.Priority`, data = train500k_data)
-
-xtabs(~`Sales.Channel` +`Region`, data = train500k_data)
-```
-
-```{r}
-contrasts(train5k_data$Sales.Channel)
-```
-
-```{r}
-# Training the model
-logistic_model2 <- glm(`Sales.Channel` ~ `Units.Sold` + `Item.Type` + `Order.Priority` + `Total.Profit` + `Region`, family = binomial(), train500k_data)
-# Summarize the model
-summary(logistic_model2)
-```
-
-#### Model Perfomance
-
-To evaluate the model further, starting by setting the baseline accuracy using the code below. Since the majority class (Offline) of the target variable has a proportion of 0.50, the baseline accuracy is 50 percent.
-```{r}
-#baseline accuracy
-prop.table(table(train500k_data$Sales.Channel))
-```
-
-
-```{r}
-# Predictions on the training set
-predictTrain = predict(logistic_model2, data = train500k_data, 
-                       type = "response")
-
-# Confusion matrix on training data
-table(train500k_data$Sales.Channel, predictTrain >= 0.5)
-(113506+86976)/nrow(train500k_data) #accuracy- 50%
-
-#Predictions on the test set
-predictTest = predict(logistic_model2, newdata = test500k_data, 
-                      type = "response")
-
-# Confusion matrix on test set
-table(test500k_data$Sales.Channel, predictTest >= 0.5)
-(28532+21661)/nrow(test500k_data) #accuracy- 50%
-
-```
-
-The model accuracy is measured as the proportion of observations that have been correctly classified. Inversely, the classification error is defined as the proportion of observations that have been misclassified.
-
-Proportion of correctly classified observations:
-```{r message=FALSE, warning=FALSE}
-predicted.classes2 <- ifelse(predictTrain > 0.5, "Online", "Offline")
-#head(predicted.classes)
-
-mean(predicted.classes2 == test5k_data$Sales.Channel)
-```
 
 ```{r}
 
@@ -411,13 +249,13 @@ mean(predicted.classes2 == test5k_data$Sales.Channel)
 # Essay
 **Answer questions such as:**  
 1. Are the columns of your data correlated?  
-Yes, the numeric variables in both the 5k and 500k dataset are highly correlated with exception to `Units.Sold` correlations at 0 with `Unit.Cost` and `Unit.Price`. `Units.Sold` highest correlation is with `Total.Profit` which makes sense as `Total.Profit` has dependency on `Units.Sold`, `Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`). The highest correlations exist between `Unit.Cost` and `Unit.Price`, `Total.Revenue` and `Total.Profit`, as well as `Total.Revenue` and `Total.Cost`.
+Yes, the numeric variables in both the 1k and 100k dataset are highly correlated with exception to `Units.Sold` correlations at 0 with `Unit.Cost` and `Unit.Price`. `Units.Sold` highest correlation is with `Total.Profit` which makes sense as `Total.Profit` has dependency on `Units.Sold`, `Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`). The highest correlations exist between `Unit.Cost` and `Unit.Price`, `Total.Revenue` and `Total.Profit`, as well as `Total.Revenue` and `Total.Cost`.
   
 2. Are there labels in your data? Did that impact your choice of algorithm?  
 No, both datasets do not contain labels in their metadata as seen by the output of the `look_for()` function from the `labelled` package.  
   
 3. What are the pros and cons of each algorithm you selected?   
-Two models were run for the binary classification of the `Sales.Channel` variable in both the 5k and 500k datasets. Decision Tree models were initially run on both datasets. The next models run on the data were Logistic Regression models. While the Decision Tree model provided highly interpretable results for the 5k dataset, it failed to provide a meaningful result on the 500k dataset. Although Decision Tree models in general are simple, highly interpretable and do not require normalization nor scaling of data, they do not perform well with large amounts of data. This dynamic can be seen in the resulting model using the 500k dataset which provided underwhelming results. Logistic Regression was the next model type chosen to be run on the data. Given the binary response variable, and no need to normalize the data, it was thought that logistic regression was the right way to go for ease and convenience. While the logistic model was able to handle both the small and large datasets, its accuracy was lacking. A major contributor to its lackluster performance can be attributed to the multicollinearity noted among the independent variables in the Exploratory Data Analysis section. Unfortunately, correlations between variables were checked *after* running the logistic regression models, which was an error on my behalf in the model selection process. 
+Two models were run for the binary classification of the `Sales.Channel` variable in both the 1k and 100k datasets. Decision Tree models were initially run on both datasets. The next models run on the data were Logistic Regression models. While the Decision Tree model provided highly interpretable results for the 1k dataset, it failed to provide a meaningful result on the 100k dataset. Although Decision Tree models in general are simple, highly interpretable and do not require normalization nor scaling of data, they do not perform well with large amounts of data. This dynamic can be seen in the resulting model using the 100k dataset which provided underwhelming results. Logistic Regression was the next model type chosen to be run on the data. Given the binary response variable, and no need to normalize the data, it was thought that logistic regression was the right way to go for ease and convenience. While the logistic model was able to handle both the small and large datasets, its accuracy was lacking. A major contributor to its lackluster performance can be attributed to the multicollinearity noted among the independent variables in the Exploratory Data Analysis section. Unfortunately, correlations between variables were checked *after* running the logistic regression models, which was an error on my behalf in the model selection process. 
 
 ^[https://dhirajkumarblog.medium.com/top-5-advantages-and-disadvantages-of-decision-tree-algorithm-428ebd199d9a]
   
