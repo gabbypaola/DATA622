@@ -50,6 +50,8 @@ library(rpart.plot)
 library(corrplot)
 library(RColorBrewer)
 library(labelled)
+library(ggplot2)
+library(ggforce)
 ```
 
 
@@ -120,6 +122,41 @@ Both datasets contain the same information, only differing in the amount of obse
 
 `Order.Priority`: C(Critical), H(High), M(Medium), and L(Low)
 
+## Variable Type Conversions
+
+Variable types are converted to ensure the models created use the correct type of variables. Variable conversion also aids in the preprocessing by ensuring originally numeric variables such as `Order.ID` are not inadvertently normalized or used in the modelling stage. There are a number of advantages to converting categorical variables to factor variables. Perhaps the most important advantage is that they can be used in statistical modeling where they will be implemented correctly, i.e., they will then be assigned the correct number of degrees of freedom. ^[https://stats.oarc.ucla.edu/r/modules/factor-variables/#:~:text=Perhaps%20the%20most%20important%20advantage,many%20different%20types%20of%20graphics.]
+
+```{r}
+df1k[['Order.Date']] <- as.Date(df1k[['Order.Date']], "%m/%d/%Y")
+df1k[['Ship.Date']] <- as.Date(df1k[['Ship.Date']], "%m/%d/%Y")
+
+df100k[['Order.Date']] <- as.Date(df100k[['Order.Date']], "%m/%d/%Y")
+df100k[['Ship.Date']] <- as.Date(df100k[['Ship.Date']], "%m/%d/%Y")
+
+df1k[['Sales.Channel']] <- as.factor(df1k[['Sales.Channel']])
+df100k[['Sales.Channel']] <- as.factor(df100k[['Sales.Channel']])
+
+df1k[['Order.Priority']] <- as.factor(df1k[['Order.Priority']])
+df100k[['Order.Priority']] <- as.factor(df100k[['Order.Priority']])
+
+df1k[['Item.Type']] <- as.factor(df1k[['Item.Type']])
+df100k[['Item.Type']] <- as.factor(df100k[['Item.Type']])
+
+df1k[['Region']] <- as.factor(df1k[['Region']])
+df100k[['Region']] <- as.factor(df100k[['Region']])
+
+df1k[['Country']] <- as.factor(df1k[['Country']])
+df100k[['Country']] <- as.factor(df100k[['Country']])
+
+df1k[['Order.ID']] <- as.character(df1k[['Order.ID']])
+df100k[['Order.ID']] <- as.character(df100k[['Order.ID']])
+```
+
+```{r}
+levels(df1k$Sales.Channel)
+levels(df100k$Sales.Channel)
+```
+
 
 ## Missing Data
 
@@ -137,6 +174,58 @@ As in the 1k dataset, there are no missing values for the 100k dataset.
 colSums(is.na(df100k))
 ```
 
+
+
+
+
+
+## Distributions
+```{r}
+#select numeric columns 1k
+df1k_n <- df1k %>% 
+   keep(is.numeric) 
+  #  %>% select(-Order.ID)
+
+#select numeric columns 100k
+df100k_n <- df100k %>% 
+  keep(is.numeric) 
+# %>% 
+#   select(-Order.ID)
+```
+
+```{r message=FALSE, warning=FALSE}
+#stats
+describe(df1k_n, fast=TRUE) %>% 
+  select(c(-vars,-n))
+
+#distribution
+df1k_n %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity", bins = 40) +
+    theme_minimal()
+```
+
+```{r message=FALSE, warning=FALSE}
+#stats
+describe(df100k_n, fast=TRUE) %>% 
+  select(c(-vars,-n))
+
+#distributions
+df100k_n %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity",bins = 40) +
+    theme_minimal()
+```
+  
+
 ## Correlations
 
 Subsequently, the correlations between numeric variables are examined. It is important to investigate the correlations between the independent variables to avoid multicollinearity. Multicollinearity occurs when two or more independent variables are highly correlated to one another. When two (or more) independent variables are highly correlated one cannot individually determine the impact of individual variables on the dependent variable.  
@@ -144,25 +233,6 @@ Subsequently, the correlations between numeric variables are examined. It is imp
 Multicollinearity can be a problem in a regression model when using algorithms such as OLS (ordinary least squares). This is because the estimated regression coefficients become unstable and difficult to interpret in the presence of multicollinearity.  
 
 When multicollinearity is present, the estimated regression coefficients may become large and unpredictable, leading to unreliable inferences about the effects of the predictor variables on the response variable. Therefore, it is important to check for multicollinearity and consider using other regression techniques that can handle this problem, such as ridge regression or principal component regression or make a decision about dropping highly correlated independent variables.
-
-```{r}
-df1k_n <- df1k %>% 
-  keep(is.numeric) %>% 
-  select(-Order.ID)
-
-describe(df1k_n, fast=TRUE) %>% 
-  select(c(-vars,-n))
-```
-
-```{r}
-df100k_n <- df100k %>% 
-  keep(is.numeric) %>% 
-  select(-Order.ID)
-
-describe(df100k_n, fast=TRUE) %>% 
-  select(c(-vars,-n))
-```
-
 
 ```{r}
 cor(df1k_n) %>%
@@ -183,84 +253,201 @@ cor(df100k_n) %>%
 
 ```
 
+The correlation plots for both the 1k and 100k dataset show nearly identical correlation coefficients. Variables with weak correlation (i.e., 0<=|r|<0.3) ^[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4888898/] between Unit.Price, Unit.Cost, and Units.Sold. Moderate correlation (i.e., 0.3≤|r|<0.7) can be seen between Total.Profit, Total.Revenue, Total.Cost and Units.Sold as well as between Unit.Price, Unit.Cost and Total.Profit. High correlation (i.e., |r|>=7) can be seen in the remaining pairs, especially between Unit.Price and Unit.Cost, Total.Profit and Total.Revenue, Total.Cost and Total.Revenue.
 
-## Distributions
+## VIF Scores
 
-```{r message=FALSE, warning=FALSE}
-df1k_n %>% 
-  gather(variable, value, 1:6) %>%
-  ggplot(aes(value)) +
-    facet_wrap(~variable, scales = "free") +
-    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
-    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
-                   color="lightblue", position="identity", bins = 40) +
-    theme_minimal()
-```
+Another detection method for multicoliniarity is through the use of the VIF (Variance Inflation Factor) score.  The variance inflation factor (or VIF), measures how much the variance of a regression coefficient is inflated due to multicollinearity in the model. The smallest possible value of VIF is one (absence of multicollinearity). As a rule of thumb, a VIF value that exceeds 5 or 10 indicates a problematic amount of collinearity. ^[http://www.sthda.com/english/articles/39-regression-model-diagnostics/160-multicollinearity-essentials-and-vif-in-r/]
 
-
-
-
-```{r message=FALSE, warning=FALSE}
-df100k_n %>% 
-  gather(variable, value, 1:6) %>%
-  ggplot(aes(value)) +
-    facet_wrap(~variable, scales = "free") +
-    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
-    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
-                   color="lightblue", position="identity",bins = 40) +
-    theme_minimal()
-```
-  
-
-## Variable Type Conversions
 ```{r}
-df1k[['Order.Date']] <- as.Date(df1k[['Order.Date']], "%m/%d/%Y")
-df1k[['Ship.Date']] <- as.Date(df1k[['Ship.Date']], "%m/%d/%Y")
+set.seed(145)
 
-df100k[['Order.Date']] <- as.Date(df100k[['Order.Date']], "%m/%d/%Y")
-df100k[['Ship.Date']] <- as.Date(df100k[['Ship.Date']], "%m/%d/%Y")
-
-df1k[['Sales.Channel']] <- as.factor(df1k[['Sales.Channel']])
-df100k[['Sales.Channel']] <- as.factor(df100k[['Sales.Channel']])
-
-df1k[['Order.Priority']] <- as.factor(df1k[['Order.Priority']])
-df100k[['Order.Priority']] <- as.factor(df100k[['Order.Priority']])
-
-df1k[['Item.Type']] <- as.factor(df1k[['Item.Type']])
-df100k[['Item.Type']] <- as.factor(df100k[['Item.Type']])
+training.samples <- df1k_n$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data  <- df1k_n[training.samples, ]
+test.data <- df1k_n[-training.samples, ]
 ```
 
 ```{r}
-levels(df1k$Sales.Channel)
-levels(df100k$Sales.Channel)
+# Build the model
+#train.data1 <-train.data #%>% select(c(-Total.Profit,-Total.Cost, -Unit.Price)) 
+model1<- lm(Total.Revenue~., data=train.data )
+
+summary(model1)
+# Make predictions
+predictions <- model1 %>% predict(test.data)
+# Model performance
+data.frame(
+  RMSE = RMSE(predictions, test.data$Total.Revenue),
+  R2 = R2(predictions, test.data$Total.Revenue)
+)
+```
+
+As expected from the correlation plot, multicoliniarity is detected through the resulting VIF scores for the 1k dataset. Four of the five numeric variables have VIF scores higher than 10, two of which are exorbitantly high with VIF scores of 172 as seen below.
+
+```{r}
+car::vif(model1)
+```
+
+Similarly, the VIF scores are calculated for the 100k dataset.
+
+```{r}
+set.seed(145)
+
+training.samples2 <- df100k_n$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data2  <- df100k_n[training.samples2, ]
+test.data2 <- df100k_n[-training.samples2, ]
+```
+
+```{r}
+# Build the model
+#%>% select(c(-Total.Profit,-Total.Cost, -Unit.Price)) 
+model2<- lm(Total.Revenue~., data=train.data2 )
+
+summary(model2)
+# Make predictions
+predictions2 <- model2 %>% predict(test.data2)
+# Model performance
+data.frame(
+  RMSE = RMSE(predictions2, test.data2$Total.Revenue),
+  R2 = R2(predictions2, test.data2$Total.Revenue)
+)
+```
+
+As in the VIF scores for the 1k dataset, the 100k dataset exhibits high VIF values, confirming the multicoliniairty detected between the predictor variables in the correlation plot.
+
+```{r}
+car::vif(model1)
+```
+
+In both the 1k and 100k datasets, the only variable not exceeding the recommended VIF score of 5 is the Units.Sold variable. As such, it will be the only numeric variable used in the modeling.
+
+
+# Preprocessing
+## Normalization
+
+Next, the data is normalized in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By normalizing the variables, we can be sure that each variable contributes equally to the analysis.
+
+```{r}
+#define Min-Max normalization function
+min_max_norm <- function(x) {
+    (x - min(x)) / (max(x) - min(x))
+}
+
+#apply Min-Max normalization to numeric columns
+df1k_norm <- as.data.frame(lapply(df1k_n, min_max_norm))
+
+df100k_norm <- as.data.frame(lapply(df100k_n, min_max_norm))
 ```
 
 
 # Models
-## 
-#### Model Perfomance
+## Simple Linear Regression
+
+The first model created is a simple linear regression using the normalized numeric data for the 1k dataset.
+
+First the data is split into a train and test sets.
+```{r}
+set.seed(146)
+
+training.samples3 <- df1k_norm$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data3  <- df1k_norm[training.samples3, ]
+test.data3 <- df1k_norm[-training.samples3, ]
+```
+
+Next, the model is run using the predictor variable, `Units.Sold` identified in the EDA stage from the VIF Scores calculated.
+
+The model performs terribly with an R-squared value of .268
+```{r}
+model3<- lm(Total.Revenue~Units.Sold, data=train.data3 )
+
+summary(model3)
+# Make predictions
+predictions3 <- model3 %>% predict(test.data3)
+
+# Model performance
+data.frame(
+  RMSE = RMSE(predictions3, test.data3$Total.Revenue),
+  R2 = R2(predictions3, test.data3$Total.Revenue)
+)
+```
+
+Another simple regression model is created, this time with the 100k dataset using the same predictor and response variables as in the model created using the 1k dataset.
+
+```{r}
+set.seed(146)
+
+training.samples4 <- df100k_norm$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data4  <- df1k_norm[training.samples4, ]
+test.data4 <- df1k_norm[-training.samples4, ]
+```
+
+```{r}
+model4<- lm(Total.Revenue~Units.Sold, data=train.data4)
+
+summary(model4)
+# Make predictions
+predictions4 <- model4 %>% predict(test.data4)
+
+# Model performance
+data.frame(
+  RMSE = RMSE(predictions4, test.data4$Total.Revenue),
+  R2 = R2(predictions4, test.data4$Total.Revenue)
+)
+```
+As in the simple regression model using the 1k dataset, the 100k dataset doesn't perform well. It has an accuracy of 26% which is nearly 1% worse than the model performance for the 1k dataset.
+
+## Multiple Linear Regression
+```{r}
+df1k2 <- df1k %>% 
+  # purrr::discard(is.numeric) %>% 
+  select(-c(Country, Unit.Cost, Unit.Price, Total.Cost, Total.Profit, Order.ID))
+
+preproc1 <-preProcess(df1k2, method=c("center", "scale"))
+norm1 <- predict(preproc1,df1k2)
+head(norm1)
+```
+
+```{r}
+set.seed(146)
+
+training.samples5 <- norm1$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data5  <- norm1[training.samples5, ]
+test.data5 <- norm1[-training.samples5, ]
+```
 
 
 ```{r}
+model5<- lm(Total.Revenue~., data=train.data5 )
 
+summary(model5)
+# Make predictions
+predictions5 <- model5 %>% predict(test.data5)
+
+# Model performance
+data.frame(
+  RMSE = RMSE(predictions5, test.data5$Total.Revenue),
+  R2 = R2(predictions5, test.data3$Total.Revenue)
+)
 ```
+
 
 
 # Essay
 **Answer questions such as:**  
-1. Are the columns of your data correlated?  
-Yes, the numeric variables in both the 1k and 100k dataset are highly correlated with exception to `Units.Sold` correlations at 0 with `Unit.Cost` and `Unit.Price`. `Units.Sold` highest correlation is with `Total.Profit` which makes sense as `Total.Profit` has dependency on `Units.Sold`, `Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`). The highest correlations exist between `Unit.Cost` and `Unit.Price`, `Total.Revenue` and `Total.Profit`, as well as `Total.Revenue` and `Total.Cost`.
-  
+1. Are the columns of your data correlated?
+Yes, the numeric variables in both the 1k and 100k dataset are highly correlated with exception to `Units.Sold` correlations at 0 with `Unit.Cost` and `Unit.Price`. `Units.Sold` highest correlation is with `Total.Profit` which makes sense as `Total.Profit` has dependency on `Units.Sold`, `Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`). The highest correlations exist between `Unit.Cost` and `Unit.Price`, `Total.Revenue` and `Total.Profit`, as well as `Total.Revenue` and `Total.Cost`.  
 2. Are there labels in your data? Did that impact your choice of algorithm?  
 No, both datasets do not contain labels in their metadata as seen by the output of the `look_for()` function from the `labelled` package.  
-  
 3. What are the pros and cons of each algorithm you selected?   
-Two models were run for the binary classification of the `Sales.Channel` variable in both the 1k and 100k datasets. Decision Tree models were initially run on both datasets. The next models run on the data were Logistic Regression models. While the Decision Tree model provided highly interpretable results for the 1k dataset, it failed to provide a meaningful result on the 100k dataset. Although Decision Tree models in general are simple, highly interpretable and do not require normalization nor scaling of data, they do not perform well with large amounts of data. This dynamic can be seen in the resulting model using the 100k dataset which provided underwhelming results. Logistic Regression was the next model type chosen to be run on the data. Given the binary response variable, and no need to normalize the data, it was thought that logistic regression was the right way to go for ease and convenience. While the logistic model was able to handle both the small and large datasets, its accuracy was lacking. A major contributor to its lackluster performance can be attributed to the multicollinearity noted among the independent variables in the Exploratory Data Analysis section. Unfortunately, correlations between variables were checked *after* running the logistic regression models, which was an error on my behalf in the model selection process. 
 
-^[https://dhirajkumarblog.medium.com/top-5-advantages-and-disadvantages-of-decision-tree-algorithm-428ebd199d9a]
   
 4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?   
-The classification algorithms were chosen as a result of noting the binary `Sales.Channel` variable, however other models could have been run on continuous variables such as `Total.Revenue` or `Total.Profit`.
+
   
 5. Which result will you trust if you need to make a business decision?  
 6. Do you think an analysis could be prone to errors when using too much data, or when using the least amount possible?  
