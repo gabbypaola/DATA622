@@ -401,6 +401,10 @@ data.frame(
 As in the simple regression model using the 1k dataset, the 100k dataset doesn't perform well. It has an accuracy of 26% which is nearly 1% worse than the model performance for the 1k dataset.
 
 ## Multiple Linear Regression
+
+For the next model, additional predictor variables are incorporated in the `lm()` function to generate a multiple linear regression model for both the 1k  and 100k datasets.
+
+First step is to narrow down the variables of the 1k dataset to be used and then preprocess the numeric values to create the model.
 ```{r}
 df1k2 <- df1k %>% 
   # purrr::discard(is.numeric) %>% 
@@ -431,11 +435,45 @@ predictions5 <- model5 %>% predict(test.data5)
 # Model performance
 data.frame(
   RMSE = RMSE(predictions5, test.data5$Total.Revenue),
-  R2 = R2(predictions5, test.data3$Total.Revenue)
+  R2 = R2(predictions5, test.data5$Total.Revenue)
 )
 ```
+A significant improvement in the accuracy of the model is shown by the R squared value which is now 0.81.
 
 
+Next is the multiple linear regression model for the 100k dataset. 
+```{r}
+df100k2 <- df100k %>% 
+  # purrr::discard(is.numeric) %>% 
+  select(-c(Country, Unit.Cost, Unit.Price, Total.Cost, Total.Profit, Order.ID))
+
+preproc2 <-preProcess(df100k2, method=c("center", "scale"))
+norm2 <- predict(preproc2,df100k2)
+head(norm2)
+```
+
+```{r}
+set.seed(147)
+
+training.samples6 <- norm2$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data6  <- norm2[training.samples6, ]
+test.data6 <- norm2[-training.samples6, ]
+```
+
+```{r}
+model6<- lm(Total.Revenue~., data=train.data6 )
+
+summary(model6)
+# Make predictions
+predictions6 <- model6 %>% predict(test.data6)
+
+# Model performance
+data.frame(
+  RMSE = RMSE(predictions6, test.data6$Total.Revenue),
+  R2 = R2(predictions6, test.data6$Total.Revenue)
+)
+```
 
 # Essay
 **Answer questions such as:**  
