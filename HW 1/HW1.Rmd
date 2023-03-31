@@ -341,6 +341,37 @@ df1k_norm <- as.data.frame(lapply(df1k_n, min_max_norm))
 df100k_norm <- as.data.frame(lapply(df100k_n, min_max_norm))
 ```
 
+```{r message=FALSE, warning=FALSE}
+#stats
+describe(df1k_norm, fast=TRUE) %>% 
+  select(c(-vars,-n))
+
+#distribution
+df1k_norm %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity", bins = 40) +
+    theme_minimal()
+```
+
+```{r message=FALSE, warning=FALSE}
+#stats
+describe(df100k_norm, fast=TRUE) %>% 
+  select(c(-vars,-n))
+
+#distribution
+df100k_norm %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity", bins = 40) +
+    theme_minimal()
+```
 
 # Models
 ## Simple Linear Regression
@@ -478,11 +509,13 @@ data.frame(
 # Essay
 **Answer questions such as:**  
 1. Are the columns of your data correlated?
-Yes, the numeric variables in both the 1k and 100k dataset are highly correlated with exception to `Units.Sold` correlations at 0 with `Unit.Cost` and `Unit.Price`. `Units.Sold` highest correlation is with `Total.Profit` which makes sense as `Total.Profit` has dependency on `Units.Sold`, `Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`). The highest correlations exist between `Unit.Cost` and `Unit.Price`, `Total.Revenue` and `Total.Profit`, as well as `Total.Revenue` and `Total.Cost`.  
+Yes, the numeric variables in both the 1k and 100k dataset are highly correlated which were verified using correlation plots as well as VIF scores. A majority of the numerical variables are highly correlated with exception to `Units.Sold` with correlations at 0 with `Unit.Cost` and `Unit.Price`. `Units.Sold` highest correlation is with `Total.Profit` which makes sense as `Total.Profit` has dependency on `Units.Sold`, `Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`). The highest correlations exist between `Unit.Cost` and `Unit.Price`, `Total.Revenue` and `Total.Profit`, as well as `Total.Revenue` and `Total.Cost`.  
 2. Are there labels in your data? Did that impact your choice of algorithm?  
 No, both datasets do not contain labels in their metadata as seen by the output of the `look_for()` function from the `labelled` package.  
 3. What are the pros and cons of each algorithm you selected?   
+The pro of the simple linear regression algorithm was it's easy interpretation, however it's major con is its poor accuracy.
 
+In contrast, the multiple linear regression has much better performance, however its interpretability is slightly less than that of the simple linear regression given the added predictor variables which include factors of multiple levels.
   
 4. How your choice of algorithm relates to the datasets (was your choice of algorithm impacted by the datasets you chose)?   
 
