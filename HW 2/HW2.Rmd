@@ -26,3 +26,224 @@ output:
 1. Essay (minimum 500 word document)  
 Write a short essay explaining your analysis, and how you would address the concerns in the blog (listed in pre-work)  
 2. Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document)
+
+# Packages
+```{r message=FALSE, warning=FALSE}
+library(readr)
+library(tidyverse)
+library(tidymodels)
+library(psych)
+library(caret)
+library(rpart)
+library(rpart.plot)
+library(corrplot)
+library(RColorBrewer)
+library(labelled)
+library(ggplot2)
+library(ggforce)
+```
+
+
+# Load Data
+```{r}
+df1k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/1000%20Sales%20Records.csv")
+df100k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/100000%20Sales%20Records.csv")
+```
+
+# Exploratory Data Analysis
+
+First, exploratory data analysis is conducted to get acquainted with the two Sales datasets selected from https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/. 
+
+## Dimensions, Variable Types, Labels, Levels, and Frequencies
+The 100k dataset contains 100,000 rows and 14 columns. Similar to the 1k dataset, in the 100k dataset there are 7 character, 2 integer, and 5 double type variables. The `glimpse()` output shows us the first few observation of each variable. There are two geographical variables one for Region, and another for each specific country. `Item.Type` refers to the type of items sold, `Sales.Channel` refers to the sales method, whether the sale was conducted online or offline, meaning an in-store purchase.
+
+The `look_for()` function from the labelled package shows us each variable, their label (if available), column type, as well as the values for any factor type variables. The function produces no labels, and no values as none of the variables are coded as factor types. 
+
+```{r}
+print("Dimensions")
+glimpse(df100k)
+print("Labels")
+look_for(df100k)
+```
+
+As above, using the `unique()` and `length()` functions are used to investigate the geographic 
+variables. There are also 7 Regions and 185 countries spanning the 100k dataset.
+
+```{r}
+unique(df100k$Region)
+length(unique(df100k$Country))
+```
+
+Once again the `table()` function is used to create contingency, or frequency tables of some of the character variables, Item.Type and Sales.Channel in the 100k dataset. The sorted frequency table shows the top three items of the total 12 types in the 100k dataset are office supplies, cereal, and baby food.
+
+```{r}
+table(df100k$Item.Type)[order(table(df100k$Item.Type),decreasing = TRUE)]
+table(df100k$Sales.Channel)
+```
+
+## Variable Dependencies and Definitions
+
+Below are the variable dependencies and definitions that are applicable to 100k dataset.
+
+`Total.Cost` = `Units.Sold` * `Unit.Cost`  
+`Total.Revenue` = `Units.Sold` * `Unit.Price`  
+`Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`)
+
+`Order.Priority`: C(Critical), H(High), M(Medium), and L(Low)
+
+## Variable Type Conversions
+
+Variable types are converted to ensure the models created use the correct type of variables. Variable conversion also aids in the preprocessing by ensuring originally numeric variables such as `Order.ID` are not inadvertently normalized or used in the modelling stage. There are a number of advantages to converting categorical variables to factor variables. Perhaps the most important advantage is that they can be used in statistical modeling where they will be implemented correctly, i.e., they will then be assigned the correct number of degrees of freedom. ^[https://stats.oarc.ucla.edu/r/modules/factor-variables/#:~:text=Perhaps%20the%20most%20important%20advantage,many%20different%20types%20of%20graphics.]
+
+```{r}
+df100k[['Order.Date']] <- as.Date(df100k[['Order.Date']], "%m/%d/%Y")
+df100k[['Ship.Date']] <- as.Date(df100k[['Ship.Date']], "%m/%d/%Y")
+
+df100k[['Sales.Channel']] <- as.factor(df100k[['Sales.Channel']])
+
+df100k[['Order.Priority']] <- as.factor(df100k[['Order.Priority']])
+
+df100k[['Item.Type']] <- as.factor(df100k[['Item.Type']])
+
+df100k[['Region']] <- as.factor(df100k[['Region']])
+
+df100k[['Country']] <- as.factor(df100k[['Country']])
+
+df100k[['Order.ID']] <- as.character(df100k[['Order.ID']])
+```
+
+```{r}
+levels(df100k$Sales.Channel)
+```
+
+## Missing Data
+
+Next the data is checked for any missing values.
+
+The below shows no missing values for the 100k dataset. 
+
+```{r}
+colSums(is.na(df100k))
+```
+
+## Distributions
+
+From the `describe()` output for the 100k dataset, it is noted that the numeric variables also have wide ranges. This will be taken care of through normalization to scale the variables in the preprocessing stage prior to running models. Futhermore, through the use of the graphs created for each variable, it is noted that `Total.Cost`, `Total.Profit`, and `Total.Revenue` are right skewed and the distributions for `Unit.Cost`, `Unit.Price`, and `Units.Sold` are multimodal. `Unit.Cost` shows six modes, `Unit.Price` shows five modes, and `Units.Sold` show four modes. 
+
+```{r message=FALSE, warning=FALSE}
+#stats
+describe(df100k_n, fast=TRUE) %>% 
+  select(c(-vars,-n))
+
+#distributions
+df100k_n %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity",bins = 40) +
+    theme_minimal()
+```
+
+## Correlations
+
+Subsequently, the correlations between numeric variables are examined. It is important to investigate the correlations between the independent variables to avoid multicollinearity. Multicollinearity occurs when two or more independent variables are highly correlated to one another. When two (or more) independent variables are highly correlated one cannot individually determine the impact of individual variables on the dependent variable.  
+
+Multicollinearity can be a problem in a regression model when using algorithms such as OLS (ordinary least squares). This is because the estimated regression coefficients become unstable and difficult to interpret in the presence of multicollinearity.  
+
+When multicollinearity is present, the estimated regression coefficients may become large and unpredictable, leading to unreliable inferences about the effects of the predictor variables on the response variable. Therefore, it is important to check for multicollinearity and consider using other regression techniques that can handle this problem, such as ridge regression or principal component regression or make a decision about dropping highly correlated independent variables entirely.
+
+Variables with weak correlation (i.e., 0<=|r|<0.3) ^[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4888898/] between `Unit.Price`,` Unit.Cost`, and `Units.Sold`. Moderate correlation (i.e., 0.3≤|r|<0.7) can be seen between `Total.Profit`, `Total.Revenue`, `Total.Cost` and `Units.Sold` as well as between `Unit.Price`, `Unit.Cost` and `Total.Profit`. High correlation (i.e., |r|>=0.7) can be seen in the remaining pairs, especially between `Unit.Price` and `Unit.Cost`, `Total.Profit` and `Total.Revenue`, `Total.Cost` and `Total.Revenue`.
+
+```{r}
+cor(df100k_n) %>%
+  corrplot(tl.col = 'black', diag=FALSE, type="lower", 
+           order="hclust", addCoef.col = "black",
+           title="100k dataset Correlations",mar=c(0,0,1,0),
+           col=brewer.pal(n=10, name="RdYlBu"))
+
+```
+
+## VIF Scores
+
+Another detection method for multicoliniarity is through the use of the VIF (Variance Inflation Factor) score.  The variance inflation factor (or VIF), measures how much the variance of a regression coefficient is inflated due to multicollinearity in the model. The smallest possible value of VIF is one (absence of multicollinearity). As a rule of thumb, a VIF value that exceeds 5 or 10 indicates a problematic amount of collinearity. ^[http://www.sthda.com/english/articles/39-regression-model-diagnostics/160-multicollinearity-essentials-and-vif-in-r/]
+
+Below the VIF scores are calculated for the 100k dataset.
+
+```{r}
+set.seed(145)
+
+training.samples2 <- df100k_n$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data2  <- df100k_n[training.samples2, ]
+test.data2 <- df100k_n[-training.samples2, ]
+```
+
+```{r}
+# Build the model
+#%>% select(c(-Total.Profit,-Total.Cost, -Unit.Price)) 
+model2<- lm(Total.Revenue~., data=train.data2 )
+
+summary(model2)
+# Make predictions
+predictions2 <- model2 %>% predict(test.data2)
+# Model performance
+data.frame(
+  RMSE = RMSE(predictions2, test.data2$Total.Revenue),
+  R2 = R2(predictions2, test.data2$Total.Revenue)
+)
+```
+
+The 100k dataset exhibits high VIF values, confirming the multicoliniairty detected between the predictor variables in the correlation plot.
+
+```{r}
+car::vif(model1)
+```
+
+The only variable not exceeding the recommended VIF score of 5 is the `Units.Sold` variable. As such, it will be the only numeric predictor variable used in the modeling.
+
+# Preprocessing
+## Normalization
+
+Next, the data is normalized in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By normalizing the variables, we can be sure that each variable contributes equally to the analysis.
+
+```{r}
+#define Min-Max normalization function
+min_max_norm <- function(x) {
+    (x - min(x)) / (max(x) - min(x))
+}
+
+#apply Min-Max normalization to numeric columns
+df100k_norm <- as.data.frame(lapply(df100k_n, min_max_norm))
+```
+
+```{r message=FALSE, warning=FALSE}
+#stats
+describe(df100k_norm, fast=TRUE) %>% 
+  select(c(-vars,-n))
+
+#distribution
+df100k_norm %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity", bins = 40) +
+    theme_minimal()
+```
+
+# Models
+
+# Essay
+
+1. Essay (minimum 500 word document)  
+Write a short essay explaining your analysis, and how you would address the concerns in the blog (listed in pre-work)  
+2. Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document)
+
+# References
+
+<!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
