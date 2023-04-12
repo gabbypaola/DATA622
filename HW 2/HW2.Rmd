@@ -14,7 +14,7 @@ output:
 
 # Assignment 2
 **Pre-work**  
-1. Read this blog: https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees which shows some of the issues with decision trees  
+1. Read this [blog](https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees), which shows some of the issues with decision trees  
 2. Choose a dataset from a source in Assignment #1, or another dataset of your choice.  
 
 **Assignment work**
@@ -239,8 +239,8 @@ df100k_norm %>%
 # Essay
 
 1. Essay (minimum 500 word document)  
-Write a short essay explaining your analysis, and how you would address the concerns in the blog (listed in pre-work)  
-2. Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document)
+Write a short essay explaining your analysis, and how you would address the concerns in the [blog](https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees) (listed in pre-work).  
+
 
 # References
 
