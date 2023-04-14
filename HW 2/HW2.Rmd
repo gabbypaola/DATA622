@@ -41,12 +41,12 @@ library(RColorBrewer)
 library(labelled)
 library(ggplot2)
 library(ggforce)
+library(pROC)
+library(mlbench)
 ```
-
 
 # Load Data
 ```{r}
-df1k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/1000%20Sales%20Records.csv")
 df100k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/100000%20Sales%20Records.csv")
 ```
 
@@ -131,6 +131,10 @@ colSums(is.na(df100k))
 From the `describe()` output for the 100k dataset, it is noted that the numeric variables also have wide ranges. This will be taken care of through normalization to scale the variables in the preprocessing stage prior to running models. Futhermore, through the use of the graphs created for each variable, it is noted that `Total.Cost`, `Total.Profit`, and `Total.Revenue` are right skewed and the distributions for `Unit.Cost`, `Unit.Price`, and `Units.Sold` are multimodal. `Unit.Cost` shows six modes, `Unit.Price` shows five modes, and `Units.Sold` show four modes. 
 
 ```{r message=FALSE, warning=FALSE}
+#select numeric columns 100k
+df100k_n <- df100k %>% 
+  keep(is.numeric) 
+
 #stats
 describe(df100k_n, fast=TRUE) %>% 
   select(c(-vars,-n))
@@ -167,7 +171,7 @@ cor(df100k_n) %>%
 
 ## VIF Scores
 
-Another detection method for multicoliniarity is through the use of the VIF (Variance Inflation Factor) score.  The variance inflation factor (or VIF), measures how much the variance of a regression coefficient is inflated due to multicollinearity in the model. The smallest possible value of VIF is one (absence of multicollinearity). As a rule of thumb, a VIF value that exceeds 5 or 10 indicates a problematic amount of collinearity. ^[http://www.sthda.com/english/articles/39-regression-model-diagnostics/160-multicollinearity-essentials-and-vif-in-r/]
+Another detection method for multicoliniarity is through the use of the VIF (Variance Inflation Factor) score. Although correlation matrix and scatter plots can also be used to find multicollinearity, their findings only show the bivariate relationship between the independent variables. VIF is preferred as it can show the correlation of a variable with a group of other variables. The variance inflation factor (or VIF), measures how much the variance of a regression coefficient is inflated due to multicollinearity in the model. The smallest possible value of VIF is one (absence of multicollinearity). As a rule of thumb, a VIF value that exceeds 5 or 10 indicates a problematic amount of collinearity. ^[http://www.sthda.com/english/articles/39-regression-model-diagnostics/160-multicollinearity-essentials-and-vif-in-r/]
 
 Below the VIF scores are calculated for the 100k dataset.
 
@@ -198,7 +202,7 @@ data.frame(
 The 100k dataset exhibits high VIF values, confirming the multicoliniairty detected between the predictor variables in the correlation plot.
 
 ```{r}
-car::vif(model1)
+car::vif(model2)
 ```
 
 The only variable not exceeding the recommended VIF score of 5 is the `Units.Sold` variable. As such, it will be the only numeric predictor variable used in the modeling.
@@ -209,22 +213,21 @@ The only variable not exceeding the recommended VIF score of 5 is the `Units.Sol
 Next, the data is normalized in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By normalizing the variables, we can be sure that each variable contributes equally to the analysis.
 
 ```{r}
-#define Min-Max normalization function
-min_max_norm <- function(x) {
-    (x - min(x)) / (max(x) - min(x))
-}
+#apply preprocessing and generate transformed values
+df100k_norm<-predict(preProcess(df100k, method=c("center", "scale")),df100k)
 
-#apply Min-Max normalization to numeric columns
-df100k_norm <- as.data.frame(lapply(df100k_n, min_max_norm))
 ```
 
 ```{r message=FALSE, warning=FALSE}
 #stats
-describe(df100k_norm, fast=TRUE) %>% 
-  select(c(-vars,-n))
+df100k_norm %>% 
+  keep(is.numeric) %>%  
+  describe(fast=TRUE) %>% 
+  select(-c(vars,n))
 
 #distribution
 df100k_norm %>% 
+  keep(is.numeric) %>%  
   gather(variable, value, 1:6) %>%
   ggplot(aes(value)) +
     facet_wrap(~variable, scales = "free") +
@@ -234,7 +237,31 @@ df100k_norm %>%
     theme_minimal()
 ```
 
+## Feature Selection
+
+```{r}
+df100k_norm <- df100k_norm %>% 
+  select(-c(Country,Order.ID))
+```
+
+
 # Models
+
+## 
+```{r}
+set.seed(1234)
+
+training.samples <- df100k_norm$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train  <- df100k_norm[training.samples, ]
+test <- df100k_norm[-training.samples, ]
+
+tree <- rpart(Total.Revenue ~., data = train,  method = 'anova')
+rpart.plot(tree)
+
+print(tree)
+```
+
 
 # Essay
 
