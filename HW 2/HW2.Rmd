@@ -257,35 +257,36 @@ set.seed(1234)
 #split
 training.samples <- df100k_norm$Total.Revenue %>%
   createDataPartition(p = 0.8, list = FALSE)
+
 train  <- df100k_norm[training.samples, ]
 test <- df100k_norm[-training.samples, ]
 
-#train
+#train using rpart
 tree <- rpart(Total.Revenue ~., data = train,  method = 'anova')
 
 #visualize
 rpart.plot(tree)
 print(tree)
 ```
-
+### Predictions
 ```{r}
 predictions <- predict(tree, newdata = test) %>% 
   bind_cols(test)
 
 predictions$...1 <- as.numeric(predictions$...1)
 
+```
+
+### Model Performance
+```{r}
+data.frame(
 #mean absolute error
-mae(predictions$Total.Revenue, predictions$...1)
-
+MAE = mae(predictions$Total.Revenue, predictions$...1),
 #rmse Root Mean Squared Error
-rmse(predictions$Total.Revenue, predictions$...1)
-
+RMSE = rmse(predictions$Total.Revenue, predictions$...1),
 #r squared
-SSE <- sum((predictions$Total.Revenue - predictions$...1)^2)
-SST <- sum((predictions$Total.Revenue - mean(predictions$Total.Revenue))^2)
-R_squared <- 1 - (SSE / SST)
-
-R_squared
+R2 = R2(predictions$Total.Revenue, predictions$...1)
+)
 ```
 
 
