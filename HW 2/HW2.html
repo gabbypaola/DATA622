@@ -671,21 +671,20 @@ Write a short essay explaining your analysis, and how you would address the conc
 <div id="predictions" class="section level3">
 <h3>Predictions</h3>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(tree, <span class="at">newdata =</span> test) <span class="sc">%&gt;%</span> </span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(test)</span></code></pre></div>
-<pre><code>## New names:
-## * `` -&gt; `...1`</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>...<span class="dv">1</span> <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(predictions<span class="sc">$</span>...<span class="dv">1</span>)</span></code></pre></div>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(test)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>...<span class="dv">1</span> <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(predictions<span class="sc">$</span>...<span class="dv">1</span>)</span></code></pre></div>
 </div>
 <div id="model-performance" class="section level3">
 <h3>Model Performance</h3>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co">#mean absolute error</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="at">MAE =</span> <span class="fu">mae</span>(predictions<span class="sc">$</span>Total.Revenue, predictions<span class="sc">$</span>...<span class="dv">1</span>),</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co">#rmse Root Mean Squared Error</span></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="at">RMSE =</span> <span class="fu">rmse</span>(predictions<span class="sc">$</span>Total.Revenue, predictions<span class="sc">$</span>...<span class="dv">1</span>),</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="co">#r squared</span></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="at">R2 =</span> <span class="fu">R2</span>(predictions<span class="sc">$</span>Total.Revenue, predictions<span class="sc">$</span>...<span class="dv">1</span>)</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co">#mean absolute error</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="at">MAE =</span> <span class="fu">mae</span>(predictions<span class="sc">$</span>Total.Revenue, predictions<span class="sc">$</span>...<span class="dv">1</span>),</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co">#rmse Root Mean Squared Error</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="at">RMSE =</span> <span class="fu">rmse</span>(predictions<span class="sc">$</span>Total.Revenue, predictions<span class="sc">$</span>...<span class="dv">1</span>),</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="co">#r squared</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="at">R2 =</span> <span class="fu">R2</span>(predictions<span class="sc">$</span>Total.Revenue, predictions<span class="sc">$</span>...<span class="dv">1</span>)</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>##         MAE      RMSE       R2
 ## 1 0.1482684 0.2044465 0.958493</code></pre>
 </div>
