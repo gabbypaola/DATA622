@@ -43,6 +43,7 @@ library(ggplot2)
 library(ggforce)
 library(pROC)
 library(mlbench)
+library(ModelMetrics)
 ```
 
 # Load Data
@@ -208,9 +209,9 @@ car::vif(model2)
 The only variable not exceeding the recommended VIF score of 5 is the `Units.Sold` variable. As such, it will be the only numeric predictor variable used in the modeling.
 
 # Preprocessing
-## Normalization
+## Scaling
 
-Next, the data is normalized in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By normalizing the variables, we can be sure that each variable contributes equally to the analysis.
+Next, the data is scaleded in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By normalizing the variables, we can be sure that each variable contributes equally to the analysis.
 
 ```{r}
 #apply preprocessing and generate transformed values
@@ -239,27 +240,52 @@ df100k_norm %>%
 
 ## Feature Selection
 
+Feature Selection is the method of reducing the input variable to your model by using only relevant data and getting rid of noise in data. It is primarily focused on removing non-informative or redundant predictors from the model. 
+
 ```{r}
 df100k_norm <- df100k_norm %>% 
-  select(-c(Country,Order.ID))
+  select(-c(Country,Order.ID)) #Country,
 ```
 
 
 # Models
 
-## 
+## Regression Decision Tree
 ```{r}
 set.seed(1234)
 
+#split
 training.samples <- df100k_norm$Total.Revenue %>%
   createDataPartition(p = 0.8, list = FALSE)
 train  <- df100k_norm[training.samples, ]
 test <- df100k_norm[-training.samples, ]
 
+#train
 tree <- rpart(Total.Revenue ~., data = train,  method = 'anova')
-rpart.plot(tree)
 
+#visualize
+rpart.plot(tree)
 print(tree)
+```
+
+```{r}
+predictions <- predict(tree, newdata = test) %>% 
+  bind_cols(test)
+
+predictions$...1 <- as.numeric(predictions$...1)
+
+#mean absolute error
+mae(predictions$Total.Revenue, predictions$...1)
+
+#rmse Root Mean Squared Error
+rmse(predictions$Total.Revenue, predictions$...1)
+
+#r squared
+SSE <- sum((predictions$Total.Revenue - predictions$...1)^2)
+SST <- sum((predictions$Total.Revenue - mean(predictions$Total.Revenue))^2)
+R_squared <- 1 - (SSE / SST)
+
+R_squared
 ```
 
 
