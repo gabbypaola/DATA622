@@ -20,7 +20,7 @@ output:
 **Assignment work**
 1. Based on the latest topics presented, choose a dataset of your choice and create a Decision Tree where you can solve a classification or regression problem and predict the outcome of a particular feature or detail of the data used.  
 2. Switch variables to generate 2 decision trees and compare the results. Create a random forest for regression and analyze the results.  
-3. Based on real cases where desicion trees went wrong, and 'the bad & ugly' aspects of decision trees (https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees), how can you change this perception when using the decision tree you created to solve a real problem?
+3. Based on real cases where decision trees went wrong, and 'the bad & ugly' aspects of decision trees (https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees), how can you change this perception when using the decision tree you created to solve a real problem?
 
 **Deliverable**
 1. Essay (minimum 500 word document)  
@@ -179,31 +179,32 @@ Below the VIF scores are calculated for the 100k dataset.
 ```{r}
 set.seed(145)
 
-training.samples2 <- df100k_n$Total.Revenue %>%
+training.samples0 <- df100k_n$Total.Revenue %>%
   createDataPartition(p = 0.8, list = FALSE)
-train.data2  <- df100k_n[training.samples2, ]
-test.data2 <- df100k_n[-training.samples2, ]
+train.data  <- df100k_n[training.samples0, ]
+test.data <- df100k_n[-training.samples0, ]
 ```
 
 ```{r}
 # Build the model
 #%>% select(c(-Total.Profit,-Total.Cost, -Unit.Price)) 
-model2<- lm(Total.Revenue~., data=train.data2 )
+model<- lm(Total.Revenue~., data=train.data )
 
-summary(model2)
+summary(model)
 # Make predictions
-predictions2 <- model2 %>% predict(test.data2)
+predictions0 <- model %>% predict(test.data)
 # Model performance
 data.frame(
-  RMSE = RMSE(predictions2, test.data2$Total.Revenue),
-  R2 = R2(predictions2, test.data2$Total.Revenue)
+  MAE = mae(predictions0, test.data$Total.Revenue),
+  RMSE = RMSE(predictions0, test.data$Total.Revenue),
+  R2 = R2(predictions0, test.data$Total.Revenue)
 )
 ```
 
 The 100k dataset exhibits high VIF values, confirming the multicoliniairty detected between the predictor variables in the correlation plot.
 
 ```{r}
-car::vif(model2)
+car::vif(model)
 ```
 
 The only variable not exceeding the recommended VIF score of 5 is the `Units.Sold` variable. As such, it will be the only numeric predictor variable used in the modeling.
@@ -250,16 +251,20 @@ df100k_norm <- df100k_norm %>%
 
 # Models
 
-## Regression Decision Tree
+## Regression Decision Tree 1
 ```{r}
 set.seed(1234)
 
+#use numerical predictors only
+df100k_norm1 <- df100k_norm %>% 
+  keep(is.numeric) 
+
 #split
-training.samples <- df100k_norm$Total.Revenue %>% 
+training.samples <- df100k_norm1$Total.Revenue %>% 
   createDataPartition(p = 0.8, list = FALSE)
 
-train  <- df100k_norm[training.samples, ]
-test <- df100k_norm[-training.samples, ]
+train  <- df100k_norm1[training.samples, ]
+test <- df100k_norm1[-training.samples, ]
 
 #train using rpart
 tree <- rpart(Total.Revenue ~., data = train,  method = 'anova')
@@ -289,6 +294,49 @@ R2 = R2(predictions$Total.Revenue, predictions$...1)
 )
 ```
 
+## Regression Decision Tree 2
+
+```{r}
+#colnames(df100k_norm1)
+
+df100k_norm2 <- df100k_norm %>% 
+  select(-c("Units.Sold","Unit.Price","Unit.Cost","Total.Cost", "Total.Profit"))
+
+#split
+training.samples2 <- df100k_norm2$Total.Revenue %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train2  <- df100k_norm2[training.samples2, ]
+test2 <- df100k_norm2[-training.samples2, ]
+
+#train using rpart
+tree2 <- rpart(Total.Revenue ~., data = train2,  method = 'anova')
+
+#visualize
+rpart.plot(tree2)
+print(tree2)
+
+```
+### Predictions
+```{r message=FALSE, warning=FALSE, results='hide'}
+predictions2 <- predict(tree2, newdata = test2) %>% 
+  bind_cols(test2)
+
+predictions2$...1 <- as.numeric(predictions2$...1)
+
+```
+
+### Model Performance
+```{r}
+data.frame(
+#mean absolute error
+MAE = mae(predictions2$Total.Revenue, predictions2$...1),
+#rmse Root Mean Squared Error
+RMSE = rmse(predictions2$Total.Revenue, predictions2$...1),
+#r squared
+R2 = R2(predictions2$Total.Revenue, predictions2$...1)
+)
+```
 
 # Essay
 
