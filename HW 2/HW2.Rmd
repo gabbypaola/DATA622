@@ -340,7 +340,7 @@ R2 = R2(predictions2$Total.Revenue, predictions2$...1)
 ```
 
 ## Regression Decision Tree 3
-```{r}
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
 set.seed(12345)
 #colnames(df100k_norm1)
 
@@ -355,20 +355,21 @@ train3  <- df100k_norm3[training.samples3, ]
 test3 <- df100k_norm3[-training.samples3, ]
 
 #train using rpart
-tree2 <- rpart(Total.Revenue ~., data = train2,  method = 'anova')
+tree3 <- rpart(Total.Revenue ~., data = train3,  method = 'anova')
 
 #visualize
-rpart.plot(tree2)
-print(tree2)
+
+rpart.plot(tree3)
+print(tree3)
 
 ```
 
 ### Predictions
 ```{r message=FALSE, warning=FALSE, results='hide'}
-predictions2 <- predict(tree2, newdata = test2) %>% 
-  bind_cols(test2)
+predictions3 <- predict(tree3, newdata = test3) %>% 
+  bind_cols(test3)
 
-predictions2$...1 <- as.numeric(predictions2$...1)
+predictions3$...1 <- as.numeric(predictions3$...1)
 
 ```
 
@@ -376,11 +377,11 @@ predictions2$...1 <- as.numeric(predictions2$...1)
 ```{r}
 data.frame(
 #mean absolute error
-MAE = mae(predictions2$Total.Revenue, predictions2$...1),
+MAE = mae(predictions3$Total.Revenue, predictions3$...1),
 #rmse Root Mean Squared Error
-RMSE = rmse(predictions2$Total.Revenue, predictions2$...1),
+RMSE = rmse(predictions3$Total.Revenue, predictions3$...1),
 #r squared
-R2 = R2(predictions2$Total.Revenue, predictions2$...1)
+R2 = R2(predictions3$Total.Revenue, predictions3$...1)
 )
 ```
 
