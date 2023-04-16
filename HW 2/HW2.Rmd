@@ -92,31 +92,6 @@ Below are the variable dependencies and definitions that are applicable to 100k 
 
 `Order.Priority`: C(Critical), H(High), M(Medium), and L(Low)
 
-## Variable Type Conversions
-
-Variable types are converted to ensure the models created use the correct type of variables. Variable conversion also aids in the preprocessing by ensuring originally numeric variables such as `Order.ID` are not inadvertently normalized or used in the modelling stage. There are a number of advantages to converting categorical variables to factor variables. Perhaps the most important advantage is that they can be used in statistical modeling where they will be implemented correctly, i.e., they will then be assigned the correct number of degrees of freedom. ^[https://stats.oarc.ucla.edu/r/modules/factor-variables/#:~:text=Perhaps%20the%20most%20important%20advantage,many%20different%20types%20of%20graphics.]
-
-```{r}
-df100k[['Order.Date']] <- as.Date(df100k[['Order.Date']], "%m/%d/%Y")
-df100k[['Ship.Date']] <- as.Date(df100k[['Ship.Date']], "%m/%d/%Y")
-
-df100k[['Sales.Channel']] <- as.factor(df100k[['Sales.Channel']])
-
-df100k[['Order.Priority']] <- as.factor(df100k[['Order.Priority']])
-
-df100k[['Item.Type']] <- as.factor(df100k[['Item.Type']])
-
-df100k[['Region']] <- as.factor(df100k[['Region']])
-
-df100k[['Country']] <- as.factor(df100k[['Country']])
-
-df100k[['Order.ID']] <- as.character(df100k[['Order.ID']])
-```
-
-```{r}
-levels(df100k$Sales.Channel)
-```
-
 ## Missing Data
 
 Next the data is checked for any missing values.
@@ -183,9 +158,7 @@ training.samples0 <- df100k_n$Total.Revenue %>%
   createDataPartition(p = 0.8, list = FALSE)
 train.data  <- df100k_n[training.samples0, ]
 test.data <- df100k_n[-training.samples0, ]
-```
 
-```{r}
 # Build the model
 #%>% select(c(-Total.Profit,-Total.Cost, -Unit.Price)) 
 model<- lm(Total.Revenue~., data=train.data )
@@ -210,6 +183,32 @@ car::vif(model)
 The only variable not exceeding the recommended VIF score of 5 is the `Units.Sold` variable. As such, it will be the only numeric predictor variable used in the modeling.
 
 # Preprocessing
+
+## Variable Type Conversions
+
+Variable types are converted to ensure the models created use the correct type of variables. Variable conversion also aids in the preprocessing by ensuring originally numeric variables such as `Order.ID` are not inadvertently normalized or used in the modelling stage. There are a number of advantages to converting categorical variables to factor variables. Perhaps the most important advantage is that they can be used in statistical modeling where they will be implemented correctly, i.e., they will then be assigned the correct number of degrees of freedom. ^[https://stats.oarc.ucla.edu/r/modules/factor-variables/#:~:text=Perhaps%20the%20most%20important%20advantage,many%20different%20types%20of%20graphics.]
+
+```{r}
+df100k[['Order.Date']] <- as.Date(df100k[['Order.Date']], "%m/%d/%Y")
+df100k[['Ship.Date']] <- as.Date(df100k[['Ship.Date']], "%m/%d/%Y")
+
+df100k[['Sales.Channel']] <- as.factor(df100k[['Sales.Channel']])
+
+df100k[['Order.Priority']] <- as.factor(df100k[['Order.Priority']])
+
+df100k[['Item.Type']] <- as.factor(df100k[['Item.Type']])
+
+df100k[['Region']] <- as.factor(df100k[['Region']])
+
+df100k[['Country']] <- as.factor(df100k[['Country']])
+
+df100k[['Order.ID']] <- as.character(df100k[['Order.ID']])
+```
+
+```{r}
+levels(df100k$Sales.Channel)
+```
+
 ## Scaling
 
 Next, the data is scaleded in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By normalizing the variables, we can be sure that each variable contributes equally to the analysis.
@@ -273,6 +272,7 @@ tree <- rpart(Total.Revenue ~., data = train,  method = 'anova')
 rpart.plot(tree)
 print(tree)
 ```
+
 ### Predictions
 ```{r message=FALSE, warning=FALSE, results='hide'}
 predictions <- predict(tree, newdata = test) %>% 
@@ -295,8 +295,8 @@ R2 = R2(predictions$Total.Revenue, predictions$...1)
 ```
 
 ## Regression Decision Tree 2
-
 ```{r}
+set.seed(12345)
 #colnames(df100k_norm1)
 
 df100k_norm2 <- df100k_norm %>% 
@@ -317,6 +317,7 @@ rpart.plot(tree2)
 print(tree2)
 
 ```
+
 ### Predictions
 ```{r message=FALSE, warning=FALSE, results='hide'}
 predictions2 <- predict(tree2, newdata = test2) %>% 
@@ -337,6 +338,52 @@ RMSE = rmse(predictions2$Total.Revenue, predictions2$...1),
 R2 = R2(predictions2$Total.Revenue, predictions2$...1)
 )
 ```
+
+## Regression Decision Tree 3
+```{r}
+set.seed(12345)
+#colnames(df100k_norm1)
+
+df100k_norm3 <- df100k_norm %>% 
+  select(-c("Unit.Price","Unit.Cost","Total.Cost", "Total.Profit"))
+
+#split
+training.samples3 <- df100k_norm3$Total.Revenue %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train3  <- df100k_norm3[training.samples3, ]
+test3 <- df100k_norm3[-training.samples3, ]
+
+#train using rpart
+tree2 <- rpart(Total.Revenue ~., data = train2,  method = 'anova')
+
+#visualize
+rpart.plot(tree2)
+print(tree2)
+
+```
+
+### Predictions
+```{r message=FALSE, warning=FALSE, results='hide'}
+predictions2 <- predict(tree2, newdata = test2) %>% 
+  bind_cols(test2)
+
+predictions2$...1 <- as.numeric(predictions2$...1)
+
+```
+
+### Model Performance
+```{r}
+data.frame(
+#mean absolute error
+MAE = mae(predictions2$Total.Revenue, predictions2$...1),
+#rmse Root Mean Squared Error
+RMSE = rmse(predictions2$Total.Revenue, predictions2$...1),
+#r squared
+R2 = R2(predictions2$Total.Revenue, predictions2$...1)
+)
+```
+
 
 # Essay
 
