@@ -180,7 +180,7 @@ The 100k dataset exhibits high VIF values, confirming the multicoliniairty detec
 car::vif(model)
 ```
 
-The only variable not exceeding the recommended VIF score of 5 is the `Units.Sold` variable. As such, it will be the only numeric predictor variable used in the modeling.
+The only variable not exceeding the recommended VIF score of 5 is the `Units.Sold` variable.
 
 # Preprocessing
 
@@ -211,7 +211,7 @@ levels(df100k$Sales.Channel)
 
 ## Scaling
 
-Next, the data is scaleded in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By normalizing the variables, we can be sure that each variable contributes equally to the analysis.
+Next, the data is scaled in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By scaling the variables, we can be sure that each variable contributes equally to the analysis and reduce the variance effect.
 
 ```{r}
 #apply preprocessing and generate transformed values
@@ -255,8 +255,7 @@ df100k_norm <- df100k_norm %>%
 set.seed(1234)
 
 #use numerical predictors only
-df100k_norm1 <- df100k_norm %>% 
-  keep(is.numeric) 
+df100k_norm1 <- df100k_norm 
 
 #split
 training.samples <- df100k_norm1$Total.Revenue %>% 
@@ -297,7 +296,6 @@ R2 = R2(predictions$Total.Revenue, predictions$...1)
 ## Regression Decision Tree 2
 ```{r}
 set.seed(12345)
-#colnames(df100k_norm1)
 
 df100k_norm2 <- df100k_norm %>% 
   select(-c("Units.Sold","Unit.Price","Unit.Cost","Total.Cost", "Total.Profit"))
@@ -341,7 +339,7 @@ R2 = R2(predictions2$Total.Revenue, predictions2$...1)
 
 ## Regression Decision Tree 3
 ```{r message=FALSE, warning=FALSE, paged.print=FALSE}
-set.seed(12345)
+set.seed(123456)
 #colnames(df100k_norm1)
 
 df100k_norm3 <- df100k_norm %>% 
@@ -358,7 +356,6 @@ test3 <- df100k_norm3[-training.samples3, ]
 tree3 <- rpart(Total.Revenue ~., data = train3,  method = 'anova')
 
 #visualize
-
 rpart.plot(tree3)
 print(tree3)
 
@@ -384,6 +381,25 @@ RMSE = rmse(predictions3$Total.Revenue, predictions3$...1),
 R2 = R2(predictions3$Total.Revenue, predictions3$...1)
 )
 ```
+
+## Random Forest Regression Tree
+
+```{r}
+
+```
+
+### Predictions
+
+```{r}
+
+```
+
+### Model Performance
+
+```{r}
+
+```
+
 
 
 # Essay
