@@ -376,13 +376,23 @@ ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
 ### Predictions
 
 ```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+predictions4 <- predict(rf, newdata = test) %>% 
+  bind_cols(test)
 
+predictions4$...1 <- as.numeric(predictions4$...1)
 ```
 
 ### Model Performance
 
 ```{r}
-
+data.frame(
+#mean absolute error
+MAE = mae(predictions4$Total.Revenue, predictions4$...1),
+#rmse Root Mean Squared Error
+RMSE = rmse(predictions4$Total.Revenue, predictions4$...1),
+#r squared
+R2 = R2(predictions4$Total.Revenue, predictions4$...1)
+)
 ```
 
 
@@ -421,13 +431,23 @@ ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
 ### Predictions
 
 ```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+predictions5 <- predict(bestmtry, newdata = test) %>% 
+  bind_cols(test)
 
+predictions5$...1 <- as.numeric(predictions5$...1)
 ```
 
 ### Model Performance
 
 ```{r}
-
+data.frame(
+#mean absolute error
+MAE = mae(predictions5$Total.Revenue, predictions5$...1),
+#rmse Root Mean Squared Error
+RMSE = rmse(predictions5$Total.Revenue, predictions5$...1),
+#r squared
+R2 = R2(predictions5$Total.Revenue, predictions5$...1)
+)
 ```
 
 
