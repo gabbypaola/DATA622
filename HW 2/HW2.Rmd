@@ -373,6 +373,21 @@ ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
 
 ```
 
+### Predictions
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+
+```
+
+### Model Performance
+
+```{r}
+
+```
+
+
+## Tuned Random Forest Regression Tree
+
 ```{r}
 set.seed(908)
 
@@ -414,7 +429,6 @@ ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
 ```{r}
 
 ```
-
 
 
 # Essay
