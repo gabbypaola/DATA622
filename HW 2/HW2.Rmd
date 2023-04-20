@@ -17,13 +17,13 @@ output:
 1. Read this [blog](https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees), which shows some of the issues with decision trees  
 2. Choose a dataset from a source in Assignment #1, or another dataset of your choice.  
 
-**Assignment work**
+**Assignment work**  
 1. Based on the latest topics presented, choose a dataset of your choice and create a Decision Tree where you can solve a classification or regression problem and predict the outcome of a particular feature or detail of the data used.  
 2. Switch variables to generate 2 decision trees and compare the results. Create a random forest for regression and analyze the results.  
-3. Based on real cases where decision trees went wrong, and 'the bad & ugly' aspects of decision trees (https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees), how can you change this perception when using the decision tree you created to solve a real problem?
+3. Based on real cases where decision trees went wrong, and 'the bad & ugly' aspects of decision trees, how can you change this perception when using the decision tree you created to solve a real problem?
 
-**Deliverable**
-1. Essay (minimum 500 word document)  
+**Deliverable**  
+1. Essay (minimum 500 words)  
 Write a short essay explaining your analysis, and how you would address the concerns in the blog (listed in pre-work)  
 2. Exploratory Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document)
 
@@ -289,7 +289,7 @@ predictions$...1 <- as.numeric(predictions$...1)
 
 ### Model Performance
 ```{r}
-data.frame(
+a <- data.frame(Model = "Decision Tree 1",
 #mean absolute error
 MAE = mae(predictions$Total.Revenue, predictions$...1),
 #rmse Root Mean Squared Error
@@ -335,7 +335,7 @@ predictions3$...1 <- as.numeric(predictions3$...1)
 
 ### Model Performance
 ```{r}
-data.frame(
+b <- data.frame(Model = "Decision Tree 2",
 #mean absolute error
 MAE = mae(predictions3$Total.Revenue, predictions3$...1),
 #rmse Root Mean Squared Error
@@ -385,7 +385,7 @@ predictions4$...1 <- as.numeric(predictions4$...1)
 ### Model Performance
 
 ```{r}
-data.frame(
+c <- data.frame(Model = "Random Forest",
 #mean absolute error
 MAE = mae(predictions4$Total.Revenue, predictions4$...1),
 #rmse Root Mean Squared Error
@@ -393,6 +393,8 @@ RMSE = rmse(predictions4$Total.Revenue, predictions4$...1),
 #r squared
 R2 = R2(predictions4$Total.Revenue, predictions4$...1)
 )
+
+c
 ```
 
 
@@ -440,7 +442,7 @@ predictions5$...1 <- as.numeric(predictions5$...1)
 ### Model Performance
 
 ```{r}
-data.frame(
+d <- data.frame(Model = "Tuned Random Forest",
 #mean absolute error
 MAE = mae(predictions5$Total.Revenue, predictions5$...1),
 #rmse Root Mean Squared Error
@@ -448,63 +450,34 @@ RMSE = rmse(predictions5$Total.Revenue, predictions5$...1),
 #r squared
 R2 = R2(predictions5$Total.Revenue, predictions5$...1)
 )
-```
 
+d
+```
 
 # Essay
 
 1. Essay (minimum 500 word document)  
 Write a short essay explaining your analysis, and how you would address the concerns in the [blog](https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees) (listed in pre-work).  
 
+The analysis for assignment 2 builds upon the analysis conducted for assignment 1. The 1k dataset initially used for assignment 1 was recycled along with the exploratory data analysis and the preprocessing steps. The purpose of reusing the data set was to see how different models interact with the same dataset. The exploratory data analysis step was used to check the dimensions, variable types, missing data, distributions, and correlations. 
+
+The numeric variables in the 1k dataset are highly correlated and were verified using correlation plots as well as VIF scores. The two variable relationships that have a 0 correlation are between `Units.Sold` and `Unit.Price`, as well as between `Units.Sold` and `Unit.Cost`. Moderate correlations (i.e., 0.3≤|r|<0.7) exist between the following pairs: `Units.Sold` and `Total.Profit`, `Units.Sold` and `Total.Revenue`, `Units.Sold` and `Total.Cost`, `Unit.Price` and `Total.Profit`, and `Unit.Cost` and `Total.Profit`. The highest correlations with values at .99 exist between `Unit.Price` and `Unit.Cost` as well as `Total.Cost` and `Total.Revenue`. The remaining six numeric variable relationships have high correlations (i.e., |r|>=0.7). Multicollinearity was expected between the numeric variables given the variable dependencies noted earlier in the exploratory data analysis portion, however both the correlation plots and the VIF scores confirmed this expectation.  
+
+The preprocessing stage uses the insights gained on the data in the exploratory data analysis stage to manipulate and drop data before it is used in order to ensure or enhance performance. In checking the variable types it was noted that variable type conversions would be required in the preprocessing stage of the assignment. Variable types are converted to ensure the models created use the correct type of variables. Variable conversion also aids in the preprocessing by ensuring originally numeric variables such as `Order.ID` are not inadvertently normalized or used in the modeling stage. 
+
+Next, from the summary statistics and distribution visualizations it is shown that scaling would need to be conducted in the preprocessing stage. When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By scaling the variables, we can be sure that each variable contributes equally to the analysis and reduce the variance effect. The data is scaled using the `preProcess()` function from the caret library.
+
+Following the exploratory data analysis and preprocessing stages comes the modeling stage. In  the first regression decision tree model all the predictor variables are used to model the `Total.Revenue` variable. The cp parameter is included to increase the complexity of the decision tree. The default results in a basic tree with few splits. From the high correlations between the numeric variables, it is expected the first variables the decision tree model uses will be among the numeric predictors. As expected, the top node splitting the data is `Total.Cost`, if `Total.Cost` is less than 0.61. After `Total.Cost`, the tree splits on `Total.Cost` again with different thresholds, `Total.Cost`<-0.31 and `Total.Cost` < 2.2.The first decision tree ends up with 7 decision nodes and 9 terminal nodes, using `Total.Cost` on 6 decision nodes and `Total.Profit` on one decision node. 
+
+In contrast to the first decision tree model, feature selection is used on the input data. The variables showing high multicollinearity are removed from the dataset. Although decision trees do not require the removal of multicollinear variables, I wanted to compare the resulting decision tree model using the same predictors to the multiple regression model created in HW1. It is no surprise that the second decision tree model slightly outperformed the multiple linear regression model (RMSE= 0.41, R2= 0.81). While the second decision tree model slightly outperformed the multiple linear regression model, it did not outperform the first decision tree model created using all the multicollinear predictors. Although the second decision tree model didn’t have better metrics in comparison to the first decision tree model, it was still interesting to see how the categorical factor variables behave. The factor variable primarily used in the decision tree was `Item.Type`, where it is the root node and 4 decision nodes. `Item.Type` gets split up into different combinations in each decision node. The remaining 8 decision nodes were split on the only numerical predictor, `Units.Sold`.
+
+Finally, for the random forest component of the assignment, two random forest models are created. One in which the `randomForest()` function is used without the use of hyperparameters, and another that uses the `tuneRF()` function with hyperparameters. It isn’t much of a surprise that the tuned random forest model slightly outperformed both decision tree models and the simple random forest model as noted by the metrics below.
 
 
-<!-- code for xgboost on same dataset -->
-<!-- ```{r} -->
-<!-- train_control = trainControl(method = "cv", number = 5, search = "grid") -->
+```{r}
+rbind(a,b,c,d)
+```
 
-<!-- set.seed(50) -->
-<!-- # Customize the tuning grid -->
-<!-- gbmGrid <-  expand.grid(max_depth = c(3, 5, 7),  -->
-<!--                         nrounds = (1:10)*25,    # number of trees -->
-<!--                         # default values below -->
-<!--                         eta = 0.3, -->
-<!--                         gamma = 0, -->
-<!--                         subsample = 1, -->
-<!--                         min_child_weight = 1, -->
-<!--                         colsample_bytree = 0.6) -->
-
-<!-- # training a XGboost Regression tree model while tuning parameters -->
-<!-- model = train(Total.Revenue~., data = train, method = "xgbTree", trControl = train_control, tuneGrid = gbmGrid, verbosity = 0) -->
-
-<!-- print(model) -->
-<!-- ``` -->
-
-<!-- ### Predictions -->
-
-<!-- The final xgboost model is used to make predictions on the testing data (unseen data) and predict the `Total.Revenue` value. -->
-
-<!-- ```{r} -->
-<!-- #use model to make predictions on test data -->
-<!-- pred_y = predict(model, test) %>%  -->
-<!--   bind_cols(test) -->
-
-<!-- pred_y$...1 <- as.numeric(pred_y$...1) -->
-<!-- ``` -->
-
-<!-- #### Model Performance -->
-
-<!-- Finally, the predictions are used to generate performance measures. -->
-<!-- ```{r} -->
-<!-- # performance metrics on the test data -->
-<!-- data.frame( -->
-<!-- #mean absolute error -->
-<!-- MAE = mae(pred_y$Total.Revenue, pred_y$...1), -->
-<!-- #rmse Root Mean Squared Error -->
-<!-- RMSE = rmse(pred_y$Total.Revenue, pred_y$...1), -->
-<!-- #r squared -->
-<!-- R2 = R2(pred_y$Total.Revenue, pred_y$...1) -->
-<!-- ) -->
-<!-- ``` -->
 
 
 # References
