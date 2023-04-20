@@ -361,7 +361,7 @@ ImpData$Var.Names <- row.names(ImpData)
 
 ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
   geom_segment( aes(x=Var.Names, xend=Var.Names, y=0, yend=`%IncMSE`), color="skyblue") +
-  geom_point(aes(size = IncNodePurity), color="blue", alpha=0.6) +
+  geom_point(aes(size = IncNodePurity),  color="steelblue", alpha=1) +
   theme_light() +
   coord_flip() +
   theme(
@@ -419,7 +419,7 @@ ImpData$Var.Names <- row.names(ImpData)
 
 ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
   geom_segment( aes(x=Var.Names, xend=Var.Names, y=0, yend=`%IncMSE`), color="skyblue") +
-  geom_point(aes(size = IncNodePurity), color="blue", alpha=0.6) +
+  geom_point(aes(size = IncNodePurity), color="steelblue", alpha=1) +
   theme_light() +
   coord_flip() +
   theme(
@@ -471,7 +471,7 @@ Following the exploratory data analysis and preprocessing stages comes the model
 
 In contrast to the first decision tree model, feature selection is used on the input data. The variables showing high multicollinearity are removed from the dataset. Although decision trees do not require the removal of multicollinear variables, I wanted to compare the resulting decision tree model using the same predictors to the multiple regression model created in HW1. It is no surprise that the second decision tree model slightly outperformed the multiple linear regression model (RMSE= 0.41, R2= 0.81). While the second decision tree model slightly outperformed the multiple linear regression model, it did not outperform the first decision tree model created using all the multicollinear predictors. Although the second decision tree model didn’t have better metrics in comparison to the first decision tree model, it was still interesting to see how the categorical factor variables behave. The factor variable primarily used in the decision tree was `Item.Type`, where it is the root node and 4 decision nodes. `Item.Type` gets split up into different combinations in each decision node. The remaining 8 decision nodes were split on the only numerical predictor, `Units.Sold`.
 
-Finally, for the random forest component of the assignment, two random forest models are created. One in which the `randomForest()` function is used without the use of hyperparameters, and another that uses the `tuneRF()` function with hyperparameters. It isn’t much of a surprise that the tuned random forest model slightly outperformed both decision tree models and the simple random forest model as noted by the metrics below.
+Finally, for the random forest component of the assignment, two random forest models are created. One in which the `randomForest()` function is used without the use of hyperparameters, and another that uses the `tuneRF()` function with hyperparameters. It isn’t much of a surprise that the tuned random forest model slightly outperforms both decision tree models and the simple random forest model as noted by the metrics below.
 
 
 ```{r}
