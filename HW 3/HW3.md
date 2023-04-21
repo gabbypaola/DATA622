@@ -8,10 +8,10 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8137961/
 - Perform an analysis of the dataset used in Homework #2 using the SVM algorithm.
 - Compare the results with the results from previous homework.  
 - Answer questions, such as:  
-Which algorithm is recommended to get more accurate results?
-Is it better for classification or regression scenarios?
-Do you agree with the recommendations?
-Why? 
+1. Which algorithm is recommended to get more accurate results?
+2. Is it better for classification or regression scenarios?
+3. Do you agree with the recommendations?
+4. Why? 
 
 Format  
 1. Essay (minimum 500 word document)  
