@@ -456,9 +456,6 @@ d
 
 # Essay
 
-1. Essay (minimum 500 word document)  
-Write a short essay explaining your analysis, and how you would address the concerns in the [blog](https://decizone.com/blog/the-good-the-bad-the-ugly-of-using-decision-trees) (listed in pre-work).  
-
 The analysis for assignment 2 builds upon the analysis conducted for assignment 1. The 1k dataset initially used for assignment 1 was recycled along with the exploratory data analysis and the preprocessing steps. The purpose of reusing the data set was to see how different models interact with the same dataset. The exploratory data analysis step was used to check the dimensions, variable types, missing data, distributions, and correlations. 
 
 The numeric variables in the 1k dataset are highly correlated and were verified using correlation plots as well as VIF scores. The two variable relationships that have a 0 correlation are between `Units.Sold` and `Unit.Price`, as well as between `Units.Sold` and `Unit.Cost`. Moderate correlations (i.e., 0.3≤|r|<0.7) exist between the following pairs: `Units.Sold` and `Total.Profit`, `Units.Sold` and `Total.Revenue`, `Units.Sold` and `Total.Cost`, `Unit.Price` and `Total.Profit`, and `Unit.Cost` and `Total.Profit`. The highest correlations with values at .99 exist between `Unit.Price` and `Unit.Cost` as well as `Total.Cost` and `Total.Revenue`. The remaining six numeric variable relationships have high correlations (i.e., |r|>=0.7). Multicollinearity was expected between the numeric variables given the variable dependencies noted earlier in the exploratory data analysis portion, however both the correlation plots and the VIF scores confirmed this expectation.  
