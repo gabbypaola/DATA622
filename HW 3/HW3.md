@@ -1,5 +1,7 @@
 Homework #3  
 
+**Perform an analysis of the dataset(s) used in Homework #2 using the SVM algorithm. Compare the results with the results from previous homework.**
+
 Read the following articles:  
 https://www.hindawi.com/journals/complexity/2021/5550344/  
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8137961/  
