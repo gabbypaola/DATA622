@@ -1,4 +1,4 @@
-Homework #3  
+**Homework #3**  
 
 **Perform an analysis of the dataset(s) used in Homework #2 using the SVM algorithm. Compare the results with the results from previous homework.**
 
