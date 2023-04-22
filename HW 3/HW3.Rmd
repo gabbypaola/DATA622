@@ -256,6 +256,168 @@ df1k_norm <- df1k_norm %>%
 
 # Models
 
+## SVM Regression Model
+
+```{r}
+set.seed(973)
+
+df1k_norm1 <- df1k_norm 
+
+#split
+training.samples <- df1k_norm1$Total.Revenue %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train  <- df1k_norm1[training.samples, ]
+test <- df1k_norm1[-training.samples, ]
+
+svm_model<-svm(formula = Total.Revenue ~ ., data = train, type = 'eps-regression', 
+           kernel='linear')
+
+print(svm_model)
+```
+
+
+### Predictions
+
+```{r message=FALSE, warning=FALSE, results='hide'}
+#use model to make predictions on test data
+predictions_ <- predict(svm_model, newdata = test) %>% 
+  bind_cols(test)
+
+predictions_$...1 <- as.numeric(predictions_$...1)
+```
+
+### Model Performance
+
+```{r}
+e<-data.frame(Model = "SVM",
+#mean absolute error
+MAE = mae(predictions_$Total.Revenue, predictions_$...1),
+#rmse Root Mean Squared Error
+RMSE = rmse(predictions_$Total.Revenue, predictions_$...1),
+#r squared
+R2 = R2(predictions_$Total.Revenue, predictions_$...1)
+)
+
+e
+```
+
+# Model Comparison
+
+```{r include=FALSE}
+set.seed(1234)
+
+tree <- rpart(Total.Revenue ~., data = train, cp = 0.004,  method = 'anova')
+
+predictions <- predict(tree, newdata = test) %>% 
+  bind_cols(test)
+
+predictions$...1 <- as.numeric(predictions$...1)
+
+a <- data.frame(Model = "Decision Tree 1",
+                #mean absolute error
+                MAE = mae(predictions$Total.Revenue, predictions$...1),
+                #rmse Root Mean Squared Error
+                RMSE = rmse(predictions$Total.Revenue, predictions$...1),
+                #r squared
+                R2 = R2(predictions$Total.Revenue, predictions$...1)
+)
+```
+
+```{r include=FALSE}
+set.seed(123456)
+#colnames(df1k_norm1)
+
+df1k_norm3 <- df1k_norm %>%
+  select(-c("Unit.Price","Unit.Cost","Total.Cost", "Total.Profit"))
+
+#split
+training.samples3 <- df1k_norm3$Total.Revenue %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train3  <- df1k_norm3[training.samples3, ]
+test3 <- df1k_norm3[-training.samples3, ]
+
+#train using rpart, cp- complexity, smaller # = more complexity, 
+#method- anova is for regression
+tree3 <- rpart(Total.Revenue ~., data = train3, cp = 0.004, method = 'anova')
+
+predictions3 <- predict(tree3, newdata = test3) %>% 
+  bind_cols(test3)
+
+predictions3$...1 <- as.numeric(predictions3$...1)
+
+b <- data.frame(Model = "Decision Tree 2",
+                #mean absolute error
+                MAE = mae(predictions3$Total.Revenue, predictions3$...1),
+                #rmse Root Mean Squared Error
+                RMSE = rmse(predictions3$Total.Revenue, predictions3$...1),
+                #r squared
+                R2 = R2(predictions3$Total.Revenue, predictions3$...1)
+)
+```
+
+```{r include=FALSE}
+set.seed(201)
+rf <- randomForest(formula = Total.Revenue ~ ., 
+                   data = train, importance=TRUE)
+
+predictions4 <- predict(rf, newdata = test) %>% 
+  bind_cols(test)
+
+predictions4$...1 <- as.numeric(predictions4$...1)
+
+c <- data.frame(Model = "Random Forest",
+                #mean absolute error
+                MAE = mae(predictions4$Total.Revenue, predictions4$...1),
+                #rmse Root Mean Squared Error
+                RMSE = rmse(predictions4$Total.Revenue, predictions4$...1),
+                #r squared
+                R2 = R2(predictions4$Total.Revenue, predictions4$...1)
+)
+```
+
+```{r include=FALSE}
+set.seed(908)
+
+train1 <- train %>% 
+  select(-Total.Revenue)
+
+bestmtry <- tuneRF(train1,train$Total.Revenue, stepFactor = 2, improve = 0.01,
+                   trace=T, plot= F, doBest=TRUE, importance=TRUE)
+
+predictions5 <- predict(bestmtry, newdata = test) %>% 
+  bind_cols(test)
+
+predictions5$...1 <- as.numeric(predictions5$...1)
+
+d <- data.frame(Model = "Tuned Random Forest",
+                #mean absolute error
+                MAE = mae(predictions5$Total.Revenue, predictions5$...1),
+                #rmse Root Mean Squared Error
+                RMSE = rmse(predictions5$Total.Revenue, predictions5$...1),
+                #r squared
+                R2 = R2(predictions5$Total.Revenue, predictions5$...1)
+)
+```
+
+```{r}
+rbind(a,b,c,d,e)
+```
+
+```{r}
+
+```
+
+
+
+# Essay
+
+# References
+
+<!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
 
 
 

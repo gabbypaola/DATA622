@@ -297,6 +297,8 @@ RMSE = rmse(predictions$Total.Revenue, predictions$...1),
 #r squared
 R2 = R2(predictions$Total.Revenue, predictions$...1)
 )
+
+a
 ```
 
 ## Regression Decision Tree 2
@@ -343,6 +345,8 @@ RMSE = rmse(predictions3$Total.Revenue, predictions3$...1),
 #r squared
 R2 = R2(predictions3$Total.Revenue, predictions3$...1)
 )
+
+b
 ```
 
 

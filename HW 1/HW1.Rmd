@@ -405,6 +405,7 @@ predictions3 <- model3 %>% predict(test.data3)
 
 # Model performance
 data.frame(
+  MAE = mae(predictions3, test.data3$Total.Revenue),
   RMSE = RMSE(predictions3, test.data3$Total.Revenue),
   R2 = R2(predictions3, test.data3$Total.Revenue)
 )
@@ -430,6 +431,7 @@ predictions4 <- model4 %>% predict(test.data4)
 
 # Model performance
 data.frame(
+  MAE = mae(predictions4, test.data4$Total.Revenue),
   RMSE = RMSE(predictions4, test.data4$Total.Revenue),
   R2 = R2(predictions4, test.data4$Total.Revenue)
 )
@@ -470,6 +472,7 @@ predictions5 <- model5 %>% predict(test.data5)
 
 # Model performance
 data.frame(
+  MAE = mae(predictions3, test.data3$Total.Revenue),
   RMSE = RMSE(predictions5, test.data5$Total.Revenue),
   R2 = R2(predictions5, test.data5$Total.Revenue)
 )
@@ -506,6 +509,7 @@ predictions6 <- model6 %>% predict(test.data6)
 
 # Model performance
 data.frame(
+  MAE = mae(predictions6, test.data6$Total.Revenue),
   RMSE = RMSE(predictions6, test.data6$Total.Revenue),
   R2 = R2(predictions6, test.data6$Total.Revenue)
 )
