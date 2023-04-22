@@ -1,0 +1,272 @@
+---
+title: "DATA622 | Machine Learning and Big Data"
+author: "Gabriella Martinez"
+date: "4/23/2023"
+output:
+      html_document:
+        toc: yes
+        toc_float: yes
+        theme: yeti
+        highlight: kate
+        font-family: "Arial"
+        code_folding: show
+---
+
+# Assignment 3
+**Pre-work**  
+Read the following articles:  
+https://www.hindawi.com/journals/complexity/2021/5550344/  
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8137961/  
+
+- Search for academic content (at least 3 articles) that compare the use of decision trees vs SVMs in your current area of expertise.
+- Perform an analysis of the dataset used in Homework #2 using the SVM algorithm.
+- Compare the results with the results from previous homework.
+- Answer questions, such as:
+  + Which algorithm is recommended to get more accurate results?
+  + Is it better for classification or regression scenarios?
+  + Do you agree with the recommendations?
+  + Why?
+
+**Deliverable**  
+1. Essay (minimum 500 words). Write a short essay explaining your selection of algorithms and how they relate to the data and what you are trying to do.  
+2. Analysis using R or Python (submit code + errors + analysis as notebook or copy/paste to document). Include analysis R (or Python) code.
+
+# Packages
+```{r message=FALSE, warning=FALSE}
+library(readr)
+library(tidyverse)
+library(tidymodels)
+library(psych)
+library(caret)
+library(rpart)
+library(rpart.plot)
+library(corrplot)
+library(RColorBrewer)
+library(labelled)
+library(ggplot2)
+library(ggforce)
+library(pROC)
+library(mlbench)
+library(ModelMetrics)
+library(randomForest)
+library(e1071)
+```
+
+# Load Data
+```{r}
+df1k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%201/1000%20Sales%20Records.csv")
+```
+
+# Exploratory Data Analysis
+
+First, exploratory data analysis is conducted to get acquainted with the 1k Sales dataset selected from https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/. 
+
+## Dimensions, Variable Types, Labels, Levels, and Frequencies
+The 1k dataset contains 100,000 rows and 14 columns. Similar to the 1k dataset, in the 1k dataset there are 7 character, 2 integer, and 5 double type variables. The `glimpse()` output shows us the first few observation of each variable. There are two geographical variables one for Region, and another for each specific country. `Item.Type` refers to the type of items sold, `Sales.Channel` refers to the sales method, whether the sale was conducted online or offline, meaning an in-store purchase.
+
+The `look_for()` function from the labelled package shows us each variable, their label (if available), column type, as well as the values for any factor type variables. The function produces no labels, and no values as none of the variables are coded as factor types. 
+
+```{r}
+print("Dimensions")
+glimpse(df1k)
+print("Labels")
+look_for(df1k)
+```
+
+As above, using the `unique()` and `length()` functions are used to investigate the geographic 
+variables. There are also 7 Regions and 185 countries spanning the 1k dataset.
+
+```{r}
+unique(df1k$Region)
+length(unique(df1k$Country))
+```
+
+Once again the `table()` function is used to create contingency, or frequency tables of some of the character variables, Item.Type and Sales.Channel in the 1k dataset. The sorted frequency table shows the top three items of the total 12 types in the 1k dataset are office supplies, cereal, and baby food.
+
+```{r}
+table(df1k$Item.Type)[order(table(df1k$Item.Type),decreasing = TRUE)]
+table(df1k$Sales.Channel)
+```
+
+## Variable Dependencies and Definitions
+
+Below are the variable dependencies and definitions that are applicable to 1k dataset.
+
+`Total.Cost` = `Units.Sold` * `Unit.Cost`  
+`Total.Revenue` = `Units.Sold` * `Unit.Price`  
+`Total.Profit` = `Total.Revenue` - `Total.Cost` (where `Total.Cost` and `Total.Revenue` depend on `Units.Sold`, `Unit.Cost`, and `Unit.Price`)
+
+`Order.Priority`: C(Critical), H(High), M(Medium), and L(Low)
+
+## Missing Data
+
+Next the data is checked for any missing values.
+
+The below shows no missing values for the 1k dataset. 
+
+```{r}
+colSums(is.na(df1k))
+```
+
+## Distributions
+
+From the `describe()` output for the 1k dataset, it is noted that the numeric variables also have wide ranges. This will be taken care of through normalization to scale the variables in the preprocessing stage prior to running models. Futhermore, through the use of the graphs created for each variable, it is noted that `Total.Cost`, `Total.Profit`, and `Total.Revenue` are right skewed and the distributions for `Unit.Cost`, `Unit.Price`, and `Units.Sold` are multimodal. `Unit.Cost` shows six modes, `Unit.Price` shows five modes, and `Units.Sold` show four modes. 
+
+```{r message=FALSE, warning=FALSE}
+#select numeric columns 1k
+df1k_n <- df1k %>% 
+  keep(is.numeric) 
+
+#stats
+describe(df1k_n, fast=TRUE) %>% 
+  select(c(-vars,-n))
+
+#distributions
+df1k_n %>% 
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity",bins = 40) +
+    theme_minimal()
+```
+
+## Correlations
+
+Subsequently, the correlations between numeric variables are examined. It is important to investigate the correlations between the independent variables to avoid multicollinearity. Multicollinearity occurs when two or more independent variables are highly correlated to one another. When two (or more) independent variables are highly correlated one cannot individually determine the impact of individual variables on the dependent variable.  
+
+Multicollinearity can be a problem in a regression model when using algorithms such as OLS (ordinary least squares). This is because the estimated regression coefficients become unstable and difficult to interpret in the presence of multicollinearity.  
+
+When multicollinearity is present, the estimated regression coefficients may become large and unpredictable, leading to unreliable inferences about the effects of the predictor variables on the response variable. Therefore, it is important to check for multicollinearity and consider using other regression techniques that can handle this problem, such as ridge regression or principal component regression or make a decision about dropping highly correlated independent variables entirely.
+
+Variables with weak correlation (i.e., 0<=|r|<0.3) ^[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4888898/] between `Unit.Price`,` Unit.Cost`, and `Units.Sold`. Moderate correlation (i.e., 0.3≤|r|<0.7) can be seen between `Total.Profit`, `Total.Revenue`, `Total.Cost` and `Units.Sold` as well as between `Unit.Price`, `Unit.Cost` and `Total.Profit`. High correlation (i.e., |r|>=0.7) can be seen in the remaining pairs, especially between `Unit.Price` and `Unit.Cost`, `Total.Profit` and `Total.Revenue`, `Total.Cost` and `Total.Revenue`.
+
+```{r}
+cor(df1k_n) %>%
+  corrplot(tl.col = 'black', diag=FALSE, type="lower", 
+           order="hclust", addCoef.col = "black",
+           title="1k dataset Correlations",mar=c(0,0,1,0),
+           col=brewer.pal(n=10, name="RdYlBu"))
+
+```
+
+## VIF Scores
+
+Another detection method for multicoliniarity is through the use of the VIF (Variance Inflation Factor) score. Although correlation matrix and scatter plots can also be used to find multicollinearity, their findings only show the bivariate relationship between the independent variables. VIF is preferred as it can show the correlation of a variable with a group of other variables. The variance inflation factor (or VIF), measures how much the variance of a regression coefficient is inflated due to multicollinearity in the model. The smallest possible value of VIF is one (absence of multicollinearity). As a rule of thumb, a VIF value that exceeds 5 or 10 indicates a problematic amount of collinearity. ^[http://www.sthda.com/english/articles/39-regression-model-diagnostics/160-multicollinearity-essentials-and-vif-in-r/]
+
+Below the VIF scores are calculated for the 1k dataset.
+
+```{r}
+set.seed(145)
+
+training.samples0 <- df1k_n$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data  <- df1k_n[training.samples0, ]
+test.data <- df1k_n[-training.samples0, ]
+
+# Build the model
+#%>% select(c(-Total.Profit,-Total.Cost, -Unit.Price)) 
+model<- lm(Total.Revenue~., data=train.data )
+
+summary(model)
+# Make predictions
+predictions0 <- model %>% predict(test.data)
+# Model performance
+data.frame(
+  MAE = mae(predictions0, test.data$Total.Revenue),
+  RMSE = RMSE(predictions0, test.data$Total.Revenue),
+  R2 = R2(predictions0, test.data$Total.Revenue)
+)
+```
+
+The 1k dataset exhibits high VIF values, confirming the multicoliniairty detected between the predictor variables in the correlation plot.
+
+```{r}
+car::vif(model)
+```
+
+The only variable not exceeding the recommended VIF score of 5 is the `Units.Sold` variable.
+
+# Preprocessing
+
+## Variable Type Conversions
+
+Variable types are converted to ensure the models created use the correct type of variables. Variable conversion also aids in the preprocessing by ensuring originally numeric variables such as `Order.ID` are not inadvertently normalized or used in the modelling stage. There are a number of advantages to converting categorical variables to factor variables. Perhaps the most important advantage is that they can be used in statistical modeling where they will be implemented correctly, i.e., they will then be assigned the correct number of degrees of freedom. ^[https://stats.oarc.ucla.edu/r/modules/factor-variables/#:~:text=Perhaps%20the%20most%20important%20advantage,many%20different%20types%20of%20graphics.]
+
+```{r}
+df1k[['Order.Date']] <- as.Date(df1k[['Order.Date']], "%m/%d/%Y")
+df1k[['Ship.Date']] <- as.Date(df1k[['Ship.Date']], "%m/%d/%Y")
+
+df1k[['Sales.Channel']] <- as.factor(df1k[['Sales.Channel']])
+
+df1k[['Order.Priority']] <- as.factor(df1k[['Order.Priority']])
+
+df1k[['Item.Type']] <- as.factor(df1k[['Item.Type']])
+
+df1k[['Region']] <- as.factor(df1k[['Region']])
+
+df1k[['Country']] <- as.factor(df1k[['Country']])
+
+df1k[['Order.ID']] <- as.character(df1k[['Order.ID']])
+```
+
+```{r}
+levels(df1k$Sales.Channel)
+```
+
+## Scaling
+
+Next, the data is scaled in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By scaling the variables, we can be sure that each variable contributes equally to the analysis and reduce the variance effect.
+
+```{r}
+#apply preprocessing and generate transformed values
+df1k_norm<-predict(preProcess(df1k, method=c("center", "scale")),df1k)
+
+```
+
+```{r message=FALSE, warning=FALSE}
+#stats
+df1k_norm %>% 
+  keep(is.numeric) %>%  
+  describe(fast=TRUE) %>% 
+  select(-c(vars,n))
+
+#distribution
+df1k_norm %>% 
+  keep(is.numeric) %>%  
+  gather(variable, value, 1:6) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity", bins = 40) +
+    theme_minimal()
+```
+
+## Feature Selection
+
+Feature Selection is the method of reducing the input variable to your model by using only relevant data and getting rid of noise in data. It is primarily focused on removing non-informative or redundant predictors from the model. 
+
+```{r}
+df1k_norm <- df1k_norm %>% 
+  select(-c(Country,Order.ID,)) #Unit.Price, Unit.Cost, Total.Cost, Total.Profit
+```
+
+
+# Models
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

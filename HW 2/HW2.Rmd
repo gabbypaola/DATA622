@@ -55,7 +55,7 @@ df1k <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/HW%2
 
 # Exploratory Data Analysis
 
-First, exploratory data analysis is conducted to get acquainted with the two Sales datasets selected from https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/. 
+First, exploratory data analysis is conducted to get acquainted with the 1k Sales dataset selected from https://excelbianalytics.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/. 
 
 ## Dimensions, Variable Types, Labels, Levels, and Frequencies
 The 1k dataset contains 100,000 rows and 14 columns. Similar to the 1k dataset, in the 1k dataset there are 7 character, 2 integer, and 5 double type variables. The `glimpse()` output shows us the first few observation of each variable. There are two geographical variables one for Region, and another for each specific country. `Item.Type` refers to the type of items sold, `Sales.Channel` refers to the sales method, whether the sale was conducted online or offline, meaning an in-store purchase.
