@@ -662,7 +662,9 @@ Read the following articles:<br />
 <h1>Models</h1>
 <div id="svm-regression-model" class="section level2">
 <h2>SVM Regression Model</h2>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<p>R package <code>e1071</code> is required to call the <code>svm()</code> function. The scaled data is used to create the model using all predictor variables with exception to <code>Country</code> and <code>Order.ID</code> which were removed in the feature selection stage. The <code>type</code> parameter is specified as <code>eps-regression</code> to ensure the model is created appropriately for the <code>Total.Revenue</code> variable.</p>
+<p>The R code for the SVM model is as follows:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">973</span>)</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>df1k_norm1 <span class="ot">&lt;-</span> df1k_norm </span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -673,35 +675,35 @@ Read the following articles:<br />
 <span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>train  <span class="ot">&lt;-</span> df1k_norm1[training.samples, ]</span>
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> df1k_norm1[<span class="sc">-</span>training.samples, ]</span>
 <span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="fu">svm</span>(<span class="at">formula =</span> Total.Revenue <span class="sc">~</span> ., <span class="at">data =</span> train, <span class="at">type =</span> <span class="st">&#39;eps-regression&#39;</span>, <span class="at">kernel=</span><span class="st">&#39;linear&#39;</span>)</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>svm_model<span class="ot">&lt;-</span><span class="fu">svm</span>(<span class="at">formula =</span> Total.Revenue <span class="sc">~</span> ., <span class="at">data =</span> train, <span class="at">type =</span> <span class="st">&#39;eps-regression&#39;</span>) <span class="co">#, kernel=&#39;linear&#39;</span></span>
 <span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(model)</span></code></pre></div>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(svm_model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
-## svm(formula = Total.Revenue ~ ., data = train, type = &quot;eps-regression&quot;, 
-##     kernel = &quot;linear&quot;)
+## svm(formula = Total.Revenue ~ ., data = train, type = &quot;eps-regression&quot;)
 ## 
 ## 
 ## Parameters:
 ##    SVM-Type:  eps-regression 
-##  SVM-Kernel:  linear 
+##  SVM-Kernel:  radial 
 ##        cost:  1 
 ##       gamma:  0.03448276 
 ##     epsilon:  0.1 
 ## 
 ## 
-## Number of Support Vectors:  15</code></pre>
+## Number of Support Vectors:  76</code></pre>
+<p>From the above, it can be seen that the default kernel used in creating the SVM model is the radial kernel.</p>
 <div id="predictions" class="section level3">
 <h3>Predictions</h3>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#use model to make predictions on test data</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>predictions_ <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> test) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>predictions_ <span class="ot">&lt;-</span> <span class="fu">predict</span>(svm_model, <span class="at">newdata =</span> test) <span class="sc">%&gt;%</span> </span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(test)</span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>predictions_<span class="sc">$</span>...<span class="dv">1</span> <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(predictions_<span class="sc">$</span>...<span class="dv">1</span>)</span></code></pre></div>
 </div>
 <div id="model-performance" class="section level3">
 <h3>Model Performance</h3>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>e<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">Model =</span> <span class="st">&quot;SVM&quot;</span>,</span>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Model =</span> <span class="st">&quot;SVM&quot;</span>,</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co">#mean absolute error</span></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="at">MAE =</span> <span class="fu">mae</span>(predictions_<span class="sc">$</span>Total.Revenue, predictions_<span class="sc">$</span>...<span class="dv">1</span>),</span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co">#rmse Root Mean Squared Error</span></span>
@@ -710,24 +712,28 @@ Read the following articles:<br />
 <span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="at">R2 =</span> <span class="fu">R2</span>(predictions_<span class="sc">$</span>Total.Revenue, predictions_<span class="sc">$</span>...<span class="dv">1</span>)</span>
 <span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>e</span></code></pre></div>
-<pre><code>##   Model        MAE      RMSE        R2
-## 1   SVM 0.04213537 0.0492559 0.9976878</code></pre>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
+<pre><code>##   Model        MAE       RMSE      R2
+## 1   SVM 0.04563273 0.06034851 0.99654</code></pre>
 </div>
 </div>
 </div>
 <div id="model-comparison" class="section level1">
 <h1>Model Comparison</h1>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(a,b,c,d,e)</span></code></pre></div>
-<pre><code>##                 Model        MAE       RMSE        R2
-## 1     Decision Tree 1 0.12156213 0.16606070 0.9737615
-## 2     Decision Tree 2 0.14830362 0.19035855 0.9677867
-## 3       Random Forest 0.02027412 0.03958048 0.9989817
-## 4 Tuned Random Forest 0.01200354 0.02333389 0.9995702
-## 5                 SVM 0.04213537 0.04925590 0.9976878</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(a,b,c,d,e,f,g)</span></code></pre></div>
+<pre><code>##                        Model        MAE       RMSE        R2
+## 1   Simple Linear Regression 0.55942748 0.75997329 0.2960062
+## 2 Multiple Linear Regression 0.30052049 0.40520126 0.8063358
+## 3            Decision Tree 1 0.12838922 0.17445923 0.9688184
+## 4            Decision Tree 2 0.14830362 0.19035855 0.9677867
+## 5              Random Forest 0.02363693 0.04324748 0.9986716
+## 6        Tuned Random Forest 0.01391962 0.02615845 0.9993922
+## 7                        SVM 0.04563273 0.06034851 0.9965400</code></pre>
 </div>
 <div id="essay" class="section level1">
 <h1>Essay</h1>
+<p>Support Vector Regression (SVR) works on similar principles as Support Vector Machine (SVM) classification. One can say that SVR is the adapted form of SVM when the dependent variable is numerical rather than categorical. A major benefit of using SVR is that it is a non-parametric technique. Unlike simple linear regression, whose results depend on Gauss-Markov assumptions, the output model from SVR does not depend on distributions of the underlying dependent and independent variables. Instead the SVR technique depends on kernel functions. Another advantage of SVR is that it permits for construction of a non-linear model without changing the explanatory variables, helping in better interpretation of the resultant model. The basic idea behind SVR is not to care about the prediction as long as the error (ϵi) is less than certain value. This is known as the principle of maximal margin. This idea of maximal margin allows viewing SVR as a convex optimization problem. The regression can also be penalized using a cost parameter, which becomes handy to avoid over-fit. SVR is a useful technique that provides the user with high flexibility in terms of distribution of underlying variables, relationship between independent and dependent variables and the control on the penalty term. SVR technique relies on kernel functions to construct the model. The commonly used kernel functions are: a) Linear, b) Polynomial, c) Sigmoid and d) Radial Basis. While implementing SVR technique, the user needs to select the appropriate kernel function. The selection of the kernel function is tricky and requires optimization techniques for the best selection.</p>
+<p>The <code>svm()</code> function from the <code>caret</code> package can be used as a classification machine, as a regression machine, or for novelty detection. Depending on whether y is a factor or not, the default setting for the <code>type</code> parameter is C-classification or eps-regression, respectively, but may be overwritten by setting an explicit value. The Radius Basis Function (RBF) kernel is the default for the kernel parameter of the <code>svm()</code> function in R and it is the kernel used to produce the SVR model for this assignment. Based on the MAE, RMSE and R-squared metrics for the models created, the Tuned Random Forest model slightly outperformed the SVM model created.</p>
 </div>
 <div id="references" class="section level1">
 <h1>References</h1>

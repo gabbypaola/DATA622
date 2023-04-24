@@ -258,6 +258,10 @@ df1k_norm <- df1k_norm %>%
 
 ## SVM Regression Model
 
+R package `e1071` is required to call the `svm()` function. The scaled data is used to create the model using all predictor variables with exception to `Country` and `Order.ID` which were removed in the feature selection stage. The `type` parameter is specified as `eps-regression` to ensure the model is created appropriately for the `Total.Revenue` variable.  
+
+The R code for the SVM model is as follows:
+
 ```{r}
 set.seed(973)
 
@@ -270,12 +274,12 @@ training.samples <- df1k_norm1$Total.Revenue %>%
 train  <- df1k_norm1[training.samples, ]
 test <- df1k_norm1[-training.samples, ]
 
-svm_model<-svm(formula = Total.Revenue ~ ., data = train, type = 'eps-regression', 
-           kernel='linear')
+svm_model<-svm(formula = Total.Revenue ~ ., data = train, type = 'eps-regression') #, kernel='linear'
 
 print(svm_model)
 ```
 
+From the above, it can be seen that the default kernel used in creating the SVM model is the radial kernel.
 
 ### Predictions
 
@@ -290,7 +294,7 @@ predictions_$...1 <- as.numeric(predictions_$...1)
 ### Model Performance
 
 ```{r}
-e<-data.frame(Model = "SVM",
+g <- data.frame(Model = "SVM",
 #mean absolute error
 MAE = mae(predictions_$Total.Revenue, predictions_$...1),
 #rmse Root Mean Squared Error
@@ -299,10 +303,63 @@ RMSE = rmse(predictions_$Total.Revenue, predictions_$...1),
 R2 = R2(predictions_$Total.Revenue, predictions_$...1)
 )
 
-e
+g
 ```
 
 # Model Comparison
+
+```{r include=FALSE}
+df1k2 <- df1k  
+
+preproc1 <-preProcess(df1k2, method=c("center", "scale"))
+norm1 <- predict(preproc1,df1k2)
+
+training.samples_slr <- norm1$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data_slr  <- norm1[training.samples_slr, ]
+test.data_slr <- norm1[-training.samples_slr, ]
+
+model_slr<- lm(Total.Revenue~Units.Sold, data=train.data_slr )
+
+# Make predictions
+predictions_slr <- model_slr %>% predict(test.data_slr)
+
+# Model performance
+a <- data.frame(Model = "Simple Linear Regression",
+  MAE = mae(predictions_slr, test.data_slr$Total.Revenue),
+  RMSE = RMSE(predictions_slr, test.data_slr$Total.Revenue),
+  R2 = R2(predictions_slr, test.data_slr$Total.Revenue)
+)
+
+```
+
+
+
+```{r include=FALSE}
+norm2 <- norm1 %>% 
+  select(-c(Country, Unit.Cost, Unit.Price, Total.Cost, Total.Profit, Order.ID))
+
+set.seed(146)
+
+training.samples_mlr <- norm2$Total.Revenue %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data_mlr  <- norm2[training.samples_mlr, ]
+test.data_mlr <- norm2[-training.samples_mlr, ]
+
+model_mlr<- lm(Total.Revenue~., data=train.data_mlr )
+
+#summary(model5)
+# Make predictions
+predictions_mlr <- model_mlr %>% predict(test.data_mlr)
+
+# Model performance
+b <- data.frame(Model = "Multiple Linear Regression",
+           MAE = mae(predictions_mlr, test.data_mlr$Total.Revenue),
+           RMSE = RMSE(predictions_mlr, test.data_mlr$Total.Revenue),
+           R2 = R2(predictions_mlr, test.data_mlr$Total.Revenue)
+)
+```
+
 
 ```{r include=FALSE}
 set.seed(1234)
@@ -314,7 +371,7 @@ predictions <- predict(tree, newdata = test) %>%
 
 predictions$...1 <- as.numeric(predictions$...1)
 
-a <- data.frame(Model = "Decision Tree 1",
+c <- data.frame(Model = "Decision Tree 1",
                 #mean absolute error
                 MAE = mae(predictions$Total.Revenue, predictions$...1),
                 #rmse Root Mean Squared Error
@@ -347,7 +404,7 @@ predictions3 <- predict(tree3, newdata = test3) %>%
 
 predictions3$...1 <- as.numeric(predictions3$...1)
 
-b <- data.frame(Model = "Decision Tree 2",
+d <- data.frame(Model = "Decision Tree 2",
                 #mean absolute error
                 MAE = mae(predictions3$Total.Revenue, predictions3$...1),
                 #rmse Root Mean Squared Error
@@ -367,7 +424,7 @@ predictions4 <- predict(rf, newdata = test) %>%
 
 predictions4$...1 <- as.numeric(predictions4$...1)
 
-c <- data.frame(Model = "Random Forest",
+e <- data.frame(Model = "Random Forest",
                 #mean absolute error
                 MAE = mae(predictions4$Total.Revenue, predictions4$...1),
                 #rmse Root Mean Squared Error
@@ -391,7 +448,7 @@ predictions5 <- predict(bestmtry, newdata = test) %>%
 
 predictions5$...1 <- as.numeric(predictions5$...1)
 
-d <- data.frame(Model = "Tuned Random Forest",
+f <- data.frame(Model = "Tuned Random Forest",
                 #mean absolute error
                 MAE = mae(predictions5$Total.Revenue, predictions5$...1),
                 #rmse Root Mean Squared Error
@@ -402,16 +459,21 @@ d <- data.frame(Model = "Tuned Random Forest",
 ```
 
 ```{r}
-rbind(a,b,c,d,e)
+rbind(a,b,c,d,e,f,g)
 ```
+
 
 ```{r}
 
 ```
 
 
-
 # Essay
+
+Support Vector Regression (SVR) works on similar principles as Support Vector Machine (SVM) classification. One can say that SVR is the adapted form of SVM when the dependent variable is numerical rather than categorical. A major benefit of using SVR is that it is a non-parametric technique. Unlike simple linear regression, whose results depend on Gauss-Markov assumptions, the output model from SVR does not depend on distributions of the underlying dependent and independent variables. Instead the SVR technique depends on kernel functions. Another advantage of SVR is that it permits for construction of a non-linear model without changing the explanatory variables, helping in better interpretation of the resultant model. The basic idea behind SVR is not to care about the prediction as long as the error (ϵi) is less than certain value. This is known as the principle of maximal margin. This idea of maximal margin allows viewing SVR as a convex optimization problem. The regression can also be penalized using a cost parameter, which becomes handy to avoid over-fit. SVR is a useful technique that provides the user with high flexibility in terms of distribution of underlying variables, relationship between independent and dependent variables and the control on the penalty term. SVR technique relies on kernel functions to construct the model. The commonly used kernel functions are: a) Linear, b) Polynomial, c) Sigmoid and d) Radial Basis. While implementing SVR technique, the user needs to select the appropriate kernel function.  The selection of the kernel function is tricky and requires optimization techniques for the best selection. 
+
+The `svm()` function from the `caret` package can be used as a classification machine, as a regression machine, or for novelty detection. Depending on whether y is a factor or not, the default setting for the `type` parameter is C-classification or eps-regression, respectively, but may be overwritten by setting an explicit value. The Radius Basis Function (RBF) kernel is the default for the kernel parameter of the `svm()` function in R and it is the kernel used to produce the SVR model for this assignment. Based on the MAE, RMSE and R-squared  metrics for the models created, the Tuned Random Forest model slightly outperformed the SVM model created. 
+
 
 # References
 
