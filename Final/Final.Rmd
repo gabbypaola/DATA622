@@ -56,15 +56,10 @@ library(Amelia)
 
 # Load Data
 ```{r}
-df_syr <- read_csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Summary_of_Syringe_Data_in_NYC_Parks.csv")
+df_syr <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Summary_of_Syringe_Data_in_NYC_Parks.csv") 
 
-df_pk <- read_csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Parks_Properties.csv")
+df_pk <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Parks_Properties.csv")
 ```
-
-```{r}
-glimpse(df_pk)
-```
-
 
 # Exploratory Data Analysis
 
@@ -80,6 +75,44 @@ look_for(df_syr)
 table(look_for(df_syr)$col_type)
 ```
 
+```{r}
+glimpse(df_pk)
+
+table(look_for(df_pk)$col_type)
+```
+
+```{r}
+df_pk<- df_pk %>% select(c("GISPROPNUM","ACRES","JURISDICTION","COMMUNITYBOARD",
+                           "COUNCILDISTRICT","SUBCATEGORY","TYPECATEGORY",
+                           "WATERFRONT"))
+
+#first display numeric as non-scientific number, then convert to char, then trim whitespace
+df_pk$COMMUNITYBOARD<-trimws(as.character(format(df_pk$COMMUNITYBOARD,scientific = FALSE)))
+df_pk$COUNCILDISTRICT<-trimws(as.character(format(df_pk$COUNCILDISTRICT,scientific = FALSE)))
+
+df_pk<-df_pk %>% 
+  mutate(COMMUNITYBOARD = ifelse(nchar(df_pk$COMMUNITYBOARD)==3,
+                                 df_pk$COMMUNITYBOARD,
+                                 str_sub(gsub('(.{3})','\\1,',df_pk$COMMUNITYBOARD),end=-2)),
+         COUNCILDISTRICT =  ifelse(nchar(df_pk$COUNCILDISTRICT)==2,
+                                 df_pk$COUNCILDISTRICT,
+                                 str_sub(gsub('(.{2})','\\1,',df_pk$COUNCILDISTRICT),end=-2)),
+         ACRES = round(ACRES,2),
+         WATERFRONT = as.logical(toupper(WATERFRONT))
+         )
+  
+glimpse(df_pk)
+
+#make factor?
+df_pk %>% count(JURISDICTION) %>% arrange(-n)
+
+df_pk %>% count(TYPECATEGORY) %>% arrange(-n)
+
+df_pk %>% count(SUBCATEGORY) %>% arrange(-n)
+
+names(df_pk) <- tolower(names(df_pk))
+```
+
 ## Variable Dependencies and Definitions
 
 Variable with dependency on two other variables in the dataset:  
@@ -90,7 +123,7 @@ Variables that are a subset of one other variable:
 
 Since [this dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) was procured from the [Open NYC Data](https://opendata.cityofnewyork.us/), there is a [data dictionary](https://docs.google.com/spreadsheets/d/1VSUqd1peSc-4D2XnBZNiLdxa0Jg4z62D/edit#gid=1183788427) available for the variables.  
 
-The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve) is also an Open NYC Data dataset which was brought in to gather additional data on the parks where syringes are collected. The data dictionary for the Parks Properties dataset can be found [here](https://docs.google.com/spreadsheets/d/1Q4DBWu7riNFxWvy1vnTJHoOI3r2L9oW6eCN56jCNyCw/edit#gid=0).
+The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve) is also an Open NYC Data dataset which was brought in to gather additional data on the parks where syringes are collected. The [data dictionary](https://docs.google.com/spreadsheets/d/1Q4DBWu7riNFxWvy1vnTJHoOI3r2L9oW6eCN56jCNyCw/edit#gid=0) for the Parks Properties dataset in addition to the [user guide](https://docs.google.com/document/d/1NExNJF5YKID04oOopi0fHainRuGG3Pz_jKSrMujPsPk/edit) are available. The user guide is particularly useful for the detailed descriptions of the `TYPECATEGORY` variable not directly available on the data dictionary.
 
 ## Missing Data
 ```{r fig.align='center', fig.height=10, fig.width=10}
