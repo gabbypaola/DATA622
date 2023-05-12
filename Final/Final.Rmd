@@ -30,6 +30,75 @@ output:
     b. An Essay (minimum 500 word document) or Video (5 to 8 minutes recording). Include the execution and explanation of your code. The video can be recorded on any platform of your choice (Youtube, Free Cam).
 
 
+# Packages
+```{r message=FALSE, warning=FALSE}
+library(readr)
+library(tidyverse)
+library(tidymodels)
+library(psych)
+library(caret)
+library(rpart)
+library(rpart.plot)
+library(corrplot)
+library(RColorBrewer)
+library(labelled)
+library(ggplot2)
+library(ggforce)
+library(pROC)
+library(mlbench)
+library(ModelMetrics)
+library(randomForest)
+library(e1071)
+library(RSocrata)
+library(Amelia)
+```
+
+
+# Load Data
+```{r}
+
+```
+
+```{r}
+glimpse(df_pk)
+```
+
+
+# Exploratory Data Analysis
+
+## Dimensions, Variable types, Labels, Levels, and Frequencies
+
+From the below two functions, the dimensions of the dataset: 24651 rows, 23 columns where all but one column are character type and one is a date-time type. The variables read in do not contain any labels and as neither variable is a factor type, there are no factor levels to report. 
+
+```{r}
+glimpse(df)
+
+look_for(df)
+```
+
+## Variable Dependencies and Definitions
+
+Variable with dependency on two other variables in the dataset:  
+`total_syringes` = `ground_syringes` + `kiosk_syringes`  
+
+Variables that are a subset of one other variable:
+`year`, `month`, `month_text`, `week`, `time_of_day`, `collected_date` are granular versions of the  `created_date` variable  
+
+Since [this dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) was procured from the [Open NYC Data](https://opendata.cityofnewyork.us/), there is a [data dictionary](https://docs.google.com/spreadsheets/d/1VSUqd1peSc-4D2XnBZNiLdxa0Jg4z62D/edit#gid=1183788427) available for the variables.  
+
+The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve) is also an Open NYC Data dataset which was brought in to gather additional data on the parks where syringes are collected. The data dictionary for the Parks Properties dataset can be found [here](https://docs.google.com/spreadsheets/d/1Q4DBWu7riNFxWvy1vnTJHoOI3r2L9oW6eCN56jCNyCw/edit#gid=0).
+
+## Missing Data
+```{r fig.align='center', fig.height=10, fig.width=10}
+# str(df)
+
+map(df, ~sum(is.na(.))) %>% t()
+
+missmap(df, main = "Missing vs Observed Values")
+```
+
+
+
 <!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
 
 <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
