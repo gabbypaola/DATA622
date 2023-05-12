@@ -56,7 +56,9 @@ library(Amelia)
 
 # Load Data
 ```{r}
+df_syr <- read_csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Summary_of_Syringe_Data_in_NYC_Parks.csv")
 
+df_pk <- read_csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Parks_Properties.csv")
 ```
 
 ```{r}
@@ -68,12 +70,14 @@ glimpse(df_pk)
 
 ## Dimensions, Variable types, Labels, Levels, and Frequencies
 
-From the below two functions, the dimensions of the dataset: 24651 rows, 23 columns where all but one column are character type and one is a date-time type. The variables read in do not contain any labels and as neither variable is a factor type, there are no factor levels to report. 
+From the below two functions, the dimensions of the dataset: 24651 rows, 23 columns. The variables read in do not contain any labels and as neither variable is a factor type, there are no factor levels to report. 
 
 ```{r}
-glimpse(df)
+glimpse(df_syr)
 
-look_for(df)
+look_for(df_syr)
+
+table(look_for(df_syr)$col_type)
 ```
 
 ## Variable Dependencies and Definitions
@@ -92,9 +96,9 @@ The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties
 ```{r fig.align='center', fig.height=10, fig.width=10}
 # str(df)
 
-map(df, ~sum(is.na(.))) %>% t()
+map(df_syr, ~sum(is.na(.))) %>% t()
 
-missmap(df, main = "Missing vs Observed Values")
+missmap(df_syr, main = "Missing vs Observed Values")
 ```
 
 
