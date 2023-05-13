@@ -9,7 +9,7 @@ output:
         theme: yeti
         highlight: kate
         font-family: "Arial"
-        code_folding: show
+        code_folding: hide
 ---
 # Final Project 
 **Exploratory analysis and essay**  
@@ -30,15 +30,37 @@ output:
     b. An Essay (minimum 500 word document) or Video (5 to 8 minutes recording). Include the execution and explanation of your code. The video can be recorded on any platform of your choice (Youtube, Free Cam).
 
 
-![](syringe_sign.png)
+&nbsp;  
+&nbsp; 
+  
+
+<center style="font-size: 36px"> Syringe Collection Efforts in the Bronx </center>
+
+&nbsp;  
+&nbsp;  
+
+<!------- Below is for editing the caption font size | CSS/HTML formatting -------->
+<style>
+p.caption {
+  font-size: 0.8em;
+}
+</style>
+
+```{r img1-with-knitr, echo=FALSE, fig.align='center', out.width='100%', fig.cap='Credit: [West/south BX community react: Syringe dropoff kiosks installed in parks](https://www.bxtimes.com/west-south-bx-community-react-syringe-dropoff-kiosks-installed-in-parks/)'}
+
+knitr::include_graphics("syringe_sign.png")
+```
+
+&nbsp;  
 
 In 2018, NYC Parks and the Health Department began installing syringe kiosks in select parks across the Bronx as as part of a [plan to reduce the prevalence of discarded syringes](https://www.nycgovparks.org/news/press-releases?id=21566). The plan is part of HealingNYC, the City’s initiative to combat the opioid epidemic stemmed from success seen in similar initiatives in Vancouver, Canada and Seatlle, WA, according to NYC Parks commissioner, Mitchell J. Silver. NYC Parks and local syringe exchange programs deploy staff with blood-borne pathogen training to regularly empty, clean and disinfect kiosks. In addition to installing kiosks, the City works with local syringe exchange programs to increase outreach to people who use drugs in Bronx parks, providing overdose prevention education, information on health and social services, and distributing personal syringe containers.  
 
-Critics of the plan claim that installing syringe kiosks invite and encourage addicts to use drugs in the parks. However, the reality is that people are already using in the parks and disposing of their used needles under benches, bushes, and other places in the parks posing a threat to people and pets that come in contact with them. Coming in contact with needles puts those at risk for contracting infectious diseases such as Hepatitis C and HIV.
+Critics of the plan claim that installing syringe kiosks invite and encourage addicts to use drugs in the parks. However, the reality is that people are already using in the parks and disposing of their used needles under benches, bushes, and other places in the parks posing an imminent public health threat to adults, children, and pets that come in contact with them. Coming in contact with needles puts those at risk for contracting infectious diseases such as Hepatitis C and HIV.
 
 
-# Packages
+
 ```{r message=FALSE, warning=FALSE}
+#Packages
 library(readr)
 library(tidyverse)
 library(tidymodels)
@@ -60,12 +82,14 @@ library(RSocrata)
 library(Amelia)
 library(kableExtra)
 library(lubridate)
-
 ```
 
 
 # Load Data
-```{r}
+
+The [Summary of Syringe Data in NYC Parks dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) was procured from the [Open NYC Data](https://opendata.cityofnewyork.us/). The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve) is also an Open NYC Data dataset which was brought in to gather additional data on the parks where syringes are collected. 
+
+```{r class.source = 'fold-show'}
 syr <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Summary_of_Syringe_Data_in_NYC_Parks.csv") 
 df_syr <- syr
 
@@ -75,17 +99,26 @@ df_pk <- pk
 
 # Exploratory Data Analysis
 
+&nbsp;  
+
+```{r img-with-knitr, echo=FALSE, fig.align='center', out.width='75%', fig.cap='A pile of syringes found under a tree on a sidewalk on St. Anne’s Avenue. These were a few of 1,200 syringes and identifiable needle parts found by the Bronx Ink in the area surrounding the Hub at 149th Street and 3rd Avenue on September 10, 2019. Credit: [A Zone of Neglect](http://bronxink.org/2019/09/19/28351-a-zone-of-neglect/)'}
+knitr::include_graphics("pile_of_syringes.jpeg")
+```
+
+&nbsp; 
+
 ## Dimensions, Variable types, Labels, Levels, and Frequencies
 
-From the below two functions, the dimensions of the dataset: 24651 rows, 23 columns. The variables read in do not contain any labels and as neither variable is a factor type, there are no factor levels to report. 
 
 ### Summary of Syringe Data in NYC Parks  
 
-This dataset contains records of syringes collected, including how many, whether they are collected from the ground or a kiosk, and when they are collected. The Syringe Summary dataset contains records for syringes collected by both Parks staff as well as collection efforts by the [Washington Heights Corner Project](https://www.nycservice.org/organizations/index.php?org_id=1462) and [New York Harm Reduction Educators](https://nyhre.org/) nonprofit group.
+This dataset contains records of syringes collected, including how many, whether they are collected from the ground or a kiosk, and when they are collected. The Syringe Summary dataset contains records for syringes collected by both Parks staff as well as collection efforts by the [Washington Heights Corner Project](https://www.nycservice.org/organizations/index.php?org_id=1462) and [New York Harm Reduction Educators](https://nyhre.org/) nonprofit group. Each row one instance or one day's total of syringes collected in a park from the ground or safe disposal kiosk.
+
+From the below two functions, the dimensions of the dataset: 24651 rows, 23 columns. The variables read in do not contain any labels and as neither variable is a factor type, there are no factor levels to report. Additionally, the table contains 15 character type variables, 1 double variable, and 7 integer variables.
 ```{r}
 glimpse(df_syr)
 
-#look_for(df_syr)
+look_for(df_syr)
 
 table(look_for(df_syr)$col_type)
 ```
@@ -107,11 +140,12 @@ df_syr<- df_syr %>%
   mutate(collected_date =as.Date(str_sub(collected_date, start=1, end=10),format='%m/%d/%Y'),
          kiosk_site = as.logical(toupper(kiosk_site)),
          kiosk_syringes = as.integer(kiosk_syringes),
-         collection_type = case_when(is.na(ground_syringes) & is.na(kiosk_syringes)  ~ "None",
-                                     (ground_syringes >= 0 & is.na(kiosk_syringes)) ~ "Ground",
-                                     (is.na(ground_syringes) & kiosk_syringes >= 0) ~ "Kiosk",
-                                     (ground_syringes >= 0 & kiosk_syringes >= 0) ~ "Ground & Kiosk"
-                                     ),
+         collection_type = 
+           case_when(is.na(ground_syringes) & is.na(kiosk_syringes)  ~ "None",
+                     (ground_syringes >= 0 & is.na(kiosk_syringes)) ~ "Ground",
+                     (is.na(ground_syringes) & kiosk_syringes >= 0) ~ "Kiosk",
+                     (ground_syringes >= 0 & kiosk_syringes >= 0) ~ "Ground & Kiosk"
+                     ),
          month_year = paste(month_text, year),
          month = factor(month, levels= c(1,2,3,4,5,6,7,8,9,10,11,12)),
          month_text = factor(month_text, levels= c("Jan", "Feb","Mar","Apr",
@@ -134,25 +168,26 @@ This dataset, provided by the Department of Parks and Recreation (DPR), identifi
 
 Records are added as more land is designated under NYC Parks’ jurisdiction. Each record represents an acquisition.
 ```{r}
+df_pk<- df_pk %>% select(c("GISPROPNUM","ACRES","JURISDICTION","COMMUNITYBOARD",
+                           "COUNCILDISTRICT","SUBCATEGORY","TYPECATEGORY",
+                           "WATERFRONT"))
 glimpse(df_pk)
 
 table(look_for(df_pk)$col_type)
 ```
 
+
+Below shows counts of unique values/levels for each character variable and preliminary data cleaning is conducted.
 ```{r}
-df_pk<- df_pk %>% select(c("GISPROPNUM","ACRES","JURISDICTION","COMMUNITYBOARD",
-                           "COUNCILDISTRICT","SUBCATEGORY","TYPECATEGORY",
-                           "WATERFRONT"))
+# df_pk<- df_pk %>% select(c("GISPROPNUM","ACRES","JURISDICTION","COMMUNITYBOARD",
+#                            "COUNCILDISTRICT","SUBCATEGORY","TYPECATEGORY",
+#                            "WATERFRONT"))
 
 # Counts of unique values/levels for each character variable
 rapply(df_pk %>% keep(is.character), function(x) length(unique(x)))
 
 #display top 10 levels and corresponding counts of selected variables
-df_pk %>% count(JURISDICTION) %>% arrange(-n) %>% head(10)
-
-df_pk %>% count(TYPECATEGORY) %>% arrange(-n) %>% head(10)
-
-df_pk %>% count(SUBCATEGORY) %>% arrange(-n) %>% head(10)
+#df_pk %>% count(JURISDICTION) %>% arrange(-n) %>% head(10)
 
 #first display numeric as non-scientific number, then convert to char, then trim whitespace
 df_pk$COMMUNITYBOARD<-trimws(as.character(format(df_pk$COMMUNITYBOARD,scientific = FALSE)))
@@ -173,15 +208,15 @@ df_pk<-df_pk %>%
 #change column cases to lowercase  
 names(df_pk) <- tolower(names(df_pk))
 
-glimpse(df_pk)
+#glimpse(df_pk)
 ```
 
+Next, the syringe collection data is merged with the parks data.
 ```{r}
 df <- left_join(x=df_syr, y=df_pk, by="gispropnum", relationship = "many-to-many")
 
 glimpse(df)  
 ```
-
 
 ## Variable Dependencies and Definitions
 
@@ -194,6 +229,7 @@ Variables that are a subset of one other variable:
 The [Summary of Syringe Data in NYC Parks dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) was procured from the [Open NYC Data](https://opendata.cityofnewyork.us/). The dataset has a [data dictionary](https://docs.google.com/spreadsheets/d/1VSUqd1peSc-4D2XnBZNiLdxa0Jg4z62D/edit#gid=1183788427) available for the variables which provides a description along with other relevant information for each variable.  
 
 The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve) is also an Open NYC Data dataset which was brought in to gather additional data on the parks where syringes are collected. The [data dictionary](https://docs.google.com/spreadsheets/d/1Q4DBWu7riNFxWvy1vnTJHoOI3r2L9oW6eCN56jCNyCw/edit#gid=0) for the Parks Properties dataset in addition to the [user guide](https://docs.google.com/document/d/1NExNJF5YKID04oOopi0fHainRuGG3Pz_jKSrMujPsPk/edit) are available. The user guide is particularly useful for the detailed descriptions of the `TYPECATEGORY` variable not directly available on the data dictionary.
+
 
 ## Missing Data
 
@@ -228,6 +264,9 @@ missmap(df, main = "Missing vs Observed Values")
 ```
 
 ## Distributions
+
+### Numeric Variables
+
 From the describe() output for the merged dataset, it is noted that the numeric variables have wide ranges. This will be taken care of through normalization to scale the variables in the preprocessing stage prior to running models. The four numeric variables the dataset are all right skewed.
 
 ```{r}
@@ -241,7 +280,7 @@ describe(df_n) %>%
   kable_styling(font_size = 9, latex_options = "scale_down")
 ```
 
-```{r message=FALSE, warning=FALSE}
+```{r fig.align='center', message=FALSE, warning=FALSE}
 #distributions
 df_n %>% 
   gather(variable, value, 1:4) %>%
@@ -253,20 +292,111 @@ df_n %>%
     theme_light()
 ```
 
+### Categorical and Date-Time Variables
+
+While this project focuses on the syringes collected in the Bronx, the dataset contains values for other NYC boroughs. Of the 24,654 total syringe collections, 16,325 belong to the Bronx, 8,254 belong to Manhattan, and the renaming observations to Queens, Staten Island, and an unspecified (NA) borough. Some observations don't have a borough associated to the collection record, which could possibly belong to either Brooklyn or any of the other 4 boroughs.  
+  
 ```{r}
-df_syr %>% 
+df%>%
+  select(borough) %>% 
+  rename(Borough=borough) %>% 
+  count(Borough, name="Total Collections") %>% 
+  arrange(-pick(starts_with("Total")))%>% 
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
+```
+
+As expected, the Bronx has the highest amount of total syringes collected from both grounds and kiosks for the 7 reporting years (2017-2023) with 425,089 syringes collected. Manhattan follows the Bronx with 277,180 syringes collected for the reporting time frame. The other boroughs have minuscule counts in comparison which doesn't necessarily mean that there is less drug usage or less syringes strewn about parks and other properties, but rather that collection efforts aren't as strong in those boroughs as in the Bronx and Manhattan.  
+
+```{r}
+df%>% 
   select(c(borough,total_syringes)) %>% 
-  group_by(borough) %>% summarise(total=sum(total_syringes, na.rm = T))
+  group_by(borough) %>% 
+  summarise(total=sum(total_syringes, na.rm = T))%>%
+  arrange(-total) %>% 
+  kable(booktabs=TRUE, col.names = c("Borough", "Total Syringes"))  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
 ```
+
+Now focusing on the data for the Bronx by year, it is shown that the year with highest syringes collected is 2022. For the years spanning the pandemic, there is a increase of 15,156 syringes collected from 2020 to 2021. The increase in syringes collected also reflects the significant increase in overdoses and deaths attributed to overdoses in 2021. There were 2,668 fatal overdoses in New York City in 2021 which was an increase of more than 500 over the 2020 figure, which itself was 600 deaths above the total in 2019 according to *The New York Times* article, [Fentanyl Helps Push Overdose Deaths to Record Level in New York City](https://www.nytimes.com/2023/01/13/nyregion/new-york-overdose-record.html). 
+
+The calculations for year-over-year values and year-over-year rates are as follows:
+
+$YoY= \frac{total - lag(total)}{lag(total)}$ 
+$YoY\_Rate =YoY\times100 :rounded\ to\ the\ hundreth$ 
+
+where [`lag()`](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/lag) is a time series shift from the `stats` package.
 
 ```{r}
-unique(syr$borough)
-table(df$borough)
+df %>% 
+  filter(borough=="Bronx") %>% 
+  group_by(year) %>%
+  summarise(total=sum(total_syringes, na.rm = T))%>%
+  mutate(Change = ifelse(year %in% c(2017,2023), "-",total - lag(total)),
+         YoY = ifelse(year %in% c(2017,2023), "-", 
+                      as.character(round((total - lag(total))/lag(total), 2))),
+         YoY_Rate =  ifelse(year %in% c(2017,2023), "-",
+                      as.character(round((total-lag(total))/lag(total)*100,2)))) %>% 
+  arrange(year) %>%
+  kable(booktabs=TRUE, col.names = c("Year", "Total Syringes","Change",
+                                     "Year over Year", "Year over Year Rate")) %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
 
-
-table(df$year)
 ```
 
+Of the 11 Jurisdictions responsible for collections, below are the top 5 for the Bronx.
+```{r}
+df %>%
+  filter(borough=="Bronx") %>% 
+  rename(Jurisdiction=jurisdiction) %>% 
+  count(Jurisdiction, name="Total Collections") %>% 
+  head(5)%>% 
+  arrange(-pick(starts_with("Total")))%>% 
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
+```
+
+Of the 14 different `type_category` levels below are the top 5 with the highest amount of total syringes collected in the Bronx:
+```{r}
+# df %>% 
+#   filter(borough=="Bronx") %>% 
+#   rename(Typecategory=typecategory) %>% 
+#   count(Typecategory, name="Total Collections") %>% 
+#   head(5)%>% 
+#   arrange(-pick(starts_with("Total")))%>% 
+#   kable(booktabs=TRUE)  %>%
+#   kable_styling(font_size = 9, latex_options = "scale_down")
+
+df %>% 
+  filter(borough=="Bronx") %>% 
+  group_by(typecategory) %>%
+  summarise(total=sum(total_syringes, na.rm = T)) %>% 
+  arrange(-total) %>% 
+  head(5) %>% 
+  kable(booktabs=TRUE, col.names = c("Type Category", "Total Syringes"))  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
+```
+
+Of the 13 different `type_category` levels below are the top 5 with the highest amount of total syringes collected in the Bronx:
+```{r}
+# df %>% 
+#   filter(borough=="Bronx") %>% 
+#   rename(Subcategory=subcategory) %>% 
+#   count(Subcategory, name="Total Collections") %>% 
+#   head(5)%>% 
+#   arrange(-pick(starts_with("Total"))) %>% 
+#   kable(booktabs=TRUE)  %>%
+#   kable_styling(font_size = 9, latex_options = "scale_down")
+
+df %>% 
+  filter(borough=="Bronx") %>% 
+  group_by(subcategory) %>%
+  summarise(total=sum(total_syringes, na.rm = T)) %>% 
+  arrange(-total) %>% 
+  head(5) %>% 
+  kable(booktabs=TRUE, col.names = c("Sub Category", "Total Syringes"))  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
+```
 
 ## Correlations
 
@@ -283,14 +413,7 @@ table(df$year)
 ## Feature Engineering
 
 ```{r}
-# collection_type = case_when(is.na(ground_syringes) & is.na(kiosk_syringes)  ~ "None",
-#                                      (ground_syringes >= 0 & is.na(kiosk_syringes)) ~ "Ground",
-#                                      (is.na(ground_syringes) & kiosk_syringes >= 0) ~ "Kiosk",
-#                                      (ground_syringes >= 0 & kiosk_syringes >= 0) ~ "Ground & Kiosk"
-#                                      )
 
-
-# df_syr %>% count(collection_type) %>% arrange(-n)
 ```
 
 
@@ -301,6 +424,22 @@ table(df$year)
 
 # Model Comparison
 
+
+<!----
+https://www.cbsnews.com/newyork/news/hypodermic-needles-nyc-parks-opioid-crisis-kiosks-bronx-parks/
+https://www.nycgovparks.org/news/press-releases?id=2156
+https://www.nytimes.com/2023/01/13/nyregion/new-york-overdose-record.html
+https://www.nydailynews.com/new-york/ny-mott-haven-overdose-crisis-opioid-fentanyl-bronx-grief-20230210-uy5teo52cfhttbchydcufgyq7q-story.html
+
+pics:
+https://www.bxtimes.com/west-south-bx-community-react-syringe-dropoff-kiosks-installed-in-parks/
+http://bronxink.org/2019/09/19/28351-a-zone-of-neglect/
+https://www.ny1.com/nyc/all-boroughs/news/2018/06/08/syringe-disposal-kiosks-at-bronx-parks
+
+
+buy back program articles:
+https://www.nytimes.com/2016/04/18/nyregion/bronx-needle-exchange-once-dismissed-finds-acceptance.html
+https://gothamist.com/news/could-a-syringe-buyback-program-help-clean-up-new-york-city-streets
 
 <!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
 
