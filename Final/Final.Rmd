@@ -11,7 +11,7 @@ output:
         font-family: "Arial"
         code_folding: show
 ---
-# Final Project
+# Final Project 
 **Exploratory analysis and essay**  
 
 1. Choose a dataset. You get to decide which dataset you want to work on. The data set must be different from the ones used in previous homeworks You can work on a problem from your job, or something you are interested in. You may also obtain a dataset from sites such as Kaggle, Data.Gov, Census Bureau, USGS or other open data portals.   
@@ -28,6 +28,13 @@ output:
 1. Your final presentation should incliude:    
     a. The traditional R file or Python file and essay  
     b. An Essay (minimum 500 word document) or Video (5 to 8 minutes recording). Include the execution and explanation of your code. The video can be recorded on any platform of your choice (Youtube, Free Cam).
+
+
+![](syringe_sign.png)
+
+In 2018, NYC Parks and the Health Department began installing syringe kiosks in select parks across the Bronx as as part of a [plan to reduce the prevalence of discarded syringes](https://www.nycgovparks.org/news/press-releases?id=21566). The plan is part of HealingNYC, the City’s initiative to combat the opioid epidemic stemmed from success seen in similar initiatives in Vancouver, Canada and Seatlle, WA, according to NYC Parks commissioner, Mitchell J. Silver. NYC Parks and local syringe exchange programs deploy staff with blood-borne pathogen training to regularly empty, clean and disinfect kiosks. In addition to installing kiosks, the City works with local syringe exchange programs to increase outreach to people who use drugs in Bronx parks, providing overdose prevention education, information on health and social services, and distributing personal syringe containers.  
+
+Critics of the plan claim that installing syringe kiosks invite and encourage addicts to use drugs in the parks. However, the reality is that people are already using in the parks and disposing of their used needles under benches, bushes, and other places in the parks posing a threat to people and pets that come in contact with them. Coming in contact with needles puts those at risk for contracting infectious diseases such as Hepatitis C and HIV.
 
 
 # Packages
@@ -51,14 +58,19 @@ library(randomForest)
 library(e1071)
 library(RSocrata)
 library(Amelia)
+library(kableExtra)
+library(lubridate)
+
 ```
 
 
 # Load Data
 ```{r}
-df_syr <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Summary_of_Syringe_Data_in_NYC_Parks.csv") 
+syr <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Summary_of_Syringe_Data_in_NYC_Parks.csv") 
+df_syr <- syr
 
-df_pk <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Parks_Properties.csv")
+pk <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Parks_Properties.csv")
+df_pk <- pk
 ```
 
 # Exploratory Data Analysis
@@ -67,14 +79,60 @@ df_pk <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Fin
 
 From the below two functions, the dimensions of the dataset: 24651 rows, 23 columns. The variables read in do not contain any labels and as neither variable is a factor type, there are no factor levels to report. 
 
+### Summary of Syringe Data in NYC Parks  
+
+This dataset contains records of syringes collected, including how many, whether they are collected from the ground or a kiosk, and when they are collected. The Syringe Summary dataset contains records for syringes collected by both Parks staff as well as collection efforts by the [Washington Heights Corner Project](https://www.nycservice.org/organizations/index.php?org_id=1462) and [New York Harm Reduction Educators](https://nyhre.org/) nonprofit group.
 ```{r}
 glimpse(df_syr)
 
-look_for(df_syr)
+#look_for(df_syr)
 
 table(look_for(df_syr)$col_type)
 ```
 
+Below are the counts of unique values for each variable. The purpose of this is to identify if there are any variables that may require a change of variable type from its originally loaded type.
+
+```{r}
+# Counts of unique values/levels for each character variable
+rapply(df_syr, function(x) length(unique(x)))
+
+# unique(df_syr$group)
+# unique(df_syr$source)
+```
+
+
+After reviewing the variables, some are updated below. Not all variables will be updated as they will be dropped in the feature selection section.
+```{r}
+df_syr<- df_syr %>%
+  mutate(collected_date =as.Date(str_sub(collected_date, start=1, end=10),format='%m/%d/%Y'),
+         kiosk_site = as.logical(toupper(kiosk_site)),
+         kiosk_syringes = as.integer(kiosk_syringes),
+         collection_type = case_when(is.na(ground_syringes) & is.na(kiosk_syringes)  ~ "None",
+                                     (ground_syringes >= 0 & is.na(kiosk_syringes)) ~ "Ground",
+                                     (is.na(ground_syringes) & kiosk_syringes >= 0) ~ "Kiosk",
+                                     (ground_syringes >= 0 & kiosk_syringes >= 0) ~ "Ground & Kiosk"
+                                     ),
+         month_year = paste(month_text, year),
+         month = factor(month, levels= c(1,2,3,4,5,6,7,8,9,10,11,12)),
+         month_text = factor(month_text, levels= c("Jan", "Feb","Mar","Apr",
+                                                   "May","Jun","Jul","Aug",
+                                                   "Sep", "Oct", "Nov","Dec")),
+         borough = case_when(substring(df_syr$district,1,1) == "M" ~ "Manhattan",
+                             substring(df_syr$district,1,1)=="X" ~ "Bronx",
+                             substring(df_syr$district,1,1) == "R" ~ "Staten Island",
+                             substring(df_syr$district,1,1) == "Q" ~ "Queens",
+                             substring(df_syr$district,1,1) == "B" ~ "Brooklyn"
+                             )
+         )
+ 
+str(df_syr)
+```
+
+### Parks Properties 
+
+This dataset, provided by the Department of Parks and Recreation (DPR), identifies property managed partially or solely by NYC Parks. This data has been produced in whole or part using secondary data and is currently owned by the NYC Parks Open Data Team. Data accuracy is limited by the scale and accuracy of the original sources. Site-specific conditions should be field-verified.
+
+Records are added as more land is designated under NYC Parks’ jurisdiction. Each record represents an acquisition.
 ```{r}
 glimpse(df_pk)
 
@@ -86,10 +144,21 @@ df_pk<- df_pk %>% select(c("GISPROPNUM","ACRES","JURISDICTION","COMMUNITYBOARD",
                            "COUNCILDISTRICT","SUBCATEGORY","TYPECATEGORY",
                            "WATERFRONT"))
 
+# Counts of unique values/levels for each character variable
+rapply(df_pk %>% keep(is.character), function(x) length(unique(x)))
+
+#display top 10 levels and corresponding counts of selected variables
+df_pk %>% count(JURISDICTION) %>% arrange(-n) %>% head(10)
+
+df_pk %>% count(TYPECATEGORY) %>% arrange(-n) %>% head(10)
+
+df_pk %>% count(SUBCATEGORY) %>% arrange(-n) %>% head(10)
+
 #first display numeric as non-scientific number, then convert to char, then trim whitespace
 df_pk$COMMUNITYBOARD<-trimws(as.character(format(df_pk$COMMUNITYBOARD,scientific = FALSE)))
 df_pk$COUNCILDISTRICT<-trimws(as.character(format(df_pk$COUNCILDISTRICT,scientific = FALSE)))
 
+#split strings for community board and council district values, update decimal, and var type
 df_pk<-df_pk %>% 
   mutate(COMMUNITYBOARD = ifelse(nchar(df_pk$COMMUNITYBOARD)==3,
                                  df_pk$COMMUNITYBOARD,
@@ -100,40 +169,137 @@ df_pk<-df_pk %>%
          ACRES = round(ACRES,2),
          WATERFRONT = as.logical(toupper(WATERFRONT))
          )
-  
-glimpse(df_pk)
 
-#make factor?
-df_pk %>% count(JURISDICTION) %>% arrange(-n)
-
-df_pk %>% count(TYPECATEGORY) %>% arrange(-n)
-
-df_pk %>% count(SUBCATEGORY) %>% arrange(-n)
-
+#change column cases to lowercase  
 names(df_pk) <- tolower(names(df_pk))
+
+glimpse(df_pk)
 ```
+
+```{r}
+df <- left_join(x=df_syr, y=df_pk, by="gispropnum", relationship = "many-to-many")
+
+glimpse(df)  
+```
+
 
 ## Variable Dependencies and Definitions
 
 Variable with dependency on two other variables in the dataset:  
 `total_syringes` = `ground_syringes` + `kiosk_syringes`  
-
+  
 Variables that are a subset of one other variable:
 `year`, `month`, `month_text`, `week`, `time_of_day`, `collected_date` are granular versions of the  `created_date` variable  
 
-Since [this dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) was procured from the [Open NYC Data](https://opendata.cityofnewyork.us/), there is a [data dictionary](https://docs.google.com/spreadsheets/d/1VSUqd1peSc-4D2XnBZNiLdxa0Jg4z62D/edit#gid=1183788427) available for the variables.  
+The [Summary of Syringe Data in NYC Parks dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) was procured from the [Open NYC Data](https://opendata.cityofnewyork.us/). The dataset has a [data dictionary](https://docs.google.com/spreadsheets/d/1VSUqd1peSc-4D2XnBZNiLdxa0Jg4z62D/edit#gid=1183788427) available for the variables which provides a description along with other relevant information for each variable.  
 
 The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve) is also an Open NYC Data dataset which was brought in to gather additional data on the parks where syringes are collected. The [data dictionary](https://docs.google.com/spreadsheets/d/1Q4DBWu7riNFxWvy1vnTJHoOI3r2L9oW6eCN56jCNyCw/edit#gid=0) for the Parks Properties dataset in addition to the [user guide](https://docs.google.com/document/d/1NExNJF5YKID04oOopi0fHainRuGG3Pz_jKSrMujPsPk/edit) are available. The user guide is particularly useful for the detailed descriptions of the `TYPECATEGORY` variable not directly available on the data dictionary.
 
 ## Missing Data
-```{r fig.align='center', fig.height=10, fig.width=10}
-# str(df)
 
-map(df_syr, ~sum(is.na(.))) %>% t()
+```{r class.source = 'fold-hide'}
+map(df_syr, ~sum(is.na(.))) %>% head(15) %>% t() %>%
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
 
-missmap(df_syr, main = "Missing vs Observed Values")
+map(df_syr, ~sum(is.na(.))) %>% tail(15) %>%t() %>%
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
 ```
 
+Looking at the below it's noted that `kiosk_syringes` (20,730 NAs) has a large amount of missing data, however `ground_syringes` (6275 NAs) has data for almost each entry where `kiosk_syringes` is NA.  
+
+After reviewing the [notes](https://docs.google.com/spreadsheets/d/1VSUqd1peSc-4D2XnBZNiLdxa0Jg4z62D/edit#gid=1183788427) for `kiosk_syringes` and `ground_syringes`:
+
+`ground_syringes`: NULL indicates that the group collecting syringes did not report a quantity of ground syringes collected for that visit, or did not collect syringes from the ground during that visit.  
+
+`kiosk_syringes`: NULL indicates that the group collecting syringes did not report a quantity of syringes removed from a kiosk for that visit (including zero), or did not empty kiosks during that visit.  
+
+Furthermore, after looking more into the data `kiosk_number` also has a large number of NAs, with 18,026 missing values. The notes for the variable are as follows:  
+
+`kiosk_number`: NULL indicates that a kiosk was not present at that location at that time, or the group collecting syringes did not service a kiosk during that visit. 
+
+With this information, some of the NAs in `kiosk_syringe` can have NAs replaced with 0s where a `kiosk_number` is present meaning a kiosk exists, however no syringes were collected that visit. 
+
+
+
+```{r fig.align='center', fig.height=8, fig.width=15}
+missmap(df, main = "Missing vs Observed Values")
+```
+
+## Distributions
+From the describe() output for the merged dataset, it is noted that the numeric variables have wide ranges. This will be taken care of through normalization to scale the variables in the preprocessing stage prior to running models. The four numeric variables the dataset are all right skewed.
+
+```{r}
+df_n<- df %>% 
+  select(c("ground_syringes", "kiosk_syringes", "total_syringes","acres"))
+
+#stats
+describe(df_n) %>% 
+  select(c(-vars,-trimmed,-mad,-kurtosis))%>%
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
+```
+
+```{r message=FALSE, warning=FALSE}
+#distributions
+df_n %>% 
+  gather(variable, value, 1:4) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity",bins = 40) +
+    theme_light()
+```
+
+```{r}
+df_syr %>% 
+  select(c(borough,total_syringes)) %>% 
+  group_by(borough) %>% summarise(total=sum(total_syringes, na.rm = T))
+```
+
+```{r}
+unique(syr$borough)
+table(df$borough)
+
+
+table(df$year)
+```
+
+
+## Correlations
+
+## VIF Scores
+
+
+
+# Preprocessing
+
+## Scaling
+
+## Feature Selection
+
+## Feature Engineering
+
+```{r}
+# collection_type = case_when(is.na(ground_syringes) & is.na(kiosk_syringes)  ~ "None",
+#                                      (ground_syringes >= 0 & is.na(kiosk_syringes)) ~ "Ground",
+#                                      (is.na(ground_syringes) & kiosk_syringes >= 0) ~ "Kiosk",
+#                                      (ground_syringes >= 0 & kiosk_syringes >= 0) ~ "Ground & Kiosk"
+#                                      )
+
+
+# df_syr %>% count(collection_type) %>% arrange(-n)
+```
+
+
+
+# Models
+
+
+
+# Model Comparison
 
 
 <!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
