@@ -1,0 +1,362 @@
+"Notes"	"County"	"County Code"	"Gender"	"Gender Code"	"Year"	"Year Code"	"Race"	"Race Code"	"Drug/Alcohol Induced Cause"	"Drug/Alcohol Induced Cause Code"	Deaths	Population	Crude Rate
+	"Albany County, NY"	"36001"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	120000	Unreliable
+	"Albany County, NY"	"36001"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	116193	Unreliable
+	"Albany County, NY"	"36001"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	115245	Unreliable
+	"Albany County, NY"	"36001"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	10	115245	Unreliable
+	"Albany County, NY"	"36001"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	114422	Unreliable
+	"Albany County, NY"	"36001"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	11	114422	Unreliable
+	"Albany County, NY"	"36001"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	113040	23.9
+	"Albany County, NY"	"36001"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	11	113040	Unreliable
+	"Bronx County, NY"	"36005"	"Female"	"F"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	360555	10.5
+	"Bronx County, NY"	"36005"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	351077	12.8
+	"Bronx County, NY"	"36005"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	10	351077	Unreliable
+	"Bronx County, NY"	"36005"	"Female"	"F"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	42	350786	12.0
+	"Bronx County, NY"	"36005"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	48	342475	14.0
+	"Bronx County, NY"	"36005"	"Female"	"F"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	346845	12.4
+	"Bronx County, NY"	"36005"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	53	338053	15.7
+	"Bronx County, NY"	"36005"	"Female"	"F"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	58	344984	16.8
+	"Bronx County, NY"	"36005"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	79	330481	23.9
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	78	312776	24.9
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"All other drug-induced causes"	"D9"	14	312776	Unreliable
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	184	320533	57.4
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	18	320533	Unreliable
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	102	305040	33.4
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"All other drug-induced causes"	"D9"	11	305040	Unreliable
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	186	311206	59.8
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	14	311206	Unreliable
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	115	303282	37.9
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	186	307522	60.5
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	145	302355	48.0
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	257	298917	86.0
+	"Bronx County, NY"	"36005"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	14	298917	Unreliable
+	"Broome County, NY"	"36007"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	86367	26.6
+	"Broome County, NY"	"36007"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	85462	Unreliable
+	"Broome County, NY"	"36007"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	83871	27.4
+	"Broome County, NY"	"36007"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	83312	43.2
+	"Broome County, NY"	"36007"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	82439	24.3
+	"Broome County, NY"	"36007"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	81915	34.2
+	"Broome County, NY"	"36007"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	44	81126	54.2
+	"Cayuga County, NY"	"36011"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	36226	Unreliable
+	"Cayuga County, NY"	"36011"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	35493	67.6
+	"Chautauqua County, NY"	"36013"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	61771	Unreliable
+	"Chautauqua County, NY"	"36013"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	61261	Unreliable
+	"Chautauqua County, NY"	"36013"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	60618	Unreliable
+	"Chautauqua County, NY"	"36013"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	60066	49.9
+	"Chautauqua County, NY"	"36013"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	59513	Unreliable
+	"Chautauqua County, NY"	"36013"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	58927	Unreliable
+	"Chautauqua County, NY"	"36013"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	58612	52.9
+	"Chemung County, NY"	"36015"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	38630	Unreliable
+	"Chemung County, NY"	"36015"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	38221	Unreliable
+	"Chemung County, NY"	"36015"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	37333	Unreliable
+	"Chemung County, NY"	"36015"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	36901	Unreliable
+	"Chemung County, NY"	"36015"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	36447	Unreliable
+	"Chemung County, NY"	"36015"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	36028	Unreliable
+	"Columbia County, NY"	"36021"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	27565	Unreliable
+	"Dutchess County, NY"	"36027"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	123587	16.2
+	"Dutchess County, NY"	"36027"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	122496	20.4
+	"Dutchess County, NY"	"36027"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	122615	Unreliable
+	"Dutchess County, NY"	"36027"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	121830	24.6
+	"Dutchess County, NY"	"36027"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	19539	Unreliable
+	"Dutchess County, NY"	"36027"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	50	120531	41.5
+	"Dutchess County, NY"	"36027"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	51	119798	42.6
+	"Dutchess County, NY"	"36027"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	44	119618	36.8
+	"Dutchess County, NY"	"36027"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	69	118743	58.1
+	"Erie County, NY"	"36029"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	61	381998	16.0
+	"Erie County, NY"	"36029"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	46	379971	12.1
+	"Erie County, NY"	"36029"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	10	379971	Unreliable
+	"Erie County, NY"	"36029"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	378847	9.0
+	"Erie County, NY"	"36029"	"Female"	"F"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	72402	30.4
+	"Erie County, NY"	"36029"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	58	376378	15.4
+	"Erie County, NY"	"36029"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	62800	33.4
+	"Erie County, NY"	"36029"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	169	363203	46.5
+	"Erie County, NY"	"36029"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	62494	Unreliable
+	"Erie County, NY"	"36029"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	112	360953	31.0
+	"Erie County, NY"	"36029"	"Male"	"M"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	62512	Unreliable
+	"Erie County, NY"	"36029"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	100	360065	27.8
+	"Erie County, NY"	"36029"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	42	63090	66.6
+	"Erie County, NY"	"36029"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	143	357918	40.0
+	"Genesee County, NY"	"36037"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	26745	Unreliable
+	"Genesee County, NY"	"36037"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	26638	Unreliable
+	"Genesee County, NY"	"36037"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	26503	Unreliable
+	"Jefferson County, NY"	"36045"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	48598	Unreliable
+	"Jefferson County, NY"	"36045"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	49686	54.3
+	"Kings County, NY"	"36047"	"Female"	"F"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	520778	4.2
+	"Kings County, NY"	"36047"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	46	675280	6.8
+	"Kings County, NY"	"36047"	"Female"	"F"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	505154	5.7
+	"Kings County, NY"	"36047"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	41	662751	6.2
+	"Kings County, NY"	"36047"	"Female"	"F"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	496306	6.2
+	"Kings County, NY"	"36047"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	661558	6.8
+	"Kings County, NY"	"36047"	"Female"	"F"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	487978	9.2
+	"Kings County, NY"	"36047"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	656250	6.6
+	"Kings County, NY"	"36047"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	92	416977	22.1
+	"Kings County, NY"	"36047"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	187	652801	28.6
+	"Kings County, NY"	"36047"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	12	652801	Unreliable
+	"Kings County, NY"	"36047"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	68	405531	16.8
+	"Kings County, NY"	"36047"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	136	639955	21.3
+	"Kings County, NY"	"36047"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	11	639955	Unreliable
+	"Kings County, NY"	"36047"	"Male"	"M"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	80	398565	20.1
+	"Kings County, NY"	"36047"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	150	637049	23.5
+	"Kings County, NY"	"36047"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	11	637049	Unreliable
+	"Kings County, NY"	"36047"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	139	392657	35.4
+	"Kings County, NY"	"36047"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	206	631027	32.6
+	"Livingston County, NY"	"36051"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	29623	Unreliable
+	"Monroe County, NY"	"36055"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	47	299969	15.7
+	"Monroe County, NY"	"36055"	"Female"	"F"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	68126	Unreliable
+	"Monroe County, NY"	"36055"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	50	298424	16.8
+	"Monroe County, NY"	"36055"	"Female"	"F"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	68320	Unreliable
+	"Monroe County, NY"	"36055"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	39	298281	13.1
+	"Monroe County, NY"	"36055"	"Female"	"F"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	68918	40.6
+	"Monroe County, NY"	"36055"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	49	297138	16.5
+	"Monroe County, NY"	"36055"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	59948	Unreliable
+	"Monroe County, NY"	"36055"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	122	284049	43.0
+	"Monroe County, NY"	"36055"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	59542	40.3
+	"Monroe County, NY"	"36055"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	121	282535	42.8
+	"Monroe County, NY"	"36055"	"Male"	"M"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	59401	55.6
+	"Monroe County, NY"	"36055"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	109	282088	38.6
+	"Monroe County, NY"	"36055"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	44	59843	73.5
+	"Monroe County, NY"	"36055"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	135	280573	48.1
+	"Nassau County, NY"	"36059"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	50	526433	9.5
+	"Nassau County, NY"	"36059"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	518999	6.2
+	"Nassau County, NY"	"36059"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	513887	8.8
+	"Nassau County, NY"	"36059"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	50	505234	9.9
+	"Nassau County, NY"	"36059"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	86118	Unreliable
+	"Nassau County, NY"	"36059"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	144	505515	28.5
+	"Nassau County, NY"	"36059"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	127	498559	25.5
+	"Nassau County, NY"	"36059"	"Male"	"M"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	87212	Unreliable
+	"Nassau County, NY"	"36059"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	132	495067	26.7
+	"Nassau County, NY"	"36059"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	88026	Unreliable
+	"Nassau County, NY"	"36059"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	174	487110	35.7
+	"New York County, NY"	"36061"	"Female"	"F"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	169158	17.1
+	"New York County, NY"	"36061"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	567698	3.7
+	"New York County, NY"	"36061"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	10	567698	Unreliable
+	"New York County, NY"	"36061"	"Female"	"F"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	166200	14.4
+	"New York County, NY"	"36061"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	557061	7.7
+	"New York County, NY"	"36061"	"Female"	"F"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	165335	16.9
+	"New York County, NY"	"36061"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	44	557464	7.9
+	"New York County, NY"	"36061"	"Female"	"F"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	164481	18.2
+	"New York County, NY"	"36061"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	54	549907	9.8
+	"New York County, NY"	"36061"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	54	147694	36.6
+	"New York County, NY"	"36061"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"All other drug-induced causes"	"D9"	10	147694	Unreliable
+	"New York County, NY"	"36061"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	110	529872	20.8
+	"New York County, NY"	"36061"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	14	529872	Unreliable
+	"New York County, NY"	"36061"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	12	529872	Unreliable
+	"New York County, NY"	"36061"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	58	144559	40.1
+	"New York County, NY"	"36061"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"All other drug-induced causes"	"D9"	13	144559	Unreliable
+	"New York County, NY"	"36061"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	125	518828	24.1
+	"New York County, NY"	"36061"	"Male"	"M"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	64	143368	44.6
+	"New York County, NY"	"36061"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	156	519894	30.0
+	"New York County, NY"	"36061"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	11	519894	Unreliable
+	"New York County, NY"	"36061"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	10	519894	Unreliable
+	"New York County, NY"	"36061"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	100	143111	69.9
+	"New York County, NY"	"36061"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	186	510678	36.4
+	"New York County, NY"	"36061"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	11	510678	Unreliable
+	"New York County, NY"	"36061"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	11	510678	Unreliable
+	"Niagara County, NY"	"36063"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	96396	Unreliable
+	"Niagara County, NY"	"36063"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	96028	Unreliable
+	"Niagara County, NY"	"36063"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	95170	Unreliable
+	"Niagara County, NY"	"36063"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	94654	Unreliable
+	"Niagara County, NY"	"36063"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	92029	29.3
+	"Niagara County, NY"	"36063"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	91511	31.7
+	"Niagara County, NY"	"36063"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	90965	23.1
+	"Niagara County, NY"	"36063"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	8514	Unreliable
+	"Niagara County, NY"	"36063"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	40	90370	44.3
+	"Oneida County, NY"	"36065"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	102213	Unreliable
+	"Oneida County, NY"	"36065"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	101644	Unreliable
+	"Oneida County, NY"	"36065"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	101205	Unreliable
+	"Oneida County, NY"	"36065"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	100250	Unreliable
+	"Oneida County, NY"	"36065"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	99451	30.2
+	"Oneida County, NY"	"36065"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	98732	25.3
+	"Oneida County, NY"	"36065"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	98139	26.5
+	"Oneida County, NY"	"36065"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	10383	Unreliable
+	"Oneida County, NY"	"36065"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	39	97457	40.0
+	"Onondaga County, NY"	"36067"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	195815	Unreliable
+	"Onondaga County, NY"	"36067"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	194553	Unreliable
+	"Onondaga County, NY"	"36067"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	193781	13.9
+	"Onondaga County, NY"	"36067"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	192629	14.5
+	"Onondaga County, NY"	"36067"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	57	183099	31.1
+	"Onondaga County, NY"	"36067"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	58	182018	31.9
+	"Onondaga County, NY"	"36067"	"Male"	"M"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	29160	Unreliable
+	"Onondaga County, NY"	"36067"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	67	181366	36.9
+	"Onondaga County, NY"	"36067"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	29555	Unreliable
+	"Onondaga County, NY"	"36067"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	86	180528	47.6
+	"Ontario County, NY"	"36069"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	51007	Unreliable
+	"Ontario County, NY"	"36069"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	50840	Unreliable
+	"Ontario County, NY"	"36069"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	50662	Unreliable
+	"Orange County, NY"	"36071"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	156446	Unreliable
+	"Orange County, NY"	"36071"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	155706	14.8
+	"Orange County, NY"	"36071"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	156192	Unreliable
+	"Orange County, NY"	"36071"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	155097	21.9
+	"Orange County, NY"	"36071"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	62	157212	39.4
+	"Orange County, NY"	"36071"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	27187	Unreliable
+	"Orange County, NY"	"36071"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	77	156219	49.3
+	"Orange County, NY"	"36071"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	55	156777	35.1
+	"Orange County, NY"	"36071"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	29063	Unreliable
+	"Orange County, NY"	"36071"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	57	155295	36.7
+	"Oswego County, NY"	"36075"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	56633	Unreliable
+	"Oswego County, NY"	"36075"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	56332	Unreliable
+	"Oswego County, NY"	"36075"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	57684	Unreliable
+	"Oswego County, NY"	"36075"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	57326	Unreliable
+	"Oswego County, NY"	"36075"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	56895	Unreliable
+	"Oswego County, NY"	"36075"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	56389	35.5
+	"Putnam County, NY"	"36079"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	46151	47.7
+	"Putnam County, NY"	"36079"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	45768	Unreliable
+	"Putnam County, NY"	"36079"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	45206	Unreliable
+	"Queens County, NY"	"36081"	"Female"	"F"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	272458	Unreliable
+	"Queens County, NY"	"36081"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	580211	5.5
+	"Queens County, NY"	"36081"	"Female"	"F"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	265212	Unreliable
+	"Queens County, NY"	"36081"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	561346	5.5
+	"Queens County, NY"	"36081"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	13	561346	Unreliable
+	"Queens County, NY"	"36081"	"Female"	"F"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	261804	Unreliable
+	"Queens County, NY"	"36081"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	553939	6.0
+	"Queens County, NY"	"36081"	"Female"	"F"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	258646	9.7
+	"Queens County, NY"	"36081"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	48	540139	8.9
+	"Queens County, NY"	"36081"	"Male"	"M"	"2017"	"2017"	"Asian or Pacific Islander"	"A-PI"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	319941	Unreliable
+	"Queens County, NY"	"36081"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	41	230840	17.8
+	"Queens County, NY"	"36081"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	163	573254	28.4
+	"Queens County, NY"	"36081"	"Male"	"M"	"2018"	"2018"	"Asian or Pacific Islander"	"A-PI"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	306728	Unreliable
+	"Queens County, NY"	"36081"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	225698	16.0
+	"Queens County, NY"	"36081"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	136	554240	24.5
+	"Queens County, NY"	"36081"	"Male"	"M"	"2019"	"2019"	"Asian or Pacific Islander"	"A-PI"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	304266	Unreliable
+	"Queens County, NY"	"36081"	"Male"	"M"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	223601	20.1
+	"Queens County, NY"	"36081"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	132	547686	24.1
+	"Queens County, NY"	"36081"	"Male"	"M"	"2020 "	"2020"	"Asian or Pacific Islander"	"A-PI"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	306306	6.9
+	"Queens County, NY"	"36081"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	63	221673	28.4
+	"Queens County, NY"	"36081"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	227	533917	42.5
+	"Rensselaer County, NY"	"36083"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	11	69182	Unreliable
+	"Rensselaer County, NY"	"36083"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	13	68522	Unreliable
+	"Rensselaer County, NY"	"36083"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	26	68068	38.2
+	"Richmond County, NY"	"36085"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	189032	Unreliable
+	"Richmond County, NY"	"36085"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	186254	Unreliable
+	"Richmond County, NY"	"36085"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	184202	12.5
+	"Richmond County, NY"	"36085"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	181452	13.2
+	"Richmond County, NY"	"36085"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	71	179638	39.5
+	"Richmond County, NY"	"36085"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	84	177214	47.4
+	"Richmond County, NY"	"36085"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	78	175770	44.4
+	"Richmond County, NY"	"36085"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	95	173110	54.9
+	"Rockland County, NY"	"36087"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	127435	18.8
+	"Rockland County, NY"	"36087"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	126500	15.8
+	"Rockland County, NY"	"36087"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	127095	26.8
+	"Rockland County, NY"	"36087"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	127032	28.3
+	"St. Lawrence County, NY"	"36089"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	52217	Unreliable
+	"St. Lawrence County, NY"	"36089"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	51000	Unreliable
+	"Saratoga County, NY"	"36091"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	11	109983	Unreliable
+	"Saratoga County, NY"	"36091"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	14	106959	Unreliable
+	"Saratoga County, NY"	"36091"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	21	106368	19.7
+	"Schenectady County, NY"	"36093"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	11	62830	Unreliable
+	"Schenectady County, NY"	"36093"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	25	60561	41.3
+	"Schenectady County, NY"	"36093"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	14	60319	Unreliable
+	"Schenectady County, NY"	"36093"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	16	59943	Unreliable
+	"Schenectady County, NY"	"36093"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	16	59436	Unreliable
+	"Steuben County, NY"	"36101"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	45743	Unreliable
+	"Suffolk County, NY"	"36103"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	102	646663	15.8
+	"Suffolk County, NY"	"36103"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	86	641062	13.4
+	"Suffolk County, NY"	"36103"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	75	637899	11.8
+	"Suffolk County, NY"	"36103"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	11	637899	Unreliable
+	"Suffolk County, NY"	"36103"	"Female"	"F"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	73851	Unreliable
+	"Suffolk County, NY"	"36103"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	92	633399	14.5
+	"Suffolk County, NY"	"36103"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	10	633399	Unreliable
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	66413	Unreliable
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	324	629983	51.4
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	66921	Unreliable
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	271	623513	43.5
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2019"	"2019"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	67512	Unreliable
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	198	620501	31.9
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	10	620501	Unreliable
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	18	620501	Unreliable
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	69265	41.9
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	261	615878	42.4
+	"Suffolk County, NY"	"36103"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"All other drug-induced causes"	"D9"	10	615878	Unreliable
+	"Sullivan County, NY"	"36105"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	32027	Unreliable
+	"Sullivan County, NY"	"36105"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	31951	Unreliable
+	"Sullivan County, NY"	"36105"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	31838	Unreliable
+	"Sullivan County, NY"	"36105"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	33086	Unreliable
+	"Sullivan County, NY"	"36105"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	32999	60.6
+	"Sullivan County, NY"	"36105"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	32732	64.2
+	"Sullivan County, NY"	"36105"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	32833	82.2
+	"Tompkins County, NY"	"36109"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	42230	Unreliable
+	"Tompkins County, NY"	"36109"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	41380	Unreliable
+	"Tompkins County, NY"	"36109"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	40976	Unreliable
+	"Ulster County, NY"	"36111"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	81226	24.6
+	"Ulster County, NY"	"36111"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	80805	Unreliable
+	"Ulster County, NY"	"36111"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	80313	Unreliable
+	"Ulster County, NY"	"36111"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	80132	Unreliable
+	"Ulster County, NY"	"36111"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	78028	32.0
+	"Ulster County, NY"	"36111"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	77675	47.6
+	"Ulster County, NY"	"36111"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	77202	29.8
+	"Ulster County, NY"	"36111"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	41	77094	53.2
+	"Warren County, NY"	"36113"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	11	30115	Unreliable
+	"Washington County, NY"	"36115"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	10	28996	Unreliable
+	"Wayne County, NY"	"36117"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	42175	Unreliable
+	"Wayne County, NY"	"36117"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	41889	Unreliable
+	"Westchester County, NY"	"36119"	"Female"	"F"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	373302	5.9
+	"Westchester County, NY"	"36119"	"Female"	"F"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	368019	9.5
+	"Westchester County, NY"	"36119"	"Female"	"F"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	367060	6.3
+	"Westchester County, NY"	"36119"	"Female"	"F"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	91258	Unreliable
+	"Westchester County, NY"	"36119"	"Female"	"F"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	364385	6.3
+	"Westchester County, NY"	"36119"	"Male"	"M"	"2017"	"2017"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	78775	Unreliable
+	"Westchester County, NY"	"36119"	"Male"	"M"	"2017"	"2017"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	89	358553	24.8
+	"Westchester County, NY"	"36119"	"Male"	"M"	"2018"	"2018"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	78841	25.4
+	"Westchester County, NY"	"36119"	"Male"	"M"	"2018"	"2018"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	87	353170	24.6
+	"Westchester County, NY"	"36119"	"Male"	"M"	"2019"	"2019"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	71	352645	20.1
+	"Westchester County, NY"	"36119"	"Male"	"M"	"2020 "	"2020"	"Black or African American"	"2054-5"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	80400	36.1
+	"Westchester County, NY"	"36119"	"Male"	"M"	"2020 "	"2020"	"White"	"2106-3"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	92	349513	26.3
+"---"
+"Dataset: Underlying Cause of Death, 1999-2020"
+"Query Parameters:"
+"Drug/Alcohol Induced Causes: Drug-induced causes"
+"States: New York (36)"
+"Year/Month: 2017; 2018; 2019; 2020"
+"Group By: County; Gender; Year; Race; Drug/Alcohol Induced Cause"
+"Show Totals: Disabled"
+"Show Zero Values: False"
+"Show Suppressed: False"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/ucd.html for more information."
+"---"
+"Query Date: May 13, 2023 10:26:12 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Mortality 1999-2020 on CDC WONDER Online Database, released in 2021. Data are from the Multiple Cause of Death Files,"
+"1999-2020, as compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative"
+"Program. Accessed at http://wonder.cdc.gov/ucd-icd10.html on May 13, 2023 10:26:12 PM"
+"---"
+Messages:
+"1. Totals are not available for these results due to suppression constraints. More Information:"
+"http://wonder.cdc.gov/wonder/help/faq.html#Privacy."
+"2. Rows with zero Deaths are hidden. Use Quick Options above to show zero rows."
+"3. Rows with suppressed Deaths are hidden. Use Quick Options above to show suppressed rows."
+"---"
+Caveats:
+"1. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Assurance of Confidentiality."
+"2. Death rates are flagged as Unreliable when the rate is calculated with a numerator of 20 or less. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Unreliable."
+"3. Information included on the death certificate about the race and Hispanic ethnicity of the decedent is reported by the"
+"funeral director as provided by an informant, often the surviving next of kin, or, in the absence of an informant, on the basis"
+"of observation. Race and ethnicity information from the census is by self-report. To the extent that race and Hispanic origin"
+"are inconsistent between these two data sources, death rates will be biased. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Racial Differences."
+"4. The population figures for year 2020 are bridged-race estimates of the July 1 resident population, from the Vintage 2020"
+"postcensal series released by NCHS on September 22, 2021. The population figures for year 2019 are bridged-race estimates of the"
+"July 1 resident population, from the Vintage 2019 postcensal series released by NCHS on July 9, 2020. The population figures for"
+"year 2018 are bridged-race estimates of the July 1 resident population, from the Vintage 2018 postcensal series released by NCHS"
+"on June 25, 2019. The population figures for year 2017 are bridged-race estimates of the July 1 resident population, from the"
+"Vintage 2017 postcensal series released by NCHS on June 27, 2018. The population figures for year 2016 are bridged-race"
+"estimates of the July 1 resident population, from the Vintage 2016 postcensal series released by NCHS on June 26, 2017. The"
+"population figures for year 2015 are bridged-race estimates of the July 1 resident population, from the Vintage 2015 postcensal"
+"series released by NCHS on June 28, 2016. The population figures for year 2014 are bridged-race estimates of the July 1 resident"
+"population, from the Vintage 2014 postcensal series released by NCHS on June 30, 2015. The population figures for year 2013 are"
+"bridged-race estimates of the July 1 resident population, from the Vintage 2013 postcensal series released by NCHS on June 26,"
+"2014. The population figures for year 2012 are bridged-race estimates of the July 1 resident population, from the Vintage 2012"
+"postcensal series released by NCHS on June 13, 2013. The population figures for year 2011 are bridged-race estimates of the July"
+"1 resident population, from the Vintage 2011 postcensal series released by NCHS on July 18, 2012. Population figures for 2010"
+"are April 1 Census counts. The population figures for years 2001 - 2009 are bridged-race estimates of the July 1 resident"
+"population, from the revised intercensal county-level 2000 - 2009 series released by NCHS on October 26, 2012. Population"
+"figures for 2000 are April 1 Census counts. Population figures for 1999 are from the 1990-1999 intercensal series of July 1"
+"estimates. Population figures for the infant age groups are the number of live births. <br/><b>Note:</b> Rates and population"
+"figures for years 2001 - 2009 differ slightly from previously published reports, due to use of the population estimates which"
+"were available at the time of release."
+"5. The population figures used in the calculation of death rates for the age group 'under 1 year' are the estimates of the"
+"resident population that is under one year of age. More information: http://wonder.cdc.gov/wonder/help/ucd.html#Age Group."
