@@ -92,16 +92,18 @@ The Underlying Causes of death data was obtained from the [CDC Wonder database](
 The [Summary of Syringe Data in NYC Parks dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) and
 The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve)  [Open NYC Data](https://opendata.cityofnewyork.us/) datasets used to gather data on the syringes collected and parks where syringes are collected. 
 
-```{r class.source = 'fold-show'}
-dth <- read_tsv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/CountyYearRaceAgeDeaths.txt", show_col_types = FALSE)
-df_dth <- dth
-
+```{r message=FALSE, warning=FALSE, class.source='fold-show'}
 syr <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Summary_of_Syringe_Data_in_NYC_Parks.csv") 
 df_syr <- syr
 
 pk <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Parks_Properties.csv")
 df_pk <- pk
+
+dth <- read_tsv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/CountyYearRaceGenderDeaths.txt", show_col_types = FALSE)
+df_dth <- dth
 ```
+
+&nbsp; 
 
 # Exploratory Data Analysis
 
@@ -114,26 +116,6 @@ knitr::include_graphics("pile_of_syringes.jpeg")
 &nbsp; 
 
 ## Dimensions, Variable types, Labels, Levels, and Frequencies
-
-### Underlying Cause of Death
-
-The Underlying Cause of Death database contains mortality and population counts for all U.S. counties. Data are based on death certificates for U.S. residents. Each death certificate identifies a single underlying cause of death and demographic data. The number of deaths, crude death rates or age-adjusted death rates, and 95% confidence intervals and standard errors for death rates can be obtained by place of residence (total U.S., region, state and county), age group (single-year-of age, 5-year age groups, 10-year age groups and infant age groups), race, Hispanic ethnicity, gender, year, cause-of-death (4-digit ICD-10 code or group of codes), injury intent and injury mechanism, drug/alcohol induced causes and urbanization categories. Data are also available for place of death, month and week day of death, and whether an autopsy was performed.
-
-The dataset has 14 columns and 275 rows where 9 variables are character type, and 5 variables are double type (decimals).
-
-```{r}
-glimpse(df_dth)
-
-look_for(df_dth)
-
-table(look_for(df_dth)$col_type)
-```
-
-```{r}
-
-```
-
-
 
 ### Summary of Syringe Data in NYC Parks  
 
@@ -151,7 +133,7 @@ table(look_for(df_syr)$col_type)
 Below are the counts of unique values for each variable. The purpose of this is to identify if there are any variables that may require a change of variable type from its originally loaded type.
 
 ```{r}
-# Counts of unique values/levels for each character variable
+# Counts of unique values/levels for each variable
 rapply(df_syr, function(x) length(unique(x)))
 
 # unique(df_syr$group)
@@ -184,8 +166,17 @@ df_syr<- df_syr %>%
                              )
          )
  
-str(df_syr)
+glimpse(df_syr)
 ```
+
+```{r}
+df_syr2 <- df_syr %>% 
+  select(c(gispropnum, month, year, month_year ,group, location, ground_syringes,
+           kiosk_syringes, total_syringes, kiosk_number, kiosk_type, kiosk_site
+           ))
+```
+
+
 
 ### Parks Properties 
 
@@ -202,13 +193,13 @@ table(look_for(df_pk)$col_type)
 ```
 
 
-Below shows counts of unique values/levels for each character variable and preliminary data cleaning is conducted.
+Below shows counts of unique values/levels for each variable and preliminary data cleaning is conducted.
 ```{r}
 # df_pk<- df_pk %>% select(c("GISPROPNUM","ACRES","JURISDICTION","COMMUNITYBOARD",
 #                            "COUNCILDISTRICT","SUBCATEGORY","TYPECATEGORY",
 #                            "WATERFRONT"))
 
-# Counts of unique values/levels for each character variable
+# Counts of unique values/levels for each variable
 rapply(df_pk %>% keep(is.character), function(x) length(unique(x)))
 
 #display top 10 levels and corresponding counts of selected variables
@@ -241,6 +232,54 @@ Next, the syringe collection data is merged with the parks data.
 df <- left_join(x=df_syr, y=df_pk, by="gispropnum", relationship = "many-to-many")
 
 glimpse(df)  
+```
+
+### Underlying Cause of Death
+
+The Underlying Cause of Death database contains mortality and population counts for all U.S. counties. Data are based on death certificates for U.S. residents. Each death certificate identifies a single underlying cause of death and demographic data. The number of deaths, crude death rates or age-adjusted death rates, and 95% confidence intervals and standard errors for death rates can be obtained by place of residence (total U.S., region, state and county), age group (single-year-of age, 5-year age groups, 10-year age groups and infant age groups), race, Hispanic ethnicity, gender, year, cause-of-death (4-digit ICD-10 code or group of codes), injury intent and injury mechanism, drug/alcohol induced causes and urbanization categories. Data are also available for place of death, month and week day of death, and whether an autopsy was performed.
+
+The dataset has 14 columns and 275 rows where 9 variables are character type, and 5 variables are double type (decimals).
+
+```{r}
+glimpse(df_dth)
+
+look_for(df_dth)
+
+table(look_for(df_dth)$col_type)
+```
+
+The Underlying Cause of Death dataset contains information for all counties in the state of New York for the years 2017-2021 and causes of deaths include Drug poisonings (overdose) Suicide (X60-X64), Drug poisonings (overdose) Undetermined (Y10-Y14), Drug poisonings (overdose) Unintentional (X40-X44), and All other drug-induced causes.
+
+The scope of this project is limited to deaths by unintentional overdose for the NYC area, specifically the Bronx. The data will be filtered for the five boroughs for exploratory analysis and county names will be used to add the borough name equivalent.
+
+After filtering for the five bororughs the causes of death remaining are narrowed down to Drug poisonings (overdose) Suicide (X60-X64), Drug poisonings (overdose) Unintentional (X40-X44), and All other drug-induced causes. The data will be filtered further to only include Drug poisonings (overdose) Unintentional (X40-X44). 
+```{r}
+df_dth <- df_dth %>% 
+  select(c("County","Year","Gender","Race","Deaths","Population",
+           "Drug/Alcohol Induced Cause")) %>% 
+  filter(County %in% c("Bronx County, NY","Kings County, NY", "New York County, NY",
+                       "Queens County, NY", "Richmond County, NY"),
+         
+         `Drug/Alcohol Induced Cause` == "Drug poisonings (overdose) Unintentional (X40-X44)") %>% 
+  mutate(borough= case_when(County == "Bronx County, NY" ~ "Bronx",
+                            County == "Kings County, NY" ~ "Brooklyn", 
+                            County == "New York County, NY" ~ "Manhattan",
+                            County == "Queens County, NY" ~ "Queens", 
+                            County == "Richmond County, NY" ~ "Staten Island")
+         )
+
+#change column cases to lowercase  
+names(df_dth) <- tolower(names(df_dth))
+```
+
+
+
+```{r message=FALSE, warning=FALSE}
+df_dth %>% 
+  group_by(borough, year) %>% 
+  summarise(total_deaths=sum(deaths, na.rm = T)) %>%
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
 ```
 
 ## Variable Dependencies and Definitions
@@ -422,6 +461,32 @@ df %>%
   kable(booktabs=TRUE, col.names = c("Sub Category", "Total Syringes"))  %>%
   kable_styling(font_size = 9, latex_options = "scale_down")
 ```
+
+```{r}
+b <- df %>% select(c(borough,location,typecategory,subcategory)) %>% 
+  filter(borough =="Bronx")
+
+b
+
+length(unique(b$location))
+
+df %>%
+  filter(borough=="Bronx", 
+         year %in% c(2017,2018,2019,2020)) %>% 
+  count(location) %>% 
+  arrange(-n)
+```
+
+```{r}
+df %>%
+  filter(borough=="Bronx", 
+         year %in% c(2017,2018,2019,2020)) %>% 
+  group_by(location, year) %>% 
+  summarise(total=sum(total_syringes, na.rm = T)) %>% 
+  arrange(-total)
+```
+
+
 
 ## Correlations
 
