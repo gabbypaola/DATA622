@@ -1,0 +1,277 @@
+"Notes"	"County"	"County Code"	"Year"	"Year Code"	"Drug/Alcohol Induced Cause"	"Drug/Alcohol Induced Cause Code"	Deaths	Population	Crude Rate
+	"Albany County, NY"	"36001"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	293953	7.8
+	"Albany County, NY"	"36001"	"2017"	"2017"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	24	293953	8.2
+	"Albany County, NY"	"36001"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	291791	9.6
+	"Albany County, NY"	"36001"	"2018"	"2018"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	18	291791	Unreliable
+	"Albany County, NY"	"36001"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	290302	10.7
+	"Albany County, NY"	"36001"	"2019"	"2019"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	24	290302	8.3
+	"Albany County, NY"	"36001"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	57	288925	19.7
+	"Albany County, NY"	"36001"	"2020 "	"2020"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	23	288925	8.0
+	"Bronx County, NY"	"36005"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	346	1365105	25.3
+	"Bronx County, NY"	"36005"	"2017"	"2017"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	12	1365105	Unreliable
+	"Bronx County, NY"	"36005"	"2017"	"2017"	"All other drug-induced causes"	"D9"	44	1365105	3.2
+	"Bronx County, NY"	"36005"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	381	1329693	28.7
+	"Bronx County, NY"	"36005"	"2018"	"2018"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	11	1329693	Unreliable
+	"Bronx County, NY"	"36005"	"2018"	"2018"	"All other drug-induced causes"	"D9"	40	1329693	3.0
+	"Bronx County, NY"	"36005"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	397	1318008	30.1
+	"Bronx County, NY"	"36005"	"2019"	"2019"	"All other drug-induced causes"	"D9"	25	1318008	1.9
+	"Bronx County, NY"	"36005"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	544	1303496	41.7
+	"Bronx County, NY"	"36005"	"2020 "	"2020"	"All other drug-induced causes"	"D9"	28	1303496	2.1
+	"Broome County, NY"	"36007"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	63	183577	34.3
+	"Broome County, NY"	"36007"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	39	181617	21.5
+	"Broome County, NY"	"36007"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	40	180602	22.1
+	"Broome County, NY"	"36007"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	75	179877	41.7
+	"Cattaraugus County, NY"	"36009"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	72917	Unreliable
+	"Cattaraugus County, NY"	"36009"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	72568	Unreliable
+	"Cattaraugus County, NY"	"36009"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	71957	Unreliable
+	"Cattaraugus County, NY"	"36009"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	71578	Unreliable
+	"Cayuga County, NY"	"36011"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	73844	29.8
+	"Cayuga County, NY"	"36011"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	73299	Unreliable
+	"Cayuga County, NY"	"36011"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	72333	42.9
+	"Chautauqua County, NY"	"36013"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	121997	31.1
+	"Chautauqua County, NY"	"36013"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	121024	20.7
+	"Chautauqua County, NY"	"36013"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	120007	25.0
+	"Chautauqua County, NY"	"36013"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	119310	37.7
+	"Chemung County, NY"	"36015"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	80698	28.5
+	"Chemung County, NY"	"36015"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	79541	Unreliable
+	"Chemung County, NY"	"36015"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	78838	43.1
+	"Chemung County, NY"	"36015"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	78180	33.3
+	"Chenango County, NY"	"36017"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	44337	Unreliable
+	"Clinton County, NY"	"36019"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	77072	Unreliable
+	"Clinton County, NY"	"36019"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	76022	Unreliable
+	"Columbia County, NY"	"36021"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	58010	Unreliable
+	"Columbia County, NY"	"36021"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	56965	Unreliable
+	"Cortland County, NY"	"36023"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	45378	Unreliable
+	"Cortland County, NY"	"36023"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	45117	Unreliable
+	"Cortland County, NY"	"36023"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	44814	Unreliable
+	"Delaware County, NY"	"36025"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	42818	Unreliable
+	"Dutchess County, NY"	"36027"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	81	281924	28.7
+	"Dutchess County, NY"	"36027"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	86	280387	30.7
+	"Dutchess County, NY"	"36027"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	69	280657	24.6
+	"Dutchess County, NY"	"36027"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	111	279949	39.7
+	"Erie County, NY"	"36029"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	263	874556	30.1
+	"Erie County, NY"	"36029"	"2017"	"2017"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	14	874556	Unreliable
+	"Erie County, NY"	"36029"	"2017"	"2017"	"All other drug-induced causes"	"D9"	12	874556	Unreliable
+	"Erie County, NY"	"36029"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	190	869674	21.8
+	"Erie County, NY"	"36029"	"2018"	"2018"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	14	869674	Unreliable
+	"Erie County, NY"	"36029"	"2018"	"2018"	"All other drug-induced causes"	"D9"	21	869674	2.4
+	"Erie County, NY"	"36029"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	161	868601	18.5
+	"Erie County, NY"	"36029"	"2019"	"2019"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	15	868601	Unreliable
+	"Erie County, NY"	"36029"	"2019"	"2019"	"All other drug-induced causes"	"D9"	10	868601	Unreliable
+	"Erie County, NY"	"36029"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	270	867734	31.1
+	"Erie County, NY"	"36029"	"2020 "	"2020"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	14	867734	Unreliable
+	"Erie County, NY"	"36029"	"2020 "	"2020"	"All other drug-induced causes"	"D9"	12	867734	Unreliable
+	"Fulton County, NY"	"36035"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	50194	Unreliable
+	"Genesee County, NY"	"36037"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	54964	Unreliable
+	"Genesee County, NY"	"36037"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	54519	36.7
+	"Genesee County, NY"	"36037"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	54344	Unreliable
+	"Genesee County, NY"	"36037"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	54059	Unreliable
+	"Greene County, NY"	"36039"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	45524	Unreliable
+	"Greene County, NY"	"36039"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	45118	Unreliable
+	"Jefferson County, NY"	"36045"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	105258	20.0
+	"Jefferson County, NY"	"36045"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	103035	Unreliable
+	"Jefferson County, NY"	"36045"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	101248	Unreliable
+	"Jefferson County, NY"	"36045"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	99952	34.0
+	"Kings County, NY"	"36047"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	354	2455403	14.4
+	"Kings County, NY"	"36047"	"2017"	"2017"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	22	2455403	0.9
+	"Kings County, NY"	"36047"	"2017"	"2017"	"All other drug-induced causes"	"D9"	25	2455403	1.0
+	"Kings County, NY"	"36047"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	279	2395590	11.6
+	"Kings County, NY"	"36047"	"2018"	"2018"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	13	2395590	Unreliable
+	"Kings County, NY"	"36047"	"2018"	"2018"	"All other drug-induced causes"	"D9"	17	2395590	Unreliable
+	"Kings County, NY"	"36047"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	311	2376977	13.1
+	"Kings County, NY"	"36047"	"2019"	"2019"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	18	2376977	Unreliable
+	"Kings County, NY"	"36047"	"2019"	"2019"	"All other drug-induced causes"	"D9"	25	2376977	1.1
+	"Kings County, NY"	"36047"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	444	2360040	18.8
+	"Kings County, NY"	"36047"	"2020 "	"2020"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	18	2360040	Unreliable
+	"Kings County, NY"	"36047"	"2020 "	"2020"	"All other drug-induced causes"	"D9"	17	2360040	Unreliable
+	"Lewis County, NY"	"36049"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	24915	Unreliable
+	"Livingston County, NY"	"36051"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	60519	Unreliable
+	"Livingston County, NY"	"36051"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	59773	Unreliable
+	"Madison County, NY"	"36053"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	67508	Unreliable
+	"Madison County, NY"	"36053"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	67043	Unreliable
+	"Monroe County, NY"	"36055"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	190	706176	26.9
+	"Monroe County, NY"	"36055"	"2017"	"2017"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	10	706176	Unreliable
+	"Monroe County, NY"	"36055"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	211	701854	30.1
+	"Monroe County, NY"	"36055"	"2018"	"2018"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	10	701854	Unreliable
+	"Monroe County, NY"	"36055"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	199	701369	28.4
+	"Monroe County, NY"	"36055"	"2019"	"2019"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	16	701369	Unreliable
+	"Monroe County, NY"	"36055"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	258	701117	36.8
+	"Montgomery County, NY"	"36057"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	46387	Unreliable
+	"Nassau County, NY"	"36059"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	215	1295136	16.6
+	"Nassau County, NY"	"36059"	"2017"	"2017"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	11	1295136	Unreliable
+	"Nassau County, NY"	"36059"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	175	1284057	13.6
+	"Nassau County, NY"	"36059"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	204	1282825	15.9
+	"Nassau County, NY"	"36059"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	253	1277764	19.8
+	"New York County, NY"	"36061"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	220	1584601	13.9
+	"New York County, NY"	"36061"	"2017"	"2017"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	28	1584601	1.8
+	"New York County, NY"	"36061"	"2017"	"2017"	"All other drug-induced causes"	"D9"	29	1584601	1.8
+	"New York County, NY"	"36061"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	256	1551762	16.5
+	"New York County, NY"	"36061"	"2018"	"2018"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	18	1551762	Unreliable
+	"New York County, NY"	"36061"	"2018"	"2018"	"All other drug-induced causes"	"D9"	31	1551762	2.0
+	"New York County, NY"	"36061"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	301	1552562	19.4
+	"New York County, NY"	"36061"	"2019"	"2019"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	19	1552562	Unreliable
+	"New York County, NY"	"36061"	"2019"	"2019"	"All other drug-induced causes"	"D9"	21	1552562	1.4
+	"New York County, NY"	"36061"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	375	1537528	24.4
+	"New York County, NY"	"36061"	"2020 "	"2020"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	17	1537528	Unreliable
+	"New York County, NY"	"36061"	"2020 "	"2020"	"All other drug-induced causes"	"D9"	22	1537528	1.4
+	"Niagara County, NY"	"36063"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	200306	21.5
+	"Niagara County, NY"	"36063"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	46	199369	23.1
+	"Niagara County, NY"	"36063"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	42	198251	21.2
+	"Niagara County, NY"	"36063"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	69	197690	34.9
+	"Oneida County, NY"	"36065"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	51	218116	23.4
+	"Oneida County, NY"	"36065"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	42	216778	19.4
+	"Oneida County, NY"	"36065"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	50	215804	23.2
+	"Oneida County, NY"	"36065"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	68	214769	31.7
+	"Onondaga County, NY"	"36067"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	86	438911	19.6
+	"Onondaga County, NY"	"36067"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	92	435673	21.1
+	"Onondaga County, NY"	"36067"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	117	434657	26.9
+	"Onondaga County, NY"	"36067"	"2019"	"2019"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	11	434657	Unreliable
+	"Onondaga County, NY"	"36067"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	146	433159	33.7
+	"Ontario County, NY"	"36069"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	104408	20.1
+	"Ontario County, NY"	"36069"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	104416	Unreliable
+	"Ontario County, NY"	"36069"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	104452	Unreliable
+	"Ontario County, NY"	"36069"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	104817	Unreliable
+	"Orange County, NY"	"36071"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	86	357002	24.1
+	"Orange County, NY"	"36071"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	112	356696	31.4
+	"Orange County, NY"	"36071"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	79	359046	22.0
+	"Orange County, NY"	"36071"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	114	359269	31.7
+	"Oswego County, NY"	"36075"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	112205	Unreliable
+	"Oswego County, NY"	"36075"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	111488	Unreliable
+	"Oswego County, NY"	"36075"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	110782	28.0
+	"Oswego County, NY"	"36075"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	110069	30.9
+	"Otsego County, NY"	"36077"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	56281	Unreliable
+	"Putnam County, NY"	"36079"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	94946	31.6
+	"Putnam County, NY"	"36079"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	94448	24.4
+	"Putnam County, NY"	"36079"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	93916	Unreliable
+	"Putnam County, NY"	"36079"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	94083	Unreliable
+	"Queens County, NY"	"36081"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	268	2212995	12.1
+	"Queens County, NY"	"36081"	"2017"	"2017"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	13	2212995	Unreliable
+	"Queens County, NY"	"36081"	"2017"	"2017"	"All other drug-induced causes"	"D9"	16	2212995	Unreliable
+	"Queens County, NY"	"36081"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	229	2137697	10.7
+	"Queens County, NY"	"36081"	"2018"	"2018"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	29	2137697	1.4
+	"Queens County, NY"	"36081"	"2018"	"2018"	"All other drug-induced causes"	"D9"	13	2137697	Unreliable
+	"Queens County, NY"	"36081"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	240	2116763	11.3
+	"Queens County, NY"	"36081"	"2019"	"2019"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	23	2116763	1.1
+	"Queens County, NY"	"36081"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	387	2092744	18.5
+	"Queens County, NY"	"36081"	"2020 "	"2020"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	16	2092744	Unreliable
+	"Queens County, NY"	"36081"	"2020 "	"2020"	"All other drug-induced causes"	"D9"	14	2092744	Unreliable
+	"Rensselaer County, NY"	"36083"	"2017"	"2017"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	15	151428	Unreliable
+	"Rensselaer County, NY"	"36083"	"2018"	"2018"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	17	151051	Unreliable
+	"Rensselaer County, NY"	"36083"	"2019"	"2019"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	19	150669	Unreliable
+	"Rensselaer County, NY"	"36083"	"2020 "	"2020"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	34	150059	22.7
+	"Richmond County, NY"	"36085"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	106	452013	23.5
+	"Richmond County, NY"	"36085"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	112	448766	25.0
+	"Richmond County, NY"	"36085"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	111	448789	24.7
+	"Richmond County, NY"	"36085"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	136	448433	30.3
+	"Rockland County, NY"	"36087"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	302949	10.9
+	"Rockland County, NY"	"36087"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	299346	10.0
+	"Rockland County, NY"	"36087"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	47	299097	15.7
+	"Rockland County, NY"	"36087"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	298736	15.1
+	"St. Lawrence County, NY"	"36089"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	103875	Unreliable
+	"St. Lawrence County, NY"	"36089"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	101793	Unreliable
+	"Saratoga County, NY"	"36091"	"2017"	"2017"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	13	217986	Unreliable
+	"Saratoga County, NY"	"36091"	"2018"	"2018"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	22	218375	10.1
+	"Saratoga County, NY"	"36091"	"2019"	"2019"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	12	218464	Unreliable
+	"Saratoga County, NY"	"36091"	"2020 "	"2020"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	33	219285	15.0
+	"Schenectady County, NY"	"36093"	"2017"	"2017"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	34	146380	23.2
+	"Schenectady County, NY"	"36093"	"2018"	"2018"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	24	146402	16.4
+	"Schenectady County, NY"	"36093"	"2019"	"2019"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	27	146118	18.5
+	"Schenectady County, NY"	"36093"	"2020 "	"2020"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	30	146104	20.5
+	"Steuben County, NY"	"36101"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	90983	Unreliable
+	"Steuben County, NY"	"36101"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	90190	Unreliable
+	"Steuben County, NY"	"36101"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	89450	Unreliable
+	"Suffolk County, NY"	"36103"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	455	1413417	32.2
+	"Suffolk County, NY"	"36103"	"2017"	"2017"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	16	1413417	Unreliable
+	"Suffolk County, NY"	"36103"	"2017"	"2017"	"All other drug-induced causes"	"D9"	10	1413417	Unreliable
+	"Suffolk County, NY"	"36103"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	371	1401794	26.5
+	"Suffolk County, NY"	"36103"	"2018"	"2018"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	17	1401794	Unreliable
+	"Suffolk County, NY"	"36103"	"2018"	"2018"	"All other drug-induced causes"	"D9"	10	1401794	Unreliable
+	"Suffolk County, NY"	"36103"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	296	1397462	21.2
+	"Suffolk County, NY"	"36103"	"2019"	"2019"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	21	1397462	1.5
+	"Suffolk County, NY"	"36103"	"2019"	"2019"	"All other drug-induced causes"	"D9"	26	1397462	1.9
+	"Suffolk County, NY"	"36103"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	400	1395583	28.7
+	"Suffolk County, NY"	"36103"	"2020 "	"2020"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	17	1395583	Unreliable
+	"Suffolk County, NY"	"36103"	"2020 "	"2020"	"All other drug-induced causes"	"D9"	20	1395583	1.4
+	"Sullivan County, NY"	"36105"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	71295	43.5
+	"Sullivan County, NY"	"36105"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	71218	47.7
+	"Sullivan County, NY"	"36105"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	71103	45.0
+	"Sullivan County, NY"	"36105"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	51	71268	71.6
+	"Tioga County, NY"	"36107"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	46100	Unreliable
+	"Tompkins County, NY"	"36109"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	100643	Unreliable
+	"Tompkins County, NY"	"36109"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	98873	Unreliable
+	"Tompkins County, NY"	"36109"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	98313	Unreliable
+	"Tompkins County, NY"	"36109"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	97355	Unreliable
+	"Ulster County, NY"	"36111"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	46	171493	26.8
+	"Ulster County, NY"	"36111"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	59	170765	34.6
+	"Ulster County, NY"	"36111"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	169913	21.2
+	"Ulster County, NY"	"36111"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	71	169951	41.8
+	"Warren County, NY"	"36113"	"2020 "	"2020"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	16	60946	Unreliable
+	"Washington County, NY"	"36115"	"2020 "	"2020"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	15	57852	Unreliable
+	"Wayne County, NY"	"36117"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	85228	Unreliable
+	"Wayne County, NY"	"36117"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	84952	Unreliable
+	"Wayne County, NY"	"36117"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	84432	Unreliable
+	"Westchester County, NY"	"36119"	"2017"	"2017"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	130	924919	14.1
+	"Westchester County, NY"	"36119"	"2017"	"2017"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	12	924919	Unreliable
+	"Westchester County, NY"	"36119"	"2018"	"2018"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	152	913826	16.6
+	"Westchester County, NY"	"36119"	"2018"	"2018"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	10	913826	Unreliable
+	"Westchester County, NY"	"36119"	"2019"	"2019"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	107	913968	11.7
+	"Westchester County, NY"	"36119"	"2020 "	"2020"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	156	913577	17.1
+	"Westchester County, NY"	"36119"	"2020 "	"2020"	"Drug poisonings (overdose) Suicide (X60-X64)"	"D2"	15	913577	Unreliable
+"---"
+"Dataset: Underlying Cause of Death, 1999-2020"
+"Query Parameters:"
+"Drug/Alcohol Induced Causes: Drug-induced causes"
+"States: New York (36)"
+"Ten-Year Age Groups: 5-14 years; 15-24 years; 25-34 years; 35-44 years; 45-54 years; 55-64 years; 65-74 years; 75-84 years; 85+"
+"years"
+"Year/Month: 2017; 2018; 2019; 2020"
+"Group By: County; Year; Drug/Alcohol Induced Cause"
+"Show Totals: Disabled"
+"Show Zero Values: False"
+"Show Suppressed: False"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/ucd.html for more information."
+"---"
+"Query Date: May 13, 2023 9:47:20 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Mortality 1999-2020 on CDC WONDER Online Database, released in 2021. Data are from the Multiple Cause of Death Files,"
+"1999-2020, as compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative"
+"Program. Accessed at http://wonder.cdc.gov/ucd-icd10.html on May 13, 2023 9:47:20 PM"
+"---"
+Messages:
+"1. Totals are not available for these results due to suppression constraints. More Information:"
+"http://wonder.cdc.gov/wonder/help/faq.html#Privacy."
+"2. Rows with zero Deaths are hidden. Use Quick Options above to show zero rows."
+"3. Rows with suppressed Deaths are hidden. Use Quick Options above to show suppressed rows."
+"---"
+Caveats:
+"1. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Assurance of Confidentiality."
+"2. Death rates are flagged as Unreliable when the rate is calculated with a numerator of 20 or less. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Unreliable."
+"3. Deaths of persons with Age ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among age groups,"
+"so are not included in age-specific counts, age-specific rates or in any age-adjusted rates. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Not Stated."
+"4. The population figures for year 2020 are bridged-race estimates of the July 1 resident population, from the Vintage 2020"
+"postcensal series released by NCHS on September 22, 2021. The population figures for year 2019 are bridged-race estimates of the"
+"July 1 resident population, from the Vintage 2019 postcensal series released by NCHS on July 9, 2020. The population figures for"
+"year 2018 are bridged-race estimates of the July 1 resident population, from the Vintage 2018 postcensal series released by NCHS"
+"on June 25, 2019. The population figures for year 2017 are bridged-race estimates of the July 1 resident population, from the"
+"Vintage 2017 postcensal series released by NCHS on June 27, 2018. The population figures for year 2016 are bridged-race"
+"estimates of the July 1 resident population, from the Vintage 2016 postcensal series released by NCHS on June 26, 2017. The"
+"population figures for year 2015 are bridged-race estimates of the July 1 resident population, from the Vintage 2015 postcensal"
+"series released by NCHS on June 28, 2016. The population figures for year 2014 are bridged-race estimates of the July 1 resident"
+"population, from the Vintage 2014 postcensal series released by NCHS on June 30, 2015. The population figures for year 2013 are"
+"bridged-race estimates of the July 1 resident population, from the Vintage 2013 postcensal series released by NCHS on June 26,"
+"2014. The population figures for year 2012 are bridged-race estimates of the July 1 resident population, from the Vintage 2012"
+"postcensal series released by NCHS on June 13, 2013. The population figures for year 2011 are bridged-race estimates of the July"
+"1 resident population, from the Vintage 2011 postcensal series released by NCHS on July 18, 2012. Population figures for 2010"
+"are April 1 Census counts. The population figures for years 2001 - 2009 are bridged-race estimates of the July 1 resident"
+"population, from the revised intercensal county-level 2000 - 2009 series released by NCHS on October 26, 2012. Population"
+"figures for 2000 are April 1 Census counts. Population figures for 1999 are from the 1990-1999 intercensal series of July 1"
+"estimates. Population figures for the infant age groups are the number of live births. <br/><b>Note:</b> Rates and population"
+"figures for years 2001 - 2009 differ slightly from previously published reports, due to use of the population estimates which"
+"were available at the time of release."

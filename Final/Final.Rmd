@@ -34,7 +34,7 @@ output:
 &nbsp; 
   
 
-<center style="font-size: 36px"> Syringe Collection Efforts in the Bronx </center>
+<center style="font-size: 38px"> Syringe Collection Efforts in the Bronx </center>
 
 &nbsp;  
 &nbsp;  
@@ -87,9 +87,15 @@ library(lubridate)
 
 # Load Data
 
-The [Summary of Syringe Data in NYC Parks dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) was procured from the [Open NYC Data](https://opendata.cityofnewyork.us/). The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve) is also an Open NYC Data dataset which was brought in to gather additional data on the parks where syringes are collected. 
+The Underlying Causes of death data was obtained from the [CDC Wonder database](https://wonder.cdc.gov/ucd-icd10.html) 
+
+The [Summary of Syringe Data in NYC Parks dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) and
+The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve)  [Open NYC Data](https://opendata.cityofnewyork.us/) datasets used to gather data on the syringes collected and parks where syringes are collected. 
 
 ```{r class.source = 'fold-show'}
+dth <- read.csv("")
+df_dth <- dth
+
 syr <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Summary_of_Syringe_Data_in_NYC_Parks.csv") 
 df_syr <- syr
 
@@ -108,6 +114,20 @@ knitr::include_graphics("pile_of_syringes.jpeg")
 &nbsp; 
 
 ## Dimensions, Variable types, Labels, Levels, and Frequencies
+
+### New York City Leading Causes of Death
+
+The New York City Leading Causes of Death dataset contains the leading causes of death by sex and ethnicity in New York City in since 2007. Cause of death is derived from the NYC death certificate which is issued for every death that occurs in New York City.
+
+The dataset has 7 columns and 1803 rows where 6 variables are character type, and 1 variable is an integer.
+
+```{r}
+glimpse(df_dth)
+
+look_for(df_dth)
+
+table(look_for(df_dth)$col_type)
+```
 
 
 ### Summary of Syringe Data in NYC Parks  
@@ -356,7 +376,7 @@ df %>%
   kable_styling(font_size = 9, latex_options = "scale_down")
 ```
 
-Of the 14 different `type_category` levels below are the top 5 with the highest amount of total syringes collected in the Bronx:
+Of the 14 different `typecategory` levels below are the top 5 with the highest amount of total syringes collected in the Bronx:
 ```{r}
 # df %>% 
 #   filter(borough=="Bronx") %>% 
@@ -377,7 +397,7 @@ df %>%
   kable_styling(font_size = 9, latex_options = "scale_down")
 ```
 
-Of the 13 different `type_category` levels below are the top 5 with the highest amount of total syringes collected in the Bronx:
+Of the 13 different `subcategory` levels below are the top 5 with the highest amount of total syringes collected in the Bronx:
 ```{r}
 # df %>% 
 #   filter(borough=="Bronx") %>% 
