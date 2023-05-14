@@ -1,526 +1,568 @@
-"Notes"	"County"	"County Code"	"Month"	"Month Code"	"Single Race 6"	"Single Race 6 Code"	"Hispanic Origin"	"Hispanic Origin Code"	"Drug/Alcohol Induced Cause"	"Drug/Alcohol Induced Cause Code"	Deaths	Population	Crude Rate
-	"Albany County, NY"	"36001"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jan., 2018"	"2018/01"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jan., 2018"	"2018/01"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Feb., 2018"	"2018/02"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Apr., 2018"	"2018/04"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"May, 2018"	"2018/05"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jun., 2018"	"2018/06"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jun., 2018"	"2018/06"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jul., 2018"	"2018/07"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jul., 2018"	"2018/07"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Aug., 2018"	"2018/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Oct., 2018"	"2018/10"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Nov., 2018"	"2018/11"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Dec., 2018"	"2018/12"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Dec., 2018"	"2018/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jan., 2019"	"2019/01"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Feb., 2019"	"2019/02"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Mar., 2019"	"2019/03"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Mar., 2019"	"2019/03"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Apr., 2019"	"2019/04"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Apr., 2019"	"2019/04"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"May, 2019"	"2019/05"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"May, 2019"	"2019/05"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jun., 2019"	"2019/06"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jun., 2019"	"2019/06"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jul., 2019"	"2019/07"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jul., 2019"	"2019/07"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Aug., 2019"	"2019/08"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Aug., 2019"	"2019/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Sep., 2019"	"2019/09"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Sep., 2019"	"2019/09"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Oct., 2019"	"2019/10"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Oct., 2019"	"2019/10"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Nov., 2019"	"2019/11"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Nov., 2019"	"2019/11"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Nov., 2019"	"2019/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Dec., 2019"	"2019/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jan., 2020"	"2020/01"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jan., 2020"	"2020/01"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Apr., 2020"	"2020/04"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Apr., 2020"	"2020/04"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"May, 2020"	"2020/05"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jun., 2020"	"2020/06"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jun., 2020"	"2020/06"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jul., 2020"	"2020/07"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jul., 2020"	"2020/07"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Aug., 2020"	"2020/08"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Aug., 2020"	"2020/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Sep., 2020"	"2020/09"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Sep., 2020"	"2020/09"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Oct., 2020"	"2020/10"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Oct., 2020"	"2020/10"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Nov., 2020"	"2020/11"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Nov., 2020"	"2020/11"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Dec., 2020"	"2020/12"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jan., 2021 "	"2021/01"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Feb., 2021 "	"2021/02"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Mar., 2021 "	"2021/03"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Apr., 2021 "	"2021/04"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"May, 2021 "	"2021/05"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"May, 2021 "	"2021/05"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jun., 2021 "	"2021/06"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jun., 2021 "	"2021/06"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jul., 2021 "	"2021/07"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Jul., 2021 "	"2021/07"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Aug., 2021 "	"2021/08"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Sep., 2021 "	"2021/09"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Sep., 2021 "	"2021/09"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Oct., 2021 "	"2021/10"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Oct., 2021 "	"2021/10"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	41	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Nov., 2021 "	"2021/11"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Nov., 2021 "	"2021/11"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	40	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Dec., 2021 "	"2021/12"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	Not Applicable	Not Applicable
-	"Bronx County, NY"	"36005"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Broome County, NY"	"36007"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Dutchess County, NY"	"36027"	"May, 2018"	"2018/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Dutchess County, NY"	"36027"	"Oct., 2020"	"2020/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Dutchess County, NY"	"36027"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jan., 2018"	"2018/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Feb., 2018"	"2018/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Mar., 2018"	"2018/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Apr., 2018"	"2018/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"May, 2018"	"2018/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jun., 2018"	"2018/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jul., 2018"	"2018/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Oct., 2018"	"2018/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Nov., 2018"	"2018/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Feb., 2019"	"2019/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Apr., 2019"	"2019/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jun., 2019"	"2019/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jul., 2019"	"2019/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Aug., 2019"	"2019/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Sep., 2019"	"2019/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Oct., 2019"	"2019/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Nov., 2019"	"2019/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jan., 2020"	"2020/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jun., 2020"	"2020/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jul., 2020"	"2020/07"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jul., 2020"	"2020/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Aug., 2020"	"2020/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Sep., 2020"	"2020/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Oct., 2020"	"2020/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Nov., 2020"	"2020/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Mar., 2021 "	"2021/03"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Jul., 2021 "	"2021/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Aug., 2021 "	"2021/08"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Sep., 2021 "	"2021/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Oct., 2021 "	"2021/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Nov., 2021 "	"2021/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Erie County, NY"	"36029"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jan., 2018"	"2018/01"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Mar., 2018"	"2018/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"May, 2018"	"2018/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jun., 2018"	"2018/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Sep., 2018"	"2018/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Oct., 2018"	"2018/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Dec., 2018"	"2018/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Feb., 2019"	"2019/02"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Feb., 2019"	"2019/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Apr., 2019"	"2019/04"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jun., 2019"	"2019/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jul., 2019"	"2019/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Aug., 2019"	"2019/08"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Oct., 2019"	"2019/10"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Dec., 2019"	"2019/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Dec., 2019"	"2019/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jan., 2020"	"2020/01"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jan., 2020"	"2020/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Feb., 2020"	"2020/02"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"May, 2020"	"2020/05"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jun., 2020"	"2020/06"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jun., 2020"	"2020/06"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jun., 2020"	"2020/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jul., 2020"	"2020/07"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jul., 2020"	"2020/07"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jul., 2020"	"2020/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Aug., 2020"	"2020/08"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Sep., 2020"	"2020/09"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Sep., 2020"	"2020/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Oct., 2020"	"2020/10"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Oct., 2020"	"2020/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Nov., 2020"	"2020/11"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Nov., 2020"	"2020/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Dec., 2020"	"2020/12"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jan., 2021 "	"2021/01"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Mar., 2021 "	"2021/03"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Apr., 2021 "	"2021/04"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"May, 2021 "	"2021/05"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"May, 2021 "	"2021/05"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"May, 2021 "	"2021/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jun., 2021 "	"2021/06"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jun., 2021 "	"2021/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jul., 2021 "	"2021/07"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jul., 2021 "	"2021/07"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Jul., 2021 "	"2021/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Aug., 2021 "	"2021/08"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Sep., 2021 "	"2021/09"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Sep., 2021 "	"2021/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Oct., 2021 "	"2021/10"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Oct., 2021 "	"2021/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Nov., 2021 "	"2021/11"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Nov., 2021 "	"2021/11"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Nov., 2021 "	"2021/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Dec., 2021 "	"2021/12"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Kings County, NY"	"36047"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Jan., 2018"	"2018/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Feb., 2018"	"2018/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Mar., 2018"	"2018/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Apr., 2018"	"2018/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"May, 2018"	"2018/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Jun., 2018"	"2018/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Jul., 2018"	"2018/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Aug., 2018"	"2018/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Oct., 2018"	"2018/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Nov., 2018"	"2018/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Dec., 2018"	"2018/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Jan., 2019"	"2019/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Mar., 2019"	"2019/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"May, 2019"	"2019/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Jun., 2019"	"2019/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Jul., 2019"	"2019/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Aug., 2019"	"2019/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Oct., 2019"	"2019/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Dec., 2019"	"2019/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Apr., 2020"	"2020/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Jun., 2020"	"2020/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Aug., 2020"	"2020/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Sep., 2020"	"2020/09"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Sep., 2020"	"2020/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Nov., 2020"	"2020/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Dec., 2020"	"2020/12"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"May, 2021 "	"2021/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Monroe County, NY"	"36055"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Jan., 2018"	"2018/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Feb., 2018"	"2018/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Mar., 2018"	"2018/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Apr., 2018"	"2018/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"May, 2018"	"2018/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Aug., 2018"	"2018/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Sep., 2018"	"2018/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Oct., 2018"	"2018/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Nov., 2018"	"2018/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Jan., 2019"	"2019/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Feb., 2019"	"2019/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Mar., 2019"	"2019/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"May, 2019"	"2019/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Jul., 2019"	"2019/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Aug., 2019"	"2019/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Sep., 2019"	"2019/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Oct., 2019"	"2019/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Nov., 2019"	"2019/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Dec., 2019"	"2019/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Jan., 2020"	"2020/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Apr., 2020"	"2020/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Jun., 2020"	"2020/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Jul., 2020"	"2020/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Aug., 2020"	"2020/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Sep., 2020"	"2020/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Oct., 2020"	"2020/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Nov., 2020"	"2020/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"May, 2021 "	"2021/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Jun., 2021 "	"2021/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Jul., 2021 "	"2021/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Sep., 2021 "	"2021/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Oct., 2021 "	"2021/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Nov., 2021 "	"2021/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Nassau County, NY"	"36059"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Mar., 2018"	"2018/03"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jul., 2018"	"2018/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Aug., 2018"	"2018/08"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Aug., 2018"	"2018/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Nov., 2018"	"2018/11"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jan., 2019"	"2019/01"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jul., 2019"	"2019/07"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Aug., 2019"	"2019/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Sep., 2019"	"2019/09"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Oct., 2019"	"2019/10"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Oct., 2019"	"2019/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Dec., 2019"	"2019/12"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Dec., 2019"	"2019/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Dec., 2019"	"2019/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Feb., 2020"	"2020/02"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Mar., 2020"	"2020/03"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"May, 2020"	"2020/05"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jun., 2020"	"2020/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jul., 2020"	"2020/07"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jul., 2020"	"2020/07"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Aug., 2020"	"2020/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Aug., 2020"	"2020/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Sep., 2020"	"2020/09"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Sep., 2020"	"2020/09"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Oct., 2020"	"2020/10"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Oct., 2020"	"2020/10"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Oct., 2020"	"2020/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Nov., 2020"	"2020/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Dec., 2020"	"2020/12"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jan., 2021 "	"2021/01"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Mar., 2021 "	"2021/03"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Apr., 2021 "	"2021/04"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"May, 2021 "	"2021/05"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"May, 2021 "	"2021/05"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"May, 2021 "	"2021/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jun., 2021 "	"2021/06"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jun., 2021 "	"2021/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jul., 2021 "	"2021/07"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jul., 2021 "	"2021/07"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Jul., 2021 "	"2021/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Aug., 2021 "	"2021/08"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Sep., 2021 "	"2021/09"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Sep., 2021 "	"2021/09"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Sep., 2021 "	"2021/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Oct., 2021 "	"2021/10"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Oct., 2021 "	"2021/10"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Nov., 2021 "	"2021/11"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Nov., 2021 "	"2021/11"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"New York County, NY"	"36061"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Aug., 2018"	"2018/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Jun., 2019"	"2019/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Jul., 2019"	"2019/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Jan., 2020"	"2020/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Oct., 2020"	"2020/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Nov., 2020"	"2020/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Jun., 2021 "	"2021/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Jul., 2021 "	"2021/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Sep., 2021 "	"2021/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Onondaga County, NY"	"36067"	"Oct., 2021 "	"2021/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Orange County, NY"	"36071"	"Mar., 2018"	"2018/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Orange County, NY"	"36071"	"Apr., 2018"	"2018/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Orange County, NY"	"36071"	"Feb., 2019"	"2019/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Orange County, NY"	"36071"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Orange County, NY"	"36071"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Orange County, NY"	"36071"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Jan., 2018"	"2018/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Mar., 2018"	"2018/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"May, 2018"	"2018/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Aug., 2018"	"2018/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Dec., 2018"	"2018/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Mar., 2019"	"2019/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"May, 2019"	"2019/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Aug., 2019"	"2019/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Oct., 2019"	"2019/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Dec., 2019"	"2019/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Jan., 2020"	"2020/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Apr., 2020"	"2020/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Jun., 2020"	"2020/06"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Jun., 2020"	"2020/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Jul., 2020"	"2020/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Aug., 2020"	"2020/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Sep., 2020"	"2020/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Oct., 2020"	"2020/10"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Oct., 2020"	"2020/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Nov., 2020"	"2020/11"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Nov., 2020"	"2020/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"May, 2021 "	"2021/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Jun., 2021 "	"2021/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Jul., 2021 "	"2021/07"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Jul., 2021 "	"2021/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Sep., 2021 "	"2021/09"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Oct., 2021 "	"2021/10"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Oct., 2021 "	"2021/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Nov., 2021 "	"2021/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Dec., 2021 "	"2021/12"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Queens County, NY"	"36081"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Rensselaer County, NY"	"36083"	"Apr., 2020"	"2020/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	10	Not Applicable	Not Applicable
-	"Richmond County, NY"	"36085"	"May, 2018"	"2018/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Richmond County, NY"	"36085"	"Mar., 2019"	"2019/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Richmond County, NY"	"36085"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Richmond County, NY"	"36085"	"Apr., 2020"	"2020/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Richmond County, NY"	"36085"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Richmond County, NY"	"36085"	"Jul., 2020"	"2020/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Richmond County, NY"	"36085"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Richmond County, NY"	"36085"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
-	"Richmond County, NY"	"36085"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Richmond County, NY"	"36085"	"Oct., 2021 "	"2021/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Saratoga County, NY"	"36091"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	10	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jan., 2018"	"2018/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Feb., 2018"	"2018/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Mar., 2018"	"2018/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Apr., 2018"	"2018/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"May, 2018"	"2018/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jun., 2018"	"2018/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jul., 2018"	"2018/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Aug., 2018"	"2018/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Sep., 2018"	"2018/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Oct., 2018"	"2018/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Nov., 2018"	"2018/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Dec., 2018"	"2018/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jan., 2019"	"2019/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Feb., 2019"	"2019/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Mar., 2019"	"2019/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Apr., 2019"	"2019/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"May, 2019"	"2019/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jun., 2019"	"2019/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jul., 2019"	"2019/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Aug., 2019"	"2019/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Sep., 2019"	"2019/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Oct., 2019"	"2019/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Nov., 2019"	"2019/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Dec., 2019"	"2019/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jan., 2020"	"2020/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Feb., 2020"	"2020/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Mar., 2020"	"2020/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Apr., 2020"	"2020/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"May, 2020"	"2020/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	40	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jun., 2020"	"2020/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jul., 2020"	"2020/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Aug., 2020"	"2020/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Sep., 2020"	"2020/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Oct., 2020"	"2020/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Nov., 2020"	"2020/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jan., 2021 "	"2021/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Feb., 2021 "	"2021/02"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Mar., 2021 "	"2021/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Apr., 2021 "	"2021/04"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"May, 2021 "	"2021/05"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jun., 2021 "	"2021/06"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Jul., 2021 "	"2021/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Aug., 2021 "	"2021/08"	"Black or African American"	"2054-5"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Hispanic or Latino"	"2135-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Sep., 2021 "	"2021/09"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	39	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Oct., 2021 "	"2021/10"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Nov., 2021 "	"2021/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	Not Applicable	Not Applicable
-	"Suffolk County, NY"	"36103"	"Dec., 2021 "	"2021/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
-	"Westchester County, NY"	"36119"	"Jan., 2018"	"2018/01"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
-	"Westchester County, NY"	"36119"	"Mar., 2018"	"2018/03"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Westchester County, NY"	"36119"	"Jul., 2018"	"2018/07"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
-	"Westchester County, NY"	"36119"	"Dec., 2018"	"2018/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
-	"Westchester County, NY"	"36119"	"Aug., 2020"	"2020/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Westchester County, NY"	"36119"	"Dec., 2020"	"2020/12"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
-	"Westchester County, NY"	"36119"	"Aug., 2021 "	"2021/08"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
-	"Westchester County, NY"	"36119"	"Nov., 2021 "	"2021/11"	"White"	"2106-3"	"Not Hispanic or Latino"	"2186-2"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+"Notes"	"County"	"County Code"	"Month"	"Month Code"	"Drug/Alcohol Induced Cause"	"Drug/Alcohol Induced Cause Code"	Deaths	Population	Crude Rate
+	"Albany County, NY"	"36001"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	42	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Feb., 2018"	"2018/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Mar., 2018"	"2018/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Apr., 2018"	"2018/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jul., 2018"	"2018/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Aug., 2018"	"2018/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	39	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Sep., 2018"	"2018/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Nov., 2018"	"2018/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Dec., 2018"	"2018/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jan., 2019"	"2019/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Feb., 2019"	"2019/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Mar., 2019"	"2019/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Apr., 2019"	"2019/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"May, 2019"	"2019/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jun., 2019"	"2019/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jul., 2019"	"2019/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Sep., 2019"	"2019/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Dec., 2019"	"2019/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	41	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	40	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	52	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jun., 2020"	"2020/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	39	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	67	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	44	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	47	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	48	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	80	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	53	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	54	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	72	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	58	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	76	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	58	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	69	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	61	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	73	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	75	Not Applicable	Not Applicable
+	"Bronx County, NY"	"36005"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	73	Not Applicable	Not Applicable
+	"Broome County, NY"	"36007"	"Mar., 2019"	"2019/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Broome County, NY"	"36007"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Broome County, NY"	"36007"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Broome County, NY"	"36007"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Dutchess County, NY"	"36027"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Feb., 2018"	"2018/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Mar., 2018"	"2018/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Apr., 2018"	"2018/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jul., 2018"	"2018/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Aug., 2018"	"2018/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Nov., 2018"	"2018/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Dec., 2018"	"2018/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jan., 2019"	"2019/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Feb., 2019"	"2019/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Apr., 2019"	"2019/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"May, 2019"	"2019/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jun., 2019"	"2019/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jul., 2019"	"2019/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Sep., 2019"	"2019/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Dec., 2019"	"2019/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jun., 2020"	"2020/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	41	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
+	"Erie County, NY"	"36029"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Feb., 2018"	"2018/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Mar., 2018"	"2018/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Apr., 2018"	"2018/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jul., 2018"	"2018/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Aug., 2018"	"2018/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Sep., 2018"	"2018/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Nov., 2018"	"2018/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Dec., 2018"	"2018/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jan., 2019"	"2019/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Feb., 2019"	"2019/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Mar., 2019"	"2019/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Apr., 2019"	"2019/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"May, 2019"	"2019/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jun., 2019"	"2019/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jul., 2019"	"2019/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Sep., 2019"	"2019/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Dec., 2019"	"2019/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	47	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jun., 2020"	"2020/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	40	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	44	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	47	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	42	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	54	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	49	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	47	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	54	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	54	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	58	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	52	Not Applicable	Not Applicable
+	"Kings County, NY"	"36047"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	59	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Feb., 2018"	"2018/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Mar., 2018"	"2018/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Apr., 2018"	"2018/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jul., 2018"	"2018/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Aug., 2018"	"2018/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Sep., 2018"	"2018/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Nov., 2018"	"2018/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Dec., 2018"	"2018/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jan., 2019"	"2019/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Feb., 2019"	"2019/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Mar., 2019"	"2019/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Apr., 2019"	"2019/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"May, 2019"	"2019/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jun., 2019"	"2019/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jul., 2019"	"2019/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Sep., 2019"	"2019/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Dec., 2019"	"2019/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jun., 2020"	"2020/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Monroe County, NY"	"36055"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Feb., 2018"	"2018/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Mar., 2018"	"2018/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Apr., 2018"	"2018/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jul., 2018"	"2018/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Aug., 2018"	"2018/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Sep., 2018"	"2018/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Nov., 2018"	"2018/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Dec., 2018"	"2018/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jan., 2019"	"2019/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Feb., 2019"	"2019/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Mar., 2019"	"2019/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Apr., 2019"	"2019/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"May, 2019"	"2019/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jun., 2019"	"2019/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jul., 2019"	"2019/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Sep., 2019"	"2019/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Dec., 2019"	"2019/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jun., 2020"	"2020/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Nassau County, NY"	"36059"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Feb., 2018"	"2018/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Mar., 2018"	"2018/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Apr., 2018"	"2018/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jul., 2018"	"2018/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Aug., 2018"	"2018/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Sep., 2018"	"2018/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Nov., 2018"	"2018/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Dec., 2018"	"2018/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jan., 2019"	"2019/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Feb., 2019"	"2019/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Mar., 2019"	"2019/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Apr., 2019"	"2019/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"May, 2019"	"2019/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jun., 2019"	"2019/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jul., 2019"	"2019/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Sep., 2019"	"2019/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Dec., 2019"	"2019/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jun., 2020"	"2020/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	40	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	42	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	46	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	43	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	42	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
+	"New York County, NY"	"36061"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"Niagara County, NY"	"36063"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Niagara County, NY"	"36063"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Niagara County, NY"	"36063"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Niagara County, NY"	"36063"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Oneida County, NY"	"36065"	"Mar., 2019"	"2019/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Oneida County, NY"	"36065"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Oneida County, NY"	"36065"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Aug., 2018"	"2018/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Jun., 2019"	"2019/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Jul., 2019"	"2019/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Sep., 2019"	"2019/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Jun., 2020"	"2020/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Onondaga County, NY"	"36067"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Mar., 2018"	"2018/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Apr., 2018"	"2018/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Jul., 2018"	"2018/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Aug., 2018"	"2018/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Feb., 2019"	"2019/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"May, 2019"	"2019/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Orange County, NY"	"36071"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Feb., 2018"	"2018/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Mar., 2018"	"2018/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Apr., 2018"	"2018/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jul., 2018"	"2018/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Aug., 2018"	"2018/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Sep., 2018"	"2018/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Nov., 2018"	"2018/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Dec., 2018"	"2018/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jan., 2019"	"2019/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Feb., 2019"	"2019/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Mar., 2019"	"2019/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Apr., 2019"	"2019/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"May, 2019"	"2019/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jun., 2019"	"2019/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jul., 2019"	"2019/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Sep., 2019"	"2019/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Dec., 2019"	"2019/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	41	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jun., 2020"	"2020/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	39	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	25	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	28	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	41	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	40	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	45	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
+	"Queens County, NY"	"36081"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	37	Not Applicable	Not Applicable
+	"Rensselaer County, NY"	"36083"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	12	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Apr., 2018"	"2018/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Jan., 2019"	"2019/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Feb., 2019"	"2019/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Mar., 2019"	"2019/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Richmond County, NY"	"36085"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Saratoga County, NY"	"36091"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Undetermined (Y10-Y14)"	"D4"	10	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	34	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Feb., 2018"	"2018/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Mar., 2018"	"2018/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	41	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Apr., 2018"	"2018/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"May, 2018"	"2018/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jul., 2018"	"2018/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	32	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Aug., 2018"	"2018/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	40	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Sep., 2018"	"2018/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	26	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Oct., 2018"	"2018/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Nov., 2018"	"2018/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Dec., 2018"	"2018/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jan., 2019"	"2019/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	27	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Feb., 2019"	"2019/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Mar., 2019"	"2019/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	30	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Apr., 2019"	"2019/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"May, 2019"	"2019/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jun., 2019"	"2019/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jul., 2019"	"2019/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Sep., 2019"	"2019/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	23	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Dec., 2019"	"2019/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	24	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	29	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Feb., 2020"	"2020/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	39	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"May, 2020"	"2020/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	52	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jun., 2020"	"2020/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	46	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	31	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	33	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	19	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	39	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	38	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	44	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	39	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	48	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	35	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	68	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	48	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	36	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	47	Not Applicable	Not Applicable
+	"Suffolk County, NY"	"36103"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	42	Not Applicable	Not Applicable
+	"Sullivan County, NY"	"36105"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Ulster County, NY"	"36111"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Ulster County, NY"	"36111"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Ulster County, NY"	"36111"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Ulster County, NY"	"36111"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Ulster County, NY"	"36111"	"Sep., 2021 "	"2021/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jan., 2018"	"2018/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Feb., 2018"	"2018/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Mar., 2018"	"2018/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jun., 2018"	"2018/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jul., 2018"	"2018/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	20	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Sep., 2018"	"2018/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Dec., 2018"	"2018/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jan., 2019"	"2019/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"May, 2019"	"2019/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jun., 2019"	"2019/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Aug., 2019"	"2019/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Sep., 2019"	"2019/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Oct., 2019"	"2019/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Nov., 2019"	"2019/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jan., 2020"	"2020/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Mar., 2020"	"2020/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Apr., 2020"	"2020/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jun., 2020"	"2020/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jul., 2020"	"2020/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	17	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Aug., 2020"	"2020/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Sep., 2020"	"2020/09"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	11	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Oct., 2020"	"2020/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Nov., 2020"	"2020/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Dec., 2020"	"2020/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jan., 2021 "	"2021/01"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Feb., 2021 "	"2021/02"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Mar., 2021 "	"2021/03"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	15	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Apr., 2021 "	"2021/04"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	13	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"May, 2021 "	"2021/05"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	14	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jun., 2021 "	"2021/06"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	10	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Jul., 2021 "	"2021/07"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	12	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Aug., 2021 "	"2021/08"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	22	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Oct., 2021 "	"2021/10"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	16	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Nov., 2021 "	"2021/11"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	21	Not Applicable	Not Applicable
+	"Westchester County, NY"	"36119"	"Dec., 2021 "	"2021/12"	"Drug poisonings (overdose) Unintentional (X40-X44)"	"D1"	18	Not Applicable	Not Applicable
 "---"
 "Dataset: Underlying Cause of Death, 2018-2021, Single Race"
 "Query Parameters:"
 "Drug/Alcohol Induced Causes: Drug-induced causes"
 "States: New York (36)"
-"Group By: County; Month; Single Race 6; Hispanic Origin; Drug/Alcohol Induced Cause"
+"Group By: County; Month; Drug/Alcohol Induced Cause"
 "Show Totals: Disabled"
-"Show Zero Values: Disabled"
+"Show Zero Values: False"
 "Show Suppressed: False"
 "Calculate Rates Per: 100,000"
 "Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
 "---"
 "Help: See http://wonder.cdc.gov/wonder/help/ucd-expanded.html for more information."
 "---"
-"Query Date: May 14, 2023 9:56:36 AM"
+"Query Date: May 14, 2023 10:17:12 AM"
 "---"
 "Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
 "System, Mortality 2018-2021 on CDC WONDER Online Database, released in 2021. Data are from the Multiple Cause of Death Files,"
 "2018-2021, as compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative"
-"Program. Accessed at http://wonder.cdc.gov/ucd-icd10-expanded.html on May 14, 2023 9:56:36 AM"
+"Program. Accessed at http://wonder.cdc.gov/ucd-icd10-expanded.html on May 14, 2023 10:17:12 AM"
 "---"
 Messages:
-"1. The full results are too long to be displayed. Due to suppression constraints rows that are zero, suppressed or a total will"
-"not be available."
+"1. Totals are not available for these results due to suppression constraints. More Information:"
+"http://wonder.cdc.gov/wonder/help/faq.html#Privacy."
+"2. Rows with zero Deaths are hidden. Use Quick Options above to show zero rows."
+"3. Rows with suppressed Deaths are hidden. Use Quick Options above to show suppressed rows."
 "---"
 Caveats:
 "1. Population and rates are labeled 'Not Applicable' when Autopsy, Place of Death, Weekday or Month are grouped by or limited,"
 "due to lack of a valid population. More information: http://wonder.cdc.gov/wonder/help/ucd-expanded.html#NotApplicableRates."
-"2. Death rates are flagged as Unreliable when the rate is calculated with a numerator of 20 or less. More information:"
+"2. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd-expanded.html#Assurance of Confidentiality."
+"3. Death rates are flagged as Unreliable when the rate is calculated with a numerator of 20 or less. More information:"
 "http://wonder.cdc.gov/wonder/help/ucd-expanded.html#Unreliable."
-"3. Deaths of persons with Hispanic origin ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among"
-"Hispanic Origin groups, so are not included in the Hispanic Origin specific counts and rates. More information:"
-"http://wonder.cdc.gov/wonder/help/ucd-expanded.html#Not Stated."
-"4. Information included on the death certificate about the race and Hispanic ethnicity of the decedent is reported by the"
-"funeral director as provided by an informant, often the surviving next of kin, or, in the absence of an informant, on the basis"
-"of observation. Race and ethnicity information from the census is by self-report. To the extent that race and Hispanic origin"
-"are inconsistent between these two data sources, death rates will be biased. More information:"
-"http://wonder.cdc.gov/wonder/help/ucd-expanded.html#Racial Differences."
-"5. Between December 22, 2020 and February 3, 2021, the county-level race-specific population figures and rates reported for year"
-"2018 were inaccurate for queries that reported race-specific categories for single race 6 Race groups in combination for any"
-"specific County and/or Urbanization categories. The results to such queries erroneously reported inaccurate population values"
-"and death rates for specific 6 Race categories at the county level. This problem applied to all queries with County and/or"
-"Urbanization categories and the specific 6 Race categories in year 2018. We apologize for this error."
