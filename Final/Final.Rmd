@@ -82,6 +82,7 @@ library(RSocrata)
 library(Amelia)
 library(kableExtra)
 library(lubridate)
+library(zoo)
 ```
 
 
@@ -99,7 +100,7 @@ df_syr <- syr
 pk <- read.csv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/Parks_Properties.csv")
 df_pk <- pk
 
-dth <- read_tsv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/CountyYearRaceGenderDeaths.txt", show_col_types = FALSE)
+dth <- read_tsv("https://raw.githubusercontent.com/gabbypaola/DATA622/main/Final/CountyMonthYearRaceDeaths.txt", show_col_types = FALSE)
 df_dth <- dth
 ```
 
@@ -147,12 +148,15 @@ df_syr<- df_syr %>%
   mutate(collected_date =as.Date(str_sub(collected_date, start=1, end=10),format='%m/%d/%Y'),
          kiosk_site = as.logical(toupper(kiosk_site)),
          kiosk_syringes = as.integer(kiosk_syringes),
-         collection_type = 
-           case_when(is.na(ground_syringes) & is.na(kiosk_syringes)  ~ "None",
-                     (ground_syringes >= 0 & is.na(kiosk_syringes)) ~ "Ground",
-                     (is.na(ground_syringes) & kiosk_syringes >= 0) ~ "Kiosk",
-                     (ground_syringes >= 0 & kiosk_syringes >= 0) ~ "Ground & Kiosk"
-                     ),
+         kiosk_syringes = coalesce(kiosk_syringes, 0),
+         ground_syringes = coalesce(ground_syringes, 0),
+         total_syringes = ground_syringes + kiosk_syringes,
+         # collection_type = 
+         #   case_when(ground_syringes == 0 & kiosk_syringes == 0    ~ "None",
+         #             (ground_syringes >= 1 & kiosk_syringes == 0) ~ "Ground",
+         #             (ground_syringes == 0 & kiosk_syringes >= 1) ~ "Kiosk",
+         #             (ground_syringes >= 1 & kiosk_syringes >= 1) ~ "Ground & Kiosk"
+         #             ),
          month_year = paste(month_text, year),
          month = factor(month, levels= c(1,2,3,4,5,6,7,8,9,10,11,12)),
          month_text = factor(month_text, levels= c("Jan", "Feb","Mar","Apr",
@@ -167,13 +171,6 @@ df_syr<- df_syr %>%
          )
  
 glimpse(df_syr)
-```
-
-```{r}
-df_syr2 <- df_syr %>% 
-  select(c(gispropnum, month, year, month_year ,group, location, ground_syringes,
-           kiosk_syringes, total_syringes, kiosk_number, kiosk_type, kiosk_site
-           ))
 ```
 
 
@@ -238,7 +235,9 @@ glimpse(df)
 
 The Underlying Cause of Death database contains mortality and population counts for all U.S. counties. Data are based on death certificates for U.S. residents. Each death certificate identifies a single underlying cause of death and demographic data. The number of deaths, crude death rates or age-adjusted death rates, and 95% confidence intervals and standard errors for death rates can be obtained by place of residence (total U.S., region, state and county), age group (single-year-of age, 5-year age groups, 10-year age groups and infant age groups), race, Hispanic ethnicity, gender, year, cause-of-death (4-digit ICD-10 code or group of codes), injury intent and injury mechanism, drug/alcohol induced causes and urbanization categories. Data are also available for place of death, month and week day of death, and whether an autopsy was performed.
 
-The dataset has 14 columns and 275 rows where 9 variables are character type, and 5 variables are double type (decimals).
+*Note: Stratifying the data into additional groups like gender, race, age causes data loss due to suppression rules in place by the CDC for [Assurance of Confidentiality](https://wonder.cdc.gov/wonder/help/ucd.html#Assurance%20of%20Confidentiality:~:text=What%20are%20the%20Assurance%20of%20Confidentiality%20constraints%20for%20the%20data%3F) constraints. Statistics representing fewer than ten (one to nine) deaths or births are suppressed. Population figures are also suppressed when the population represents fewer than ten persons. This dataset is stratified by County, Month Year, Race, Drug/Alcohol Induced Cause of death.
+
+The dataset has 12 columns and 593 rows where 10 variables are character type, and 2 variables are double type (decimals).
 
 ```{r}
 glimpse(df_dth)
@@ -248,35 +247,46 @@ look_for(df_dth)
 table(look_for(df_dth)$col_type)
 ```
 
-The Underlying Cause of Death dataset contains information for all counties in the state of New York for the years 2017-2021 and causes of deaths include Drug poisonings (overdose) Suicide (X60-X64), Drug poisonings (overdose) Undetermined (Y10-Y14), Drug poisonings (overdose) Unintentional (X40-X44), and All other drug-induced causes.
+The Underlying Cause of Death dataset contains information for all counties in the state of New York for the years 2018-2021 and causes of deaths include "Drug poisonings (overdose) Unintentional (X40-X44)" and "Drug poisonings (overdose) Undetermined (Y10-Y14)".
 
 The scope of this project is limited to deaths by unintentional overdose for the NYC area, specifically the Bronx. The data will be filtered for the five boroughs for exploratory analysis and county names will be used to add the borough name equivalent.
 
-After filtering for the five bororughs the causes of death remaining are narrowed down to Drug poisonings (overdose) Suicide (X60-X64), Drug poisonings (overdose) Unintentional (X40-X44), and All other drug-induced causes. The data will be filtered further to only include Drug poisonings (overdose) Unintentional (X40-X44). 
+After filtering for the five boroughs the causes of death remaining are narrowed down to Drug poisonings (overdose) Suicide (X60-X64), Drug poisonings (overdose) Unintentional (X40-X44), and All other drug-induced causes. The data will be filtered further to only include Drug poisonings (overdose) Unintentional (X40-X44). 
 ```{r}
+
+df_dth <-dth
+
 df_dth <- df_dth %>% 
-  select(c("County","Year","Gender","Race","Deaths","Population",
+  select(c("County","Month","Month Code", "Single Race 6","Deaths",
            "Drug/Alcohol Induced Cause")) %>% 
   filter(County %in% c("Bronx County, NY","Kings County, NY", "New York County, NY",
                        "Queens County, NY", "Richmond County, NY"),
-         
          `Drug/Alcohol Induced Cause` == "Drug poisonings (overdose) Unintentional (X40-X44)") %>% 
   mutate(borough= case_when(County == "Bronx County, NY" ~ "Bronx",
                             County == "Kings County, NY" ~ "Brooklyn", 
                             County == "New York County, NY" ~ "Manhattan",
                             County == "Queens County, NY" ~ "Queens", 
-                            County == "Richmond County, NY" ~ "Staten Island")
-         )
+                            County == "Richmond County, NY" ~ "Staten Island"),
+         year = factor(as.integer(trimws(substr(`Month Code`, 1, 4))), 
+                       levels= c(2018,2019,2020,2021)),
+         month = factor(as.integer(trimws(substr(`Month Code`, 6,7))), 
+                        levels= c(1,2,3,4,5,6,7,8,9,10,11,12)), 
+         month_year = ifelse(month == 5, gsub(",", "", Month),
+                             gsub(".,", "", Month)
+                             )
+         ) %>% 
+  rename(deaths="Deaths", race = "Single Race 6", cause = "Drug/Alcohol Induced Cause") 
 
-#change column cases to lowercase  
-names(df_dth) <- tolower(names(df_dth))
+
+df_od_dth <- df_dth %>% 
+  select(borough, month, year, month_year, deaths, race)
 ```
 
 
 
 ```{r message=FALSE, warning=FALSE}
-df_dth %>% 
-  group_by(borough, year) %>% 
+df_od_dth %>% 
+  group_by(borough) %>% 
   summarise(total_deaths=sum(deaths, na.rm = T)) %>%
   kable(booktabs=TRUE)  %>%
   kable_styling(font_size = 9, latex_options = "scale_down")
@@ -290,7 +300,7 @@ Variable with dependency on two other variables in the dataset:
 Variables that are a subset of one other variable:
 `year`, `month`, `month_text`, `week`, `time_of_day`, `collected_date` are granular versions of the  `created_date` variable  
 
-The [Summary of Syringe Data in NYC Parks dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) was procured from the [Open NYC Data](https://opendata.cityofnewyork.us/). The dataset has a [data dictionary](https://docs.google.com/spreadsheets/d/1VSUqd1peSc-4D2XnBZNiLdxa0Jg4z62D/edit#gid=1183788427) available for the variables which provides a description along with other relevant information for each variable.  
+The [Summary of Syringe Data in NYC Parks dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) was collected from the [Open NYC Data](https://opendata.cityofnewyork.us/). The dataset has a [data dictionary](https://docs.google.com/spreadsheets/d/1VSUqd1peSc-4D2XnBZNiLdxa0Jg4z62D/edit#gid=1183788427) available for the variables which provides a description along with other relevant information for each variable.  
 
 The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve) is also an Open NYC Data dataset which was brought in to gather additional data on the parks where syringes are collected. The [data dictionary](https://docs.google.com/spreadsheets/d/1Q4DBWu7riNFxWvy1vnTJHoOI3r2L9oW6eCN56jCNyCw/edit#gid=0) for the Parks Properties dataset in addition to the [user guide](https://docs.google.com/document/d/1NExNJF5YKID04oOopi0fHainRuGG3Pz_jKSrMujPsPk/edit) are available. The user guide is particularly useful for the detailed descriptions of the `TYPECATEGORY` variable not directly available on the data dictionary.
 
@@ -320,7 +330,6 @@ Furthermore, after looking more into the data `kiosk_number` also has a large nu
 `kiosk_number`: NULL indicates that a kiosk was not present at that location at that time, or the group collecting syringes did not service a kiosk during that visit. 
 
 With this information, some of the NAs in `kiosk_syringe` can have NAs replaced with 0s where a `kiosk_number` is present meaning a kiosk exists, however no syringes were collected that visit. 
-
 
 
 ```{r fig.align='center', fig.height=8, fig.width=15}
@@ -462,30 +471,26 @@ df %>%
   kable_styling(font_size = 9, latex_options = "scale_down")
 ```
 
-```{r}
-b <- df %>% select(c(borough,location,typecategory,subcategory)) %>% 
-  filter(borough =="Bronx")
+Below are total deaths due to overdose according to the CDC data for the 5 boroughs from 2018-2021.
 
-b
-
-length(unique(b$location))
-
-df %>%
-  filter(borough=="Bronx", 
-         year %in% c(2017,2018,2019,2020)) %>% 
-  count(location) %>% 
-  arrange(-n)
+```{r message=FALSE, warning=FALSE}
+df_od_dth %>% 
+  group_by(borough,year) %>% 
+  summarise(total_deaths=sum(deaths, na.rm = T)) %>%
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
 ```
 
-```{r}
-df %>%
-  filter(borough=="Bronx", 
-         year %in% c(2017,2018,2019,2020)) %>% 
-  group_by(location, year) %>% 
-  summarise(total=sum(total_syringes, na.rm = T)) %>% 
-  arrange(-total)
-```
+With relation to deaths to overdoses, below are counts for the Bronx by race and year using the CDC data from 2018-2021. 
 
+```{r message=FALSE, warning=FALSE}
+df_od_dth %>% 
+  filter(borough=="Bronx") %>% 
+  group_by(borough, race,year) %>% 
+  summarise(total_deaths=sum(deaths, na.rm = T)) %>%
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
+```
 
 
 ## Correlations
@@ -496,16 +501,61 @@ df %>%
 
 # Preprocessing
 
+```{r this is it}
+df_syr2 <- df_syr %>% 
+  filter(borough == "Bronx", 
+         year %in% c(2018,2019,2020,2021)) %>% 
+  select(c(gispropnum, borough, month, year, month_year, group, location, #collection_type,
+           kiosk_site, kiosk_type, kiosk_site, kiosk_syringes, ground_syringes, total_syringes
+           )) %>% 
+  mutate(kiosk_type = ifelse(kiosk_site==TRUE & is.na(kiosk_type), "Unspecified", kiosk_type),
+         kiosk_site = ifelse(kiosk_syringes > 0, TRUE, kiosk_site)
+         ) %>% 
+  mutate_if(is.character, ~na_if(., '')) %>% 
+  na.omit()
+
+df_syr2$month_year <- as.yearmon(df_syr2$month_year, "%b %Y")
+
+map(df_syr2, ~sum(is.na(.))) %>% t()
+
+glimpse(df_syr2)
+```
+
+```{r}
+agg_syr <- aggregate(cbind(kiosk_syringes, ground_syringes, total_syringes) ~ 
+            gispropnum + borough + month + year+ month_year + group + 
+            location + kiosk_site + kiosk_type,
+          data = df_syr2,
+          FUN = sum)
+
+agg_syr <- agg_syr %>% 
+  mutate(collection_type = 
+           case_when(ground_syringes == 0 & kiosk_syringes == 0 ~ "None",
+                     (ground_syringes >= 1 & kiosk_syringes == 0) ~ "Ground",
+                     (ground_syringes == 0 & kiosk_syringes >= 1) ~ "Kiosk",
+                     (ground_syringes >= 1 & kiosk_syringes >= 1) ~ "Ground & Kiosk"
+                     ) 
+         )
+    
+
+    
+```
+
+
+```{r}
+df_od_dth <- df_od_dth %>% 
+  mutate(month_year= as.yearmon(df_od_dth$month_year, "%b %Y"))
+
+glimpse(df_od_dth)
+```
+
+
+
 ## Scaling
 
 ## Feature Selection
 
 ## Feature Engineering
-
-```{r}
-
-```
-
 
 
 # Models
