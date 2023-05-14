@@ -183,7 +183,7 @@ Records are added as more land is designated under NYC Parks’ jurisdiction. Ea
 ```{r}
 df_pk<- df_pk %>% select(c("GISPROPNUM","ACRES","JURISDICTION","COMMUNITYBOARD",
                            "COUNCILDISTRICT","SUBCATEGORY","TYPECATEGORY",
-                           "WATERFRONT"))
+                           "WATERFRONT", "BOROUGH"))
 glimpse(df_pk)
 
 table(look_for(df_pk)$col_type)
@@ -215,18 +215,27 @@ df_pk<-df_pk %>%
                                  df_pk$COUNCILDISTRICT,
                                  str_sub(gsub('(.{2})','\\1,',df_pk$COUNCILDISTRICT),end=-2)),
          ACRES = round(ACRES,2),
-         WATERFRONT = as.logical(toupper(WATERFRONT))
+         WATERFRONT = as.logical(toupper(WATERFRONT)),
+         BOROUGH = case_when(BOROUGH == "X" ~ "Bronx",
+                             BOROUGH == "B" ~ "Brooklyn",
+                             BOROUGH == "Q" ~ "Queens",
+                             BOROUGH == "M" ~ "Manhattan",
+                             BOROUGH == "R" ~ "Staten Island")
          )
 
 #change column cases to lowercase  
 names(df_pk) <- tolower(names(df_pk))
 
-#glimpse(df_pk)
+#unique(df_pk$borough)
+glimpse(df_pk)
 ```
 
 Next, the syringe collection data is merged with the parks data.
 ```{r}
 df <- left_join(x=df_syr, y=df_pk, by="gispropnum", relationship = "many-to-many")
+
+df <- df %>% select(-borough.x) %>% 
+  rename(borough= borough.y)
 
 glimpse(df)  
 ```
@@ -300,6 +309,8 @@ Variable with dependency on two other variables in the dataset:
 Variables that are a subset of one other variable:
 `year`, `month`, `month_text`, `week`, `time_of_day`, `collected_date` are granular versions of the  `created_date` variable  
 
+`group`: BBP stand for Bloodborne Pathogen crew, a Parks group specifically trained to handle waste that could spread blood bourne pathogens. CP stands for Washington Heights Corner Project, a harm reduction nonprofit. NYHRE stands for New York Harm Reduction Educators, a harm reduction nonprofit.
+
 The [Summary of Syringe Data in NYC Parks dataset](https://data.cityofnewyork.us/Public-Safety/Summary-of-Syringe-Data-in-NYC-Parks/t8xi-d5wb) was collected from the [Open NYC Data](https://opendata.cityofnewyork.us/). The dataset has a [data dictionary](https://docs.google.com/spreadsheets/d/1VSUqd1peSc-4D2XnBZNiLdxa0Jg4z62D/edit#gid=1183788427) available for the variables which provides a description along with other relevant information for each variable.  
 
 The [Parks Properties](https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve) is also an Open NYC Data dataset which was brought in to gather additional data on the parks where syringes are collected. The [data dictionary](https://docs.google.com/spreadsheets/d/1Q4DBWu7riNFxWvy1vnTJHoOI3r2L9oW6eCN56jCNyCw/edit#gid=0) for the Parks Properties dataset in addition to the [user guide](https://docs.google.com/document/d/1NExNJF5YKID04oOopi0fHainRuGG3Pz_jKSrMujPsPk/edit) are available. The user guide is particularly useful for the detailed descriptions of the `TYPECATEGORY` variable not directly available on the data dictionary.
@@ -371,8 +382,7 @@ While this project focuses on the syringes collected in the Bronx, the dataset c
   
 ```{r}
 df%>%
-  select(borough) %>% 
-  rename(Borough=borough) %>% 
+  rename(Borough = borough)%>% 
   count(Borough, name="Total Collections") %>% 
   arrange(-pick(starts_with("Total")))%>% 
   kable(booktabs=TRUE)  %>%
@@ -498,10 +508,15 @@ df_od_dth %>%
 ## VIF Scores
 
 
-
 # Preprocessing
 
-```{r this is it}
+## Feature Selection
+
+### Feature Selection from Syringe data
+
+```{r syringe class.source='fold-show'}
+#SYRINGE DATA
+#filter syringes data, select columns, clean vars, drop nas
 df_syr2 <- df_syr %>% 
   filter(borough == "Bronx", 
          year %in% c(2018,2019,2020,2021)) %>% 
@@ -509,61 +524,128 @@ df_syr2 <- df_syr %>%
            kiosk_site, kiosk_type, kiosk_site, kiosk_syringes, ground_syringes, total_syringes
            )) %>% 
   mutate(kiosk_type = ifelse(kiosk_site==TRUE & is.na(kiosk_type), "Unspecified", kiosk_type),
-         kiosk_site = ifelse(kiosk_syringes > 0, TRUE, kiosk_site)
+         kiosk_site = ifelse(kiosk_syringes > 0, TRUE, kiosk_site), 
+         year = factor(year, levels= c(2018,2019,2020,2021))
          ) %>% 
   mutate_if(is.character, ~na_if(., '')) %>% 
   na.omit()
 
+#convert to yearmon type
 df_syr2$month_year <- as.yearmon(df_syr2$month_year, "%b %Y")
 
 map(df_syr2, ~sum(is.na(.))) %>% t()
 
 glimpse(df_syr2)
+
 ```
 
-```{r}
-agg_syr <- aggregate(cbind(kiosk_syringes, ground_syringes, total_syringes) ~ 
-            gispropnum + borough + month + year+ month_year + group + 
-            location + kiosk_site + kiosk_type,
-          data = df_syr2,
-          FUN = sum)
+### Feature Selection from Death data
 
-agg_syr <- agg_syr %>% 
+```{r death class.source='fold-show'}
+#DEATH DATA
+#select columns
+df_od_dth <- df_dth %>% 
+  select(borough, month, year, month_year, deaths, race)
+
+#filter for Bronx, select columns
+df_od_dth2 <- df_od_dth %>% 
+  filter(borough=="Bronx") %>% 
+  select(month_year, deaths, race)
+
+#update to yearmon type
+df_od_dth2$month_year <- as.yearmon(df_od_dth2$month_year, "%b %Y")
+
+map(df_od_dth2, ~sum(is.na(.))) %>% t()
+
+glimpse(df_od_dth2)
+```
+
+### Feature Selection from Park data
+
+```{r park class.source='fold-show'}
+#PARK DATA
+df_pk2 <- df_pk %>% 
+  filter(borough=="Bronx") %>% 
+  select(c(-borough, -councildistrict))
+
+map(df_pk2, ~sum(is.na(.))) %>% t()
+
+glimpse(df_pk2)
+```
+
+### Merge Syringe, Death, and Park data
+
+```{r merge class.source='fold-show'}
+#MERGE DATA
+#merge syringe data with death data
+syr_dth <- merge(x=df_syr2, y=df_od_dth2, by= "month_year", all=TRUE)
+
+#merge syringe and death data with park data
+syr_dth_pk <- merge(x=syr_dth , y= df_pk2, by="gispropnum", all=TRUE)
+
+```
+
+### Aggregation
+
+```{r aggregate class.source='fold-show'}
+agg_df <- aggregate(cbind(kiosk_syringes, ground_syringes, total_syringes) ~ 
+            month_year +  month + year + jurisdiction + communityboard + 
+              subcategory + typecategory + waterfront + acres + 
+              location + kiosk_type + kiosk_site + group +  race + deaths,
+          data = syr_dth_pk,
+          FUN = sum)
+```
+
+
+## Feature Engineering
+```{r class.source='fold-show'}
+agg_df <- agg_df %>% 
   mutate(collection_type = 
            case_when(ground_syringes == 0 & kiosk_syringes == 0 ~ "None",
                      (ground_syringes >= 1 & kiosk_syringes == 0) ~ "Ground",
                      (ground_syringes == 0 & kiosk_syringes >= 1) ~ "Kiosk",
                      (ground_syringes >= 1 & kiosk_syringes >= 1) ~ "Ground & Kiosk"
                      ) 
-         )
-    
+         ) %>% 
+  mutate_if(is.character, ~na_if(., ''))
 
-    
+map(agg_df, ~sum(is.na(.))) %>% t()
+
+glimpse(agg_df)
 ```
-
-
-```{r}
-df_od_dth <- df_od_dth %>% 
-  mutate(month_year= as.yearmon(df_od_dth$month_year, "%b %Y"))
-
-glimpse(df_od_dth)
-```
-
-
 
 ## Scaling
 
-## Feature Selection
+Next, the data is scaled in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By scaling the variables, we can be sure that each variable contributes equally to the analysis and reduce the variance effect.
 
-## Feature Engineering
+```{r message=FALSE, warning=FALSE}
+#apply preprocessing and generate transformed values
+agg_df_norm <- predict(preProcess(agg_df, method=c("center", "scale")),agg_df)
 
+#stats
+agg_df_norm %>% 
+  keep(is.numeric) %>%  
+  describe(fast=TRUE) %>% 
+  select(-c(vars,n))
+
+#distribution
+agg_df_norm %>% 
+  keep(is.numeric) %>%  
+  gather(variable, value, 1:5) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity", bins = 40) +
+    theme_light()
+```
 
 # Models
 
 
-
 # Model Comparison
 
+# Essay
 
 <!----
 https://www.cbsnews.com/newyork/news/hypodermic-needles-nyc-parks-opioid-crisis-kiosks-bronx-parks/
