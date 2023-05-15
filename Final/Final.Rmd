@@ -53,11 +53,6 @@ knitr::include_graphics("syringe_sign.png")
 
 &nbsp;  
 
-In 2018, NYC Parks and the Health Department began installing syringe kiosks in select parks across the Bronx as as part of a [plan to reduce the prevalence of discarded syringes](https://www.nycgovparks.org/news/press-releases?id=21566). The plan is part of HealingNYC, the City’s initiative to combat the opioid epidemic stemmed from success seen in similar initiatives in Vancouver, Canada and Seatlle, WA, according to NYC Parks commissioner, Mitchell J. Silver. NYC Parks and local syringe exchange programs deploy staff with blood-borne pathogen training to regularly empty, clean and disinfect kiosks. In addition to installing kiosks, the City works with local syringe exchange programs to increase outreach to people who use drugs in Bronx parks, providing overdose prevention education, information on health and social services, and distributing personal syringe containers.  
-
-Critics of the plan claim that installing syringe kiosks invite and encourage addicts to use drugs in the parks. However, the reality is that people are already using in the parks and disposing of their used needles under benches, bushes, and other places in the parks posing an imminent public health threat to adults, children, and pets that come in contact with them. Coming in contact with needles puts those at risk for contracting infectious diseases such as Hepatitis C and HIV.
-
-
 
 ```{r message=FALSE, warning=FALSE}
 #Packages
@@ -532,11 +527,6 @@ df_od_dth %>%
   kable_styling(font_size = 9, latex_options = "scale_down")
 ```
 
-
-## Correlations
-
-## VIF Scores
-
 &nbsp;  
 
 # Preprocessing
@@ -633,6 +623,17 @@ agg_df <- aggregate(cbind(kiosk_syringes, ground_syringes, total_syringes) ~
           FUN = sum)
 ```
 
+
+## Correlations
+```{r}
+num<- agg_df%>% 
+  select(deaths,total_syringes,kiosk_syringes,ground_syringes)
+  
+cor(num,method = "pearson", use = "complete.obs") %>%
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
+
+```
 
 ## Feature Engineering
 ```{r class.source='fold-show'}
@@ -743,6 +744,8 @@ RMSE = rmse(trf_pred$deaths, trf_pred$...1)
 #R2 = R2(trf_pred$deaths, trf_pred$...1)
 )
 a
+
+cor(trf_pred$deaths, trf_pred$...1)^2
 ```
 
 ### Predicting `total_syringes`
@@ -803,51 +806,15 @@ RMSE = rmse(trf_pred$total_syringes, trf_pred$...1)
 )
 
 b
+
+cor(trf_pred$deaths, trf_pred$...1)^2
 ```
 
 ## Principal Components Regression
+## Predicting `deaths`
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
-set.seed(212)
-
-agg_df_norm2 <- agg_df_norm
-
-#split
-training.samples2 <- agg_df_norm2$deaths %>% 
-  createDataPartition(p = 0.8, list = FALSE)
-
-train_  <- agg_df_norm2[training.samples2, ]
-test_ <- agg_df_norm2[-training.samples2, ]
-
-pcr_model <- pcr(deaths~., data = train_, validation = "CV")
-
-summary(pcr_model)
-
-# Plot the root mean squared error
-validationplot(pcr_model)
-
-# Plot the cross validation MSE
-validationplot(pcr_model, val.type="MSEP")
-
-# Plot the R2
-validationplot(pcr_model, val.type = "R2")
-
-pcr_pred <- predict(pcr_model, test_, comps=59) %>% 
-  bind_cols(test_)
-
-pcr_pred$...1 <- as.numeric(pcr_pred...1)
-
-#2nd attempt
-pca_model <- caret::train(
-  total_syringes ~ .,
-  data = agg_df,
-  method = 'lm',
-  preProcess = c("pca")
-)
-pca_model
-```
-
-```{r}
+```{r pca}
+set.seed(718)
 agg_df_num <- agg_df %>% 
   keep(is.numeric)
 
@@ -864,17 +831,69 @@ pca_model <- caret::train(deaths ~ ., data = train_,
 pca_model
 ```
 
+## Predicting `total_syringes`
 
+```{r}
+c <- data.frame(Model = "PCA Linear Regression: deaths",
+#mean absolute error
+MAE = 5.607594,
+#rmse Root Mean Squared Error
+RMSE = 6.931028
+#r squared
+#R2 = R2(trf_pred$total_syringes, trf_pred$...1)
+)
+```
+
+
+```{r pca2}
+set.seed(212)
+agg_df_num <- agg_df %>% 
+  keep(is.numeric) 
+
+#split
+training.samples2 <- agg_df_num$total_syringes %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train_  <- agg_df_num[training.samples2, ]
+test_ <- agg_df_num[-training.samples2, ]
+
+pca_model2 <- caret::train(total_syringes ~ ., data = train_, 
+                          method = 'lm', preProcess = c("center", "scale","pca"))
+
+pca_model2
+```
+
+```{r}
+d <- data.frame(Model = "PCA Linear Regression: total_syringes",
+#mean absolute error
+MAE = 4.076397,
+#rmse Root Mean Squared Error
+RMSE = 4.971208
+#r squared
+#R2 = R2(trf_pred$total_syringes, trf_pred$...1)
+)
+```
 
 
 # Model Comparison
 
 ```{r}
-
+rbind(a,c,b,d)
 ```
 
-
 # Essay
+
+In 2018, NYC Parks and the Health Department began installing syringe kiosks in select parks across the Bronx as as part of a [plan to reduce the prevalence of discarded syringes](https://www.nycgovparks.org/news/press-releases?id=21566). The plan is part of HealingNYC, the City’s initiative to combat the opioid epidemic stemmed from success seen in similar initiatives in Vancouver, Canada and Seatlle, WA, according to NYC Parks commissioner, Mitchell J. Silver. NYC Parks and local syringe exchange programs deploy staff with blood-borne pathogen training to regularly empty, clean and disinfect kiosks. In addition to installing kiosks, the City works with local syringe exchange programs to increase outreach to people who use drugs in Bronx parks, providing overdose prevention education, information on health and social services, and distributing personal syringe containers.  
+
+Critics of the plan claim that installing syringe kiosks invite and encourage addicts to use drugs in the parks. However, the reality is that people are already using in the parks and disposing of their used needles under benches, bushes, and other places in the parks posing an imminent public health threat to adults, children, and pets that come in contact with them. Coming in contact with needles puts those at risk for contracting infectious diseases such as Hepatitis C and HIV.
+
+The syringe dataset contains records of syringes collected, including how many, whether they are collected from the ground or a kiosk, and when they are collected. The Syringe Summary dataset contains records for syringes collected by both Parks staff as well as collection efforts by the [Washington Heights Corner Project](https://www.nycservice.org/organizations/index.php?org_id=1462) and [New York Harm Reduction Educators](https://nyhre.org/) nonprofit group. Each row one instance or one day's total of syringes collected in a park from the ground or safe disposal kiosk.
+
+The parks properies dataset, provided by the Department of Parks and Recreation (DPR), identifies property managed partially or solely by NYC Parks. This data has been produced in whole or part using secondary data and is currently owned by the NYC Parks Open Data Team. Data accuracy is limited by the scale and accuracy of the original sources. Site-specific conditions should be field-verified.
+
+The Underlying Cause of Death database contains mortality and population counts for all U.S. counties. Data are based on death certificates for U.S. residents. Each death certificate identifies a single underlying cause of death and demographic data. The number of deaths, crude death rates or age-adjusted death rates, and 95% confidence intervals and standard errors for death rates can be obtained by place of residence (total U.S., region, state and county), age group (single-year-of age, 5-year age groups, 10-year age groups and infant age groups), race, Hispanic ethnicity, gender, year, cause-of-death (4-digit ICD-10 code or group of codes), injury intent and injury mechanism, drug/alcohol induced causes and urbanization categories. Data are also available for place of death, month and week day of death, and whether an autopsy was performed.
+
+*Note: Stratifying the data into additional groups like gender, race, age causes data loss due to suppression rules in place by the CDC for [Assurance of Confidentiality](https://wonder.cdc.gov/wonder/help/ucd.html#Assurance%20of%20Confidentiality:~:text=What%20are%20the%20Assurance%20of%20Confidentiality%20constraints%20for%20the%20data%3F) constraints. Statistics representing fewer than ten (one to nine) deaths or births are suppressed. Population figures are also suppressed when the population represents fewer than ten persons. This dataset is stratified by County, Month Year, Race, Drug/Alcohol Induced Cause of death.
 
 <!----
 https://www.cbsnews.com/newyork/news/hypodermic-needles-nyc-parks-opioid-crisis-kiosks-bronx-parks/
@@ -894,6 +913,47 @@ https://gothamist.com/news/could-a-syringe-buyback-program-help-clean-up-new-yor
 other: 
 https://www.health.ny.gov/diseases/aids/consumers/prevention/needles_syringes/sharps/
 https://www.nyc.gov/assets/doh/downloads/pdf/epi/databrief133.pdf
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# set.seed(212)
+# 
+# agg_df_norm2 <- agg_df_norm
+# 
+# #split
+# training.samples2 <- agg_df_norm2$deaths %>% 
+#   createDataPartition(p = 0.8, list = FALSE)
+# 
+# train_  <- agg_df_norm2[training.samples2, ]
+# test_ <- agg_df_norm2[-training.samples2, ]
+# 
+# pcr_model <- pcr(deaths~., data = train_, validation = "CV")
+# 
+# summary(pcr_model)
+# 
+# # Plot the root mean squared error
+# validationplot(pcr_model)
+# 
+# # Plot the cross validation MSE
+# validationplot(pcr_model, val.type="MSEP")
+# 
+# # Plot the R2
+# validationplot(pcr_model, val.type = "R2")
+# 
+# pcr_pred <- predict(pcr_model, test_, comps=59) %>% 
+#   bind_cols(test_)
+# 
+# pcr_pred$...1 <- as.numeric(pcr_pred...1)
+# 
+# #2nd attempt
+# pca_model <- caret::train(
+#   total_syringes ~ .,
+#   data = agg_df,
+#   method = 'lm',
+#   preProcess = c("pca")
+# )
+# pca_model
+```
+
 
 ```{r nn attempt, eval=FALSE, include=FALSE}
 #set seed for reproducibility
