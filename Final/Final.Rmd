@@ -83,6 +83,11 @@ library(Amelia)
 library(kableExtra)
 library(lubridate)
 library(zoo)
+library(neuralnet)
+library(keras)
+library(tensorflow)
+library(stringi)
+library(pls)
 ```
 
 
@@ -110,7 +115,7 @@ df_dth <- dth
 
 &nbsp;  
 
-```{r img-with-knitr, echo=FALSE, fig.align='center', out.width='75%', fig.cap='A pile of syringes found under a tree on a sidewalk on St. Anne’s Avenue. These were a few of 1,200 syringes and identifiable needle parts found by the Bronx Ink in the area surrounding the Hub at 149th Street and 3rd Avenue on September 10, 2019. Credit: [A Zone of Neglect](http://bronxink.org/2019/09/19/28351-a-zone-of-neglect/)'}
+```{r img2-with-knitr, echo=FALSE, fig.align='center', out.width='75%', fig.cap='A pile of syringes found under a tree on a sidewalk on St. Anne’s Avenue. These were a few of 1,200 syringes and identifiable needle parts found by the Bronx Ink in the area surrounding the Hub at 149th Street and 3rd Avenue on September 10, 2019. Credit: [A Zone of Neglect](http://bronxink.org/2019/09/19/28351-a-zone-of-neglect/)'}
 knitr::include_graphics("pile_of_syringes.jpeg")
 ```
 
@@ -158,10 +163,10 @@ df_syr<- df_syr %>%
          #             (ground_syringes >= 1 & kiosk_syringes >= 1) ~ "Ground & Kiosk"
          #             ),
          month_year = paste(month_text, year),
-         month = factor(month, levels= c(1,2,3,4,5,6,7,8,9,10,11,12)),
-         month_text = factor(month_text, levels= c("Jan", "Feb","Mar","Apr",
-                                                   "May","Jun","Jul","Aug",
-                                                   "Sep", "Oct", "Nov","Dec")),
+         # month = factor(month, levels= c(1,2,3,4,5,6,7,8,9,10,11,12)),
+         # month_text = factor(month_text, levels= c("Jan", "Feb","Mar","Apr",
+         #                                           "May","Jun","Jul","Aug",
+         #                                           "Sep", "Oct", "Nov","Dec")),
          borough = case_when(substring(df_syr$district,1,1) == "M" ~ "Manhattan",
                              substring(df_syr$district,1,1)=="X" ~ "Bronx",
                              substring(df_syr$district,1,1) == "R" ~ "Staten Island",
@@ -351,14 +356,27 @@ missmap(df, main = "Missing vs Observed Values")
 
 ### Numeric Variables
 
-From the describe() output for the merged dataset, it is noted that the numeric variables have wide ranges. This will be taken care of through normalization to scale the variables in the preprocessing stage prior to running models. The four numeric variables the dataset are all right skewed.
+From the describe() output for the dataset, it is noted that the numeric variables have wide ranges. This will be taken care of in the preprocessing stage by scaling the variables prior to running models. The five numeric variables in the dataset are all right skewed where acres and deaths are multimodal.
 
 ```{r}
+#SYRINGE & PARK
 df_n<- df %>% 
   select(c("ground_syringes", "kiosk_syringes", "total_syringes","acres"))
 
 #stats
 describe(df_n) %>% 
+  select(c(-vars,-trimmed,-mad,-kurtosis))%>%
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
+
+#DEATH
+#stats
+dth_n <- df_od_dth %>% 
+  select(deaths)
+
+dth_n <- as.data.frame(dth_n)
+
+describe(dth_n) %>% 
   select(c(-vars,-trimmed,-mad,-kurtosis))%>%
   kable(booktabs=TRUE)  %>%
   kable_styling(font_size = 9, latex_options = "scale_down")
@@ -368,6 +386,18 @@ describe(df_n) %>%
 #distributions
 df_n %>% 
   gather(variable, value, 1:4) %>%
+  ggplot(aes(value)) +
+    facet_wrap(~variable, scales = "free") +
+    geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
+    geom_histogram(aes(y=after_stat(density)), alpha=0.2, fill = "lightblue", 
+                   color="lightblue", position="identity",bins = 40) +
+    theme_light()
+```
+
+```{r fig.align='center', fig.height=3, fig.width=4, message=FALSE, warning=FALSE}
+#distribution histogram
+dth_n %>%  
+  gather(variable, value, 1:1) %>%
   ggplot(aes(value)) +
     facet_wrap(~variable, scales = "free") +
     geom_density(fill = "steelblue", alpha=0.9, color="steelblue") +
@@ -507,14 +537,21 @@ df_od_dth %>%
 
 ## VIF Scores
 
+&nbsp;  
 
 # Preprocessing
+
+&nbsp;  
+
+```{r img3-with-knitr, echo=FALSE, fig.align='center', out.width='100%', fig.cap='Credit: [New Syringe Disposal Kiosks popping up at Bronx parks with highest number of used needles](https://www.ny1.com/nyc/all-boroughs/news/2018/06/08/syringe-disposal-kiosks-at-bronx-parks)'}
+knitr::include_graphics("syringe_drop_box.jpg")
+```
 
 ## Feature Selection
 
 ### Feature Selection from Syringe data
 
-```{r syringe class.source='fold-show'}
+```{r syringe, class.source='fold-show'}
 #SYRINGE DATA
 #filter syringes data, select columns, clean vars, drop nas
 df_syr2 <- df_syr %>% 
@@ -525,7 +562,7 @@ df_syr2 <- df_syr %>%
            )) %>% 
   mutate(kiosk_type = ifelse(kiosk_site==TRUE & is.na(kiosk_type), "Unspecified", kiosk_type),
          kiosk_site = ifelse(kiosk_syringes > 0, TRUE, kiosk_site), 
-         year = factor(year, levels= c(2018,2019,2020,2021))
+         # year = factor(year, levels= c(2018,2019,2020,2021))
          ) %>% 
   mutate_if(is.character, ~na_if(., '')) %>% 
   na.omit()
@@ -541,7 +578,7 @@ glimpse(df_syr2)
 
 ### Feature Selection from Death data
 
-```{r death class.source='fold-show'}
+```{r death, class.source='fold-show'}
 #DEATH DATA
 #select columns
 df_od_dth <- df_dth %>% 
@@ -562,7 +599,7 @@ glimpse(df_od_dth2)
 
 ### Feature Selection from Park data
 
-```{r park class.source='fold-show'}
+```{r park, class.source='fold-show'}
 #PARK DATA
 df_pk2 <- df_pk %>% 
   filter(borough=="Bronx") %>% 
@@ -575,7 +612,7 @@ glimpse(df_pk2)
 
 ### Merge Syringe, Death, and Park data
 
-```{r merge class.source='fold-show'}
+```{r merge, class.source='fold-show'}
 #MERGE DATA
 #merge syringe data with death data
 syr_dth <- merge(x=df_syr2, y=df_od_dth2, by= "month_year", all=TRUE)
@@ -587,7 +624,7 @@ syr_dth_pk <- merge(x=syr_dth , y= df_pk2, by="gispropnum", all=TRUE)
 
 ### Aggregation
 
-```{r aggregate class.source='fold-show'}
+```{r aggregate, class.source='fold-show'}
 agg_df <- aggregate(cbind(kiosk_syringes, ground_syringes, total_syringes) ~ 
             month_year +  month + year + jurisdiction + communityboard + 
               subcategory + typecategory + waterfront + acres + 
@@ -616,9 +653,9 @@ glimpse(agg_df)
 
 ## Scaling
 
-Next, the data is scaled in preparation for modelling. ^[https://www.statology.org/how-to-normalize-data-in-r/] When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By scaling the variables, we can be sure that each variable contributes equally to the analysis and reduce the variance effect.
+Next, the data is scaled in preparation for modelling. When variables are measured at different scales, they often do not contribute equally to the analysis. For example, if the values of one variable range from 0 to 100,000 and the values of another variable range from 0 to 100, the variable with the larger range will be given a larger weight in the analysis. By scaling the variables, we can be sure that each variable contributes equally to the analysis and reduce the variance effect.
 
-```{r message=FALSE, warning=FALSE}
+```{r fig.align='center', message=FALSE, warning=FALSE}
 #apply preprocessing and generate transformed values
 agg_df_norm <- predict(preProcess(agg_df, method=c("center", "scale")),agg_df)
 
@@ -626,7 +663,9 @@ agg_df_norm <- predict(preProcess(agg_df, method=c("center", "scale")),agg_df)
 agg_df_norm %>% 
   keep(is.numeric) %>%  
   describe(fast=TRUE) %>% 
-  select(-c(vars,n))
+  select(-c(vars,n)) %>%
+  kable(booktabs=TRUE)  %>%
+  kable_styling(font_size = 9, latex_options = "scale_down")
 
 #distribution
 agg_df_norm %>% 
@@ -642,8 +681,198 @@ agg_df_norm %>%
 
 # Models
 
+### Tuned Random Forest Regression
+
+### Predicting `deaths`
+```{r message=FALSE, warning=FALSE}
+#for reproducibility
+set.seed(917)
+
+agg_df_norm1 <- agg_df_norm %>% 
+  select(-c(month,year, month_year))
+#(select(-c(month,year))
+
+#split
+training.samples <- agg_df_norm1$deaths %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train  <- agg_df_norm1[training.samples, ]
+test <- agg_df_norm1[-training.samples, ]
+
+train1 <- train %>% 
+  select(-deaths)
+
+bestmtry <- tuneRF(train1,train$deaths, stepFactor = 2, improve = 0.01,
+                   trace=T, plot= T, doBest=TRUE, importance=TRUE)
+
+#bestmtry
+
+# Get variable importance from the model fit
+ImpData <- as.data.frame(importance(bestmtry))
+ImpData$Var.Names <- row.names(ImpData)
+
+ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
+  geom_segment( aes(x=Var.Names, xend=Var.Names, y=0, yend=`%IncMSE`), color="skyblue") +
+  geom_point(aes(size = IncNodePurity), color="steelblue", alpha=1) +
+  theme_light() +
+  coord_flip() +
+  theme(
+    legend.position="bottom",
+    panel.grid.major.y = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+
+#PREDICTIONS
+trf_pred <- predict(bestmtry, newdata = test) %>% 
+  bind_cols(test)
+
+trf_pred$...1 <- as.numeric(trf_pred$...1)
+```
+
+
+
+#### Performance
+```{r}
+a <- data.frame(Model = "Tuned Random Forest: deaths",
+#mean absolute error
+MAE = mae(trf_pred$deaths, trf_pred$...1),
+#rmse Root Mean Squared Error
+RMSE = rmse(trf_pred$deaths, trf_pred$...1)
+#r squared
+#R2 = R2(trf_pred$deaths, trf_pred$...1)
+)
+a
+```
+
+### Predicting `total_syringes`
+```{r message=FALSE, warning=FALSE}
+#for reproducibility
+set.seed(917)
+
+agg_df_norm1 <- agg_df_norm %>% 
+  select(-c(month,year))
+
+#split
+training.samples <- agg_df_norm1$total_syringes %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train  <- agg_df_norm1[training.samples, ]
+test <- agg_df_norm1[-training.samples, ]
+
+train1 <- train %>% 
+  select(-total_syringes)
+
+bestmtry <- tuneRF(train1,train$total_syringes, stepFactor = 2, improve = 0.01,
+                   trace=T, plot= T, doBest=TRUE, importance=TRUE)
+
+#bestmtry
+
+# Get variable importance from the model fit
+ImpData <- as.data.frame(importance(bestmtry))
+ImpData$Var.Names <- row.names(ImpData)
+
+ggplot(ImpData, aes(x=Var.Names, y=`%IncMSE`)) +
+  geom_segment( aes(x=Var.Names, xend=Var.Names, y=0, yend=`%IncMSE`), color="skyblue") +
+  geom_point(aes(size = IncNodePurity), color="steelblue", alpha=1) +
+  theme_light() +
+  coord_flip() +
+  theme(
+    legend.position="bottom",
+    panel.grid.major.y = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+
+#PREDICTIONS
+trf_pred <- predict(bestmtry, newdata = test) %>% 
+  bind_cols(test)
+
+trf_pred$...1 <- as.numeric(trf_pred$...1)
+```
+
+#### Performance
+```{r}
+b <- data.frame(Model = "Tuned Random Forest: total_syringes",
+#mean absolute error
+MAE = mae(trf_pred$total_syringes, trf_pred$...1),
+#rmse Root Mean Squared Error
+RMSE = rmse(trf_pred$total_syringes, trf_pred$...1)
+#r squared
+#R2 = R2(trf_pred$total_syringes, trf_pred$...1)
+)
+
+b
+```
+
+## Principal Components Regression
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+set.seed(212)
+
+agg_df_norm2 <- agg_df_norm
+
+#split
+training.samples2 <- agg_df_norm2$deaths %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train_  <- agg_df_norm2[training.samples2, ]
+test_ <- agg_df_norm2[-training.samples2, ]
+
+pcr_model <- pcr(deaths~., data = train_, validation = "CV")
+
+summary(pcr_model)
+
+# Plot the root mean squared error
+validationplot(pcr_model)
+
+# Plot the cross validation MSE
+validationplot(pcr_model, val.type="MSEP")
+
+# Plot the R2
+validationplot(pcr_model, val.type = "R2")
+
+pcr_pred <- predict(pcr_model, test_, comps=59) %>% 
+  bind_cols(test_)
+
+pcr_pred$...1 <- as.numeric(pcr_pred...1)
+
+#2nd attempt
+pca_model <- caret::train(
+  total_syringes ~ .,
+  data = agg_df,
+  method = 'lm',
+  preProcess = c("pca")
+)
+pca_model
+```
+
+```{r}
+agg_df_num <- agg_df %>% 
+  keep(is.numeric)
+
+#split
+training.samples2 <- agg_df_num$deaths %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train_  <- agg_df_num[training.samples2, ]
+test_ <- agg_df_num[-training.samples2, ]
+
+pca_model <- caret::train(deaths ~ ., data = train_, 
+                          method = 'lm', preProcess = c("center", "scale","pca"))
+
+pca_model
+```
+
+
+
 
 # Model Comparison
+
+```{r}
+
+```
+
 
 # Essay
 
@@ -658,10 +887,73 @@ https://www.bxtimes.com/west-south-bx-community-react-syringe-dropoff-kiosks-ins
 http://bronxink.org/2019/09/19/28351-a-zone-of-neglect/
 https://www.ny1.com/nyc/all-boroughs/news/2018/06/08/syringe-disposal-kiosks-at-bronx-parks
 
-
 buy back program articles:
 https://www.nytimes.com/2016/04/18/nyregion/bronx-needle-exchange-once-dismissed-finds-acceptance.html
 https://gothamist.com/news/could-a-syringe-buyback-program-help-clean-up-new-york-city-streets
+
+other: 
+https://www.health.ny.gov/diseases/aids/consumers/prevention/needles_syringes/sharps/
+https://www.nyc.gov/assets/doh/downloads/pdf/epi/databrief133.pdf
+
+```{r nn attempt, eval=FALSE, include=FALSE}
+#set seed for reproducibility
+# set.seed(917)
+# 
+# agg_df_norm1 <- agg_df_norm 
+# 
+# #convert qualitative variables to dummy variables
+# m <- as.data.frame(model.matrix(~agg_df_norm+month_year + jurisdiction + communityboard + 
+#               subcategory + typecategory + waterfront + acres + 
+#               location + kiosk_type + kiosk_site + group +  race +
+#               kiosk_syringes + ground_syringes + total_syringes,
+#               data = agg_df_norm1))
+# 
+# colnames(m) <- gsub('[^[:alnum:] ]','',colnames(m))
+# colnames(m) <- gsub(' ','',colnames(m))
+# 
+# #split
+# training.samples <- m$deaths %>% 
+#   createDataPartition(p = 0.8, list = FALSE)
+# 
+# train  <- m[training.samples, ]
+# test <- m[-training.samples, ]
+# 
+# # colnames(m)
+# 
+# #build neural network
+# nn <- neuralnet(totalsyringes ~ 
+#                   monthyear+jurisdictionDPRDOE+communityboard202+communityboard203+communityboard204+communityboard205 +communityboard205207+communityboard206 +communityboard207+subcategoryLargePark +subcategoryNeighborhoodPark+subcategoryNeighborhoodPlgd  +subcategorySittingAreaTriangleMall+typecategoryFlagshipPark  +typecategoryJointlyOperatedPlayground+typecategoryNeighborhoodPark  +typecategoryPlayground+typecategoryRecreationFieldCourts+ typecategoryTrianglePlaza+waterfrontTRUE+acres+locationBillRaineyPark +locationClaremontPark+locationClarkPlayground +locationCrotonaPark+locationFranzSigelPark +locationNelsonPlayground+locationPattersonPlayground+locationRichmanEchoPark+locationRoseHillPark+locationRyanTriangle+locationStMarysPark +locationWalterGladwinPark+ locationWillisPlayground+kiosktypeMailbox+ kiosksiteTRUE+groupCPNYHRE+groupParks + raceWhite+kiosksyringes +groundsyringes, data = train, 
+#               hidden = c(4,3),
+#               linear.output = FALSE)
+# 
+# plot(nn,rep = "best")
+# 
+# 
+# pr.nn <- compute(nn, test)
+# 
+# pr.nn_ <- pr.nn$net.result * (max(m$totalsyringes) - min(m$totalsyringes)) 
+#                                               + min(m$totalsyringes)
+# test.r <- (test$totalsyringes) * (max(m$totalsyringes) - min(m$totalsyringes)) + 
+#                                               min(m$totalsyringes)
+# MSE.nn <- sum((test.r - pr.nn_)^2) / nrow(test)
+# 
+# nn_pred <- predict(nn, test) %>% 
+#   bind_cols(test)
+# 
+# nn_pred$...1 <- as.numeric(nn_pred$...1)
+# 
+# b<- data.frame(Model = "NN",
+# #mean absolute error
+# MAE = mae(nn_pred$totalsyringes, nn_pred$...1),
+# #rmse Root Mean Squared Error
+# RMSE = rmse(nn_pred$totalsyringes, nn_pred$...1),
+# #r squared
+# R2 = R2(nn_pred$totalsyringes, nn_pred$...1)
+# )
+# 
+# b
+```
+
 
 <!------- Below is for removing excessive space in Rmarkdown | HTML formatting -------->
 
